@@ -1,0 +1,157 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+VWO-TC001,Successful Login with Valid Credentials,Functional,Verify user can login with valid email and password,VWO login page (app.vwo.com) is accessible,1,Navigate to app.vwo.com,Login page is displayed with email and password fields,High
+,,,,,2,Enter valid email address in email field,Email is entered and displayed in the field,
+,,,,,3,Enter valid password in password field,Password is entered and masked,
+,,,,,4,Click Login button,User is authenticated successfully,
+,,,,,5,Verify dashboard transition,User is redirected to VWO main dashboard,
+
+VWO-TC002,Login with Remember Me Enabled,Functional,Verify Remember Me checkbox creates persistent session,VWO login page accessible with valid credentials,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid email address,Email is entered in field,
+,,,,,3,Enter valid password,Password is entered in field,
+,,,,,4,Check the Remember Me checkbox,Checkbox is selected,
+,,,,,5,Click Login button,User is logged in successfully,
+,,,,,6,Close browser and reopen,Browser is closed and reopened,
+,,,,,7,Navigate to app.vwo.com,User session is persisted - user remains logged in,
+
+VWO-TC003,Email Format Validation on Blur,Functional,Verify real-time email format validation on blur,VWO login page is accessible,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Click on email field,Email field receives focus,
+,,,,,3,Enter invalid email format (e.g. test@),Invalid email is entered,
+,,,,,4,Move focus to password field (blur),Real-time validation error is displayed for invalid email format,
+
+VWO-TC004,Login with Empty Email Field,Negative,Verify error when email field is empty,VWO login page is accessible,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Leave email field empty,Email field remains empty,
+,,,,,3,Enter password in password field,Password is entered,
+,,,,,4,Click Login button,Validation error displayed for empty email field,
+
+VWO-TC005,Login with Empty Password Field,Negative,Verify error when password field is empty,VWO login page is accessible,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid email address,Email is entered,
+,,,,,3,Leave password field empty,Password field remains empty,
+,,,,,4,Click Login button,Validation error displayed for empty password field,
+
+VWO-TC006,Login with Invalid Credentials,Negative,Verify error message for failed authentication,VWO login page is accessible,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter invalid email address,Invalid email is entered,
+,,,,,3,Enter invalid password,Invalid password is entered,
+,,,,,4,Click Login button,Clear actionable error message displayed for failed authentication,
+
+VWO-TC007,Forgot Password Flow,Functional,Verify password reset process with secure token,VWO login page accessible with valid registered email,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Click Forgot Password link,Password reset page/modal is displayed,
+,,,,,3,Enter registered email address,Email is entered in reset field,
+,,,,,4,Click Submit/Reset button,Password reset email is sent with secure token,
+,,,,,5,Check email inbox,Password reset email is received,
+
+VWO-TC008,Auto-focus on First Input Field,Functional,Verify automatic focus on email field on page load,Browser is open,1,Navigate to app.vwo.com login page,Login page loads completely,Medium
+,,,,,2,Observe cursor position without clicking,Cursor is auto-focused on email input field,
+
+VWO-TC009,Clickable Form Labels,Accessibility,Verify clicking labels focuses corresponding input fields,VWO login page is accessible,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Click on Email label text,Email input field receives focus,
+,,,,,3,Click on Password label text,Password input field receives focus,
+
+VWO-TC010,Password Strength Indicator,Functional,Verify visual feedback for password requirements,VWO login page is accessible,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Click on password field,Password field receives focus,
+,,,,,3,Enter weak password,Password strength indicator shows weak feedback,
+,,,,,4,Enter stronger password,Password strength indicator updates to stronger feedback,
+
+VWO-TC011,Navigate to Free Trial Signup,Functional,Verify registration path for new users,VWO login page is accessible,1,Navigate to login page,Login page is displayed with registration link,Medium
+,,,,,2,Locate free trial/signup link,Registration link is visible,
+,,,,,3,Click on registration/free trial link,User is directed to free trial signup page,
+
+VWO-TC012,Switch to Dark Mode,Functional,Verify theme toggle to Dark Mode,VWO login page is accessible,1,Navigate to login page,Login page displayed in default theme,Medium
+,,,,,2,Locate theme toggle option,Theme toggle is visible (per product announcements),
+,,,,,3,Click to switch to Dark Mode,UI switches to Dark Mode theme,
+,,,,,4,Verify all elements are visible in Dark Mode,All login elements render correctly in Dark Mode,
+
+VWO-TC013,Switch to Light Mode,Functional,Verify theme toggle to Light Mode,VWO login page is in Dark Mode,1,Ensure login page is in Dark Mode,Dark Mode is active,Medium
+,,,,,2,Locate theme toggle option,Theme toggle is visible,
+,,,,,3,Click to switch to Light Mode,UI switches to Light Mode theme,
+,,,,,4,Verify all elements are visible in Light Mode,All login elements render correctly in Light Mode,
+
+VWO-TC014,Keyboard Navigation - Tab Through Elements,Accessibility,Verify full keyboard navigation for all interactive elements,VWO login page is accessible,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Press Tab key,Focus moves to first interactive element (email field),
+,,,,,3,Press Tab key again,Focus moves to password field,
+,,,,,4,Press Tab key again,Focus moves to Remember Me checkbox,
+,,,,,5,Press Tab key again,Focus moves to Login button,
+,,,,,6,Press Enter on Login button,Form submission is triggered via keyboard,
+
+VWO-TC015,Screen Reader ARIA Labels,Accessibility,Verify ARIA labels for screen reader support,Screen reader enabled VWO login page accessible,1,Navigate to login page with screen reader,Login page loads,Medium
+,,,,,2,Use screen reader to navigate email field,Screen reader announces email field with proper ARIA label,
+,,,,,3,Use screen reader to navigate password field,Screen reader announces password field with proper ARIA label,
+,,,,,4,Use screen reader to navigate Login button,Screen reader announces Login button correctly,
+
+VWO-TC016,High Contrast Mode Accessibility,Accessibility,Verify high contrast mode for visually impaired users,VWO login page accessible with high contrast enabled,1,Enable high contrast mode in browser/OS,High contrast mode is active,Medium
+,,,,,2,Navigate to login page,Login page is displayed,
+,,,,,3,Verify all text elements are visible,All text has sufficient contrast,
+,,,,,4,Verify all buttons are visible,All interactive elements are clearly visible,
+
+VWO-TC017,HTTPS Enforcement Verification,Security,Verify SSL/TLS encryption for all communications,Network inspection tool available,1,Open browser developer tools,Developer tools panel is open,High
+,,,,,2,Navigate to app.vwo.com,Login page loads,
+,,,,,3,Verify URL shows HTTPS,Connection is secure with HTTPS,
+,,,,,4,Check Security tab/certificate,Valid SSL/TLS certificate is present,
+
+VWO-TC018,Multi-Factor Authentication,Security,Verify optional 2FA support functionality,2FA enabled VWO account,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid email with 2FA enabled,Email is entered,
+,,,,,3,Enter valid password,Password is entered,
+,,,,,4,Click Login button,2FA verification prompt is displayed,
+,,,,,5,Enter valid 2FA code,2FA code is entered,
+,,,,,6,Submit 2FA verification,User is authenticated and redirected to dashboard,
+
+VWO-TC019,Brute Force Protection - Rate Limiting,Security,Verify protection against brute force attacks,VWO login page accessible,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid email,Email is entered,
+,,,,,3,Enter wrong password and attempt login,Login fails with error,
+,,,,,4,Repeat failed login attempts multiple times,Multiple failed attempts are made,
+,,,,,5,Observe system response after threshold,Rate limiting protection is triggered - account locked or CAPTCHA displayed,
+
+VWO-TC020,Page Load Time Performance,Performance,Verify login page loads within 2 seconds,Network connection available standard connection,1,Clear browser cache,Browser cache is cleared,High
+,,,,,2,Open browser developer tools Performance tab,Performance monitoring is ready,
+,,,,,3,Navigate to login page,Login page loads,
+,,,,,4,Measure page load time,Page loads within 2 seconds,
+
+VWO-TC021,Loading States During Authentication,Functional,Verify clear feedback during login processing,VWO login page accessible with valid credentials,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Enter valid email and password,Credentials are entered,
+,,,,,3,Click Login button,Loading state/spinner is displayed,
+,,,,,4,Observe feedback during processing,Clear visual feedback indicates authentication in progress,
+,,,,,5,Wait for completion,Loading state clears and user is redirected,
+
+VWO-TC022,Mobile Responsive Design,Functional,Verify mobile-optimized interface with touch-friendly controls,Mobile device or emulator,1,Open mobile browser or emulator,Mobile environment is ready,Medium
+,,,,,2,Navigate to app.vwo.com,Login page loads on mobile,
+,,,,,3,Verify layout adapts to mobile screen,Responsive design displays correctly,
+,,,,,4,Verify touch controls are appropriately sized,Input fields and buttons are touch-friendly,
+,,,,,5,Complete login flow on mobile,Login works on mobile device,
+
+VWO-TC023,Product Announcement Banner Visibility,Functional,Verify banner highlighting new UI features,VWO login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,,,2,Observe banner area,Product announcement banner is visible,
+,,,,,3,Verify banner content,Banner highlights Light and Dark Mode options,
+
+VWO-TC024,Brand Consistency Verification,UI,Verify alignment with VWO design system,VWO login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,,,2,Verify VWO logo is present,VWO branding logo is displayed,
+,,,,,3,Verify color scheme matches VWO brand,Colors align with VWO design system,
+,,,,,4,Verify fonts and visual elements,Professional trustworthy appearance is maintained,
+
+VWO-TC025,Session Timeout Handling,Functional,Verify secure session handling with timeout,User logged into VWO,1,Login to VWO successfully,User is on VWO dashboard,Medium
+,,,,,2,Leave session idle for timeout period,Session remains idle (duration not specified),
+,,,,,3,Attempt to perform action after timeout,Session expiration is handled appropriately,
+
+VWO-TC026,SSO Login - Enterprise Authentication,Functional,Verify SSO integration for organizational accounts,Enterprise SSO configured for organization,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Select SSO login option,SSO authentication flow is initiated,
+,,,,,3,Complete organization SSO authentication,SSO authentication is processed,
+,,,,,4,Verify redirect to VWO dashboard,User is authenticated via SSO and redirected to dashboard,
+
+VWO-TC027,Password Not Transmitted in Plain Text,Security,Verify end-to-end encryption for authentication data,Network monitoring tool available,1,Open network monitoring tool,Network traffic monitoring is active,High
+,,,,,2,Navigate to login page,Login page is displayed,
+,,,,,3,Enter credentials and submit login,Login request is sent,
+,,,,,4,Inspect network traffic,Password is not visible in plain text - encrypted transmission,
+
+VWO-TC028,Secure Session Token Generation,Security,Verify secure session token after login,Browser developer tools available,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid credentials and login,User is authenticated,
+,,,,,3,Open browser developer tools,Developer tools are open,
+,,,,,4,Inspect cookies/session storage,Secure session token is generated with appropriate flags,
+
+VWO-TC029,Dashboard Transition After Login,Integration,Verify seamless transition to main dashboard,Valid VWO credentials,1,Navigate to login page,Login page is displayed,High
+,,,,,2,Enter valid credentials,Credentials are entered,
+,,,,,3,Click Login button,Authentication is processed,
+,,,,,4,Verify immediate dashboard access,User is seamlessly transitioned to personalized VWO dashboard,
+
+VWO-TC030,Login Analytics Tracking,Integration,Verify login success/failure tracking for analytics,Analytics configured for VWO,1,Navigate to login page,Login page is displayed,Medium
+,,,,,2,Attempt successful login,Login succeeds,
+,,,,,3,Verify analytics captured login success,Login success event is tracked,
+,,,,,4,Logout and attempt failed login,Login fails,
+,,,,,5,Verify analytics captured login failure,Login failure event is tracked,

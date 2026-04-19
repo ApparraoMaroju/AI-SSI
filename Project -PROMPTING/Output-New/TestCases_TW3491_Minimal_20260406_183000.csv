@@ -1,0 +1,33 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_TW3491_001,Verify Processing Status Tile Displays All Status Types,Functional,Verify the Processing Status tile is visible and displays saved/for approval/approved statuses,User logged in; Records exist in saved - for approval - and approved states,1,Navigate to the application dashboard,Dashboard loads with Processing Status (Bearbeitungsstatus) tile visible,High
+,,,,,2,Observe the Processing Status tile,Tile shows indicators for all three status types,
+,,,,,3,Verify saved status represented with save icon,Save icon visible on tile,
+,,,,,4,Verify for approval status represented with single orange tick,Orange tick visible on tile,
+,,,,,5,Verify approved status represented with green double tick,Green double tick visible on tile,
+
+TC_TW3491_002,Verify Pop-up Opens and Displays Actions with Correct Icons,Functional,Verify activating tile opens pop-up showing all action types with appropriate status icons,User logged in; Records exist in all three states; Dashboard displayed,1,Click on the Processing Status tile,Pop-up window opens displaying actions being processed,High
+,,,,,2,Verify saved actions displayed with save icon and area information,Saved actions listed with save icon and selectable area,
+,,,,,3,Verify for approval actions displayed with single orange tick icon,For approval actions listed with orange tick,
+,,,,,4,Verify approved actions displayed with green double tick icon,Approved actions listed with green double tick,
+
+TC_TW3491_003,Verify Navigation to Original Mask and Continue Release Process,Functional,Verify selecting area in pop-up navigates to Bearbeiten page where user can continue release process,Writer or Admin user logged in; Saved action exists; Pop-up displayed,1,Select a saved action/area in the pop-up,Navigation to Bearbeiten (Edit) page initiates,High
+,,,,,2,Verify record displayed with updated data in left column and production data in right column,Bearbeiten page shows correct layout with updated fields highlighted in green,
+,,,,,3,Verify Send for Approval button is enabled,Send for Approval button available,
+,,,,,4,Click Send for Approval,Record sent for approval; status changes to orange tick; record becomes non-editable,
+,,,,,5,Navigate back to Processing Status pop-up and select a for approval action (sent by another user),Navigate to record in for approval state,
+,,,,,6,Verify Approve and Reject buttons are enabled,Both action buttons available,
+,,,,,7,Click Approve to complete release process,Record approved; green double tick displayed; release user and timestamp updated,
+
+TC_TW3491_004,Verify Role-Based Access - Viewer User View-Only Mode,Functional,Verify Viewer user can access tile and pop-up but navigates to view-only mode,Viewer user logged in with view-only access,1,Navigate to dashboard and verify Processing Status tile is visible,Tile visible for Viewer user,Medium
+,,,,,2,Activate Processing Status tile,Pop-up opens showing all action statuses,
+,,,,,3,Select an action to navigate to Bearbeiten page,Navigation occurs; page opens in view-only mode,
+,,,,,4,Verify all fields are disabled and only Schließen (Close) button enabled,All fields disabled; only Close button enabled; no edit capability,
+
+TC_TW3491_005,Verify Sender Cannot Approve Own Record,Negative,Verify user who sent record for approval cannot approve their own submission,Writer user logged in; User has sent own record for approval,1,Navigate to dashboard and activate Processing Status tile,Pop-up opens,High
+,,,,,2,Select own record that is in for approval state,Navigation to Bearbeiten page occurs,
+,,,,,3,Verify Approve and Reject buttons are disabled for sender,Only Close button enabled for sender,
+,,,,,4,Verify message Record not editable is displayed,Non-editable message shown confirming sender restriction,
+
+TC_TW3491_006,Verify Pop-up Behavior With No Actions Being Processed,Edge,Verify pop-up display when no records exist in any processing state,User logged in; No records in saved/for approval/approved states,1,Ensure no records are in any processing state,System has no pending actions,Medium
+,,,,,2,Navigate to dashboard and activate Processing Status tile,Pop-up opens,
+,,,,,3,Verify pop-up content when no actions exist,Insufficient information to determine exact empty state message - pop-up behavior with no data not specified,

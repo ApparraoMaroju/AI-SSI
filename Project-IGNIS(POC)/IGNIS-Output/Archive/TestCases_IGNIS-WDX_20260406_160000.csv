@@ -1,0 +1,186 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_WDX_001,Verify IPL to WDX CreateRequest - End-to-End Mission Flow,Functional,Verify that IPL mission request is successfully transformed and sent to WDX as CreateRequest,Adapter Integration Service running; WDX3 Flottenserver accessible; Valid certificates configured; IPL Mock Service running,1,Prepare a valid TransferEinsatzRequest JSON payload with all required fields (sourceMandant - targetMandant - einsatzId - einsatznummerKurz),Valid JSON payload is prepared,High
+,,,,,2,Send POST request to /einsatztransfer/erzeugeEinsatz endpoint via Postman,Request is accepted by Adapter Integration Service,
+,,,,,3,Verify Adapter translates IPL request to WDX-compliant CreateRequest format,Translation logged in Adapter logs showing correct field mappings,
+,,,,,4,Verify CreateRequest is forwarded to WDX3 Flottenserver via gRPC,CreateRequest sent successfully to WDX,
+,,,,,5,Verify WDX confirms receipt on transport level,WDX acknowledgment received,
+
+TC_WDX_002,Verify WDX to IPL AcceptOperation Event Flow,Functional,Verify that WDX AcceptOperation feedback is correctly received and translated to IPL format,Adapter Integration Service running; WDX streaming connection established; IPL Mock Service running,1,Trigger an AcceptOperation event from WDX test system,AcceptOperation event is sent by WDX,High
+,,,,,2,Verify Adapter receives the AcceptOperation event via gRPC stream,Event received and logged in Adapter,
+,,,,,3,Verify Adapter translates AcceptOperation to IPL-style ACK message,Translation logged showing correct format conversion,
+,,,,,4,Verify translated ACK is forwarded to IPL Mock Service via /einsatztransfer/quittiereTranferEinsatz,IPL Mock Service receives the ACK,
+,,,,,5,Verify ACK details are logged in IPL Mock Service,AcceptOperation details visible in mock service logs,
+
+TC_WDX_003,Verify WDX to IPL RejectOperation Event Flow,Functional,Verify that WDX RejectOperation feedback is correctly received and translated to IPL format,Adapter Integration Service running; WDX streaming connection established; IPL Mock Service running,1,Trigger a RejectOperation event from WDX test system,RejectOperation event is sent by WDX,High
+,,,,,2,Verify Adapter receives the RejectOperation event via gRPC stream,Event received and logged in Adapter,
+,,,,,3,Verify Adapter translates RejectOperation to IPL-style rejection message,Translation logged showing correct format conversion,
+,,,,,4,Verify translated rejection is forwarded to IPL Mock Service,IPL Mock Service receives the rejection,
+,,,,,5,Verify rejection details are logged in IPL Mock Service,RejectOperation details visible in mock service logs,
+
+TC_WDX_004,Verify 10-Second Acknowledgment Requirement,Functional,Verify that events are acknowledged within the required 10-second timeframe,Adapter Integration Service running; WDX connection established; Timing measurement capability available,1,Send a CreateRequest to WDX via Adapter,CreateRequest is sent successfully,High
+,,,,,2,Start timing measurement when request is sent,Timer started,
+,,,,,3,Wait for WDX acknowledgment response,Acknowledgment is received,
+,,,,,4,Stop timing measurement when acknowledgment received,Timer stopped,
+,,,,,5,Verify acknowledgment was received within 10 seconds,Acknowledgment time is less than or equal to 10 seconds,
+
+TC_WDX_005,Verify sourceMandant to header.sender_client_id Mapping,Functional,Verify 1:1 mapping of sourceMandant field to WDX header.sender_client_id,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific sourceMandant value (e.g. TEST_SENDER_001),Request prepared with known sourceMandant,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify header.sender_client_id equals the original sourceMandant value,header.sender_client_id = TEST_SENDER_001,
+
+TC_WDX_006,Verify targetMandant to header.receiver_client_id Mapping,Functional,Verify 1:1 mapping of targetMandant field to WDX header.receiver_client_id,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific targetMandant value (e.g. TEST_RECEIVER_001),Request prepared with known targetMandant,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify header.receiver_client_id equals the original targetMandant value,header.receiver_client_id = TEST_RECEIVER_001,
+
+TC_WDX_007,Verify einsatzId to operation.id Mapping,Functional,Verify 1:1 mapping of transferEinsatz.einsatzId to operation.id,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific einsatzId value (e.g. EINSATZ_12345),Request prepared with known einsatzId,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify operation.id equals the original einsatzId value,operation.id = EINSATZ_12345,
+
+TC_WDX_008,Verify einsatznummerKurz to operation.name Mapping,Functional,Verify 1:1 mapping of transferEinsatz.einsatznummerKurz to operation.name,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific einsatznummerKurz value (e.g. E-2026-001),Request prepared with known einsatznummerKurz,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify operation.name equals the original einsatznummerKurz value,operation.name = E-2026-001,
+
+TC_WDX_009,Verify kategorie to operation.occassion.type_1 Mapping,Functional,Verify 1:1 mapping of transferEinsatz.kategorie to operation.occassion.type_1,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific kategorie value,Request prepared with known kategorie,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify operation.occassion.type_1 equals the original kategorie value,operation.occassion.type_1 matches kategorie,
+
+TC_WDX_010,Verify einsatzStichwort to operation.occassion.keyword_1 Mapping,Functional,Verify 1:1 mapping of transferEinsatz.einsatzStichwort to operation.occassion.keyword_1,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific einsatzStichwort value,Request prepared with known alarm keyword,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify operation.occassion.keyword_1 equals the original einsatzStichwort value,operation.occassion.keyword_1 matches einsatzStichwort,
+
+TC_WDX_011,Verify alarmierungsstichwortText to keyword_1_text Mapping,Functional,Verify 1:1 mapping of alarmierungsstichwortText to operation.occassion.keyword_1_text,Adapter running; Valid TransferEinsatzRequest prepared,1,Prepare TransferEinsatzRequest with specific alarmierungsstichwortText value,Request prepared with alarm keyword text,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify operation.occassion.keyword_1_text equals the original alarmierungsstichwortText,keyword_1_text matches alarmierungsstichwortText,
+
+TC_WDX_012,Verify CreateRequest.send_time is Set by Adapter,Functional,Verify that CreateRequest.send_time is automatically set by Adapter at send time,Adapter running; No send_time in IPL request,1,Prepare TransferEinsatzRequest without send_time field (as per spec - no IPL field),Request prepared without send_time,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,
+,,,,,3,Capture the outgoing WDX CreateRequest in logs,WDX request logged,
+,,,,,4,Verify CreateRequest.send_time is populated by Adapter,send_time field contains valid timestamp set at send time,
+
+TC_WDX_013,Verify WDX Streaming Connection with NEW Event Filter,Functional,Verify streaming connection is established and filtered for NEW events only,Adapter running; WDX accessible; Streaming configured with enum = NEW,1,Start Adapter Integration Service,Service starts and initiates streaming connection,High
+,,,,,2,Verify streaming connection to WDX is established,Connection logged as successful,
+,,,,,3,Verify stream is configured with filter enum = NEW,Log shows filter configuration,
+,,,,,4,Trigger a NEW event from WDX,Event is sent on stream,
+,,,,,5,Verify only NEW events are received by Adapter,Only events with NEW status are processed,
+
+TC_WDX_014,Verify Certificate-Based Authentication to WDX,Functional,Verify Adapter authenticates to WDX using valid certificates,Valid certs in certs/ directory; wdx3-test-client.crt and wdx3-test-client.pk8 present,1,Verify certificate files exist in certs/ directory,wdx3-test-client.crt and wdx3-test-client.pk8 present,High
+,,,,,2,Start Adapter Integration Service,Service attempts to connect to WDX,
+,,,,,3,Verify TLS handshake completes successfully,No certificate errors in logs,
+,,,,,4,Verify connection to WDX3 Flottenserver is established,Connection successful with certificate authentication,
+
+TC_WDX_015,Verify ise_auth_token in Request Header,Functional,Verify login token (ise_auth_token) is included in WDX requests,Adapter running; Authentication token configured,1,Send a mission request via /einsatztransfer/erzeugeEinsatz,Request processed by Adapter,High
+,,,,,2,Capture outgoing gRPC request headers,Headers logged,
+,,,,,3,Verify ise_auth_token is present in request header,ise_auth_token header is included,
+,,,,,4,Verify WDX accepts the authenticated request,Request processed successfully by WDX,
+
+TC_WDX_016,Verify WDX3Header Contains sender_client_id and receiver_client_id,Functional,Verify every request contains WDX3Header with both client IDs,Adapter running; Valid TransferEinsatzRequest with both mandant fields,1,Prepare TransferEinsatzRequest with sourceMandant and targetMandant,Request prepared with both identifiers,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX request structure,Request structure logged,
+,,,,,4,Verify WDX3Header contains sender_client_id,sender_client_id present in header,
+,,,,,5,Verify WDX3Header contains receiver_client_id,receiver_client_id present in header,
+
+TC_WDX_017,Verify Bi-directional Round Trip - IPL to WDX to IPL,Functional,Verify complete round-trip flow from IPL through WDX and back,All services running; End-to-end connectivity verified,1,Send mission request from Postman to Adapter,Request sent to /einsatztransfer/erzeugeEinsatz,High
+,,,,,2,Verify Adapter transforms and forwards to WDX,CreateRequest sent to WDX,
+,,,,,3,Wait for WDX to process and send feedback (Accept or Reject),Feedback event generated by WDX,
+,,,,,4,Verify Adapter receives feedback from WDX stream,Feedback event received,
+,,,,,5,Verify Adapter translates and forwards to IPL Mock,IPL Mock receives translated feedback,
+,,,,,6,Verify complete round-trip in logs,All stages logged showing successful round-trip,
+
+TC_WDX_018,Verify IPL Mock Service Receives Translated Events,Functional,Verify IPL Mock Service correctly receives events translated from WDX format,IPL Mock Service running; Adapter connected to both WDX and Mock,1,Trigger an event from WDX test system,WDX sends event to Adapter,High
+,,,,,2,Verify Adapter receives the event,Event logged in Adapter,
+,,,,,3,Verify Adapter translates to IPL format,Translation logged,
+,,,,,4,Verify IPL Mock Service receives the translated event,Event received by Mock Service,
+,,,,,5,Verify event details are correctly logged in Mock Service,All event attributes visible in Mock logs,
+
+TC_WDX_019,Verify All Mappable Fields in Single Request,Functional,Verify all TransferEinsatz fields are correctly mapped in a single comprehensive request,Adapter running; Complete TransferEinsatzRequest prepared with all fields,1,Prepare TransferEinsatzRequest with all mappable fields populated,Complete request prepared,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify sourceMandant mapped to header.sender_client_id,Mapping correct,
+,,,,,5,Verify targetMandant mapped to header.receiver_client_id,Mapping correct,
+,,,,,6,Verify einsatzId mapped to operation.id,Mapping correct,
+,,,,,7,Verify einsatznummerKurz mapped to operation.name,Mapping correct,
+,,,,,8,Verify kategorie mapped to operation.occassion.type_1,Mapping correct,
+,,,,,9,Verify einsatzStichwort mapped to operation.occassion.keyword_1,Mapping correct,
+,,,,,10,Verify alarmierungsstichwortText mapped to operation.occassion.keyword_1_text,Mapping correct,
+,,,,,11,Verify send_time is auto-populated by Adapter,send_time present with valid timestamp,
+
+TC_WDX_020,Verify Log-Based Message Conversion Validation,Functional,Verify all message conversions are logged for validation and debugging,Adapter running with logging enabled,1,Send a mission request through Adapter,Request processed,Medium
+,,,,,2,Check Adapter logs for incoming IPL request payload,IPL request payload logged,
+,,,,,3,Check Adapter logs for transformation details,Mapping operations logged,
+,,,,,4,Check Adapter logs for outgoing WDX request payload,WDX request payload logged,
+,,,,,5,Verify all intermediate conversions are traceable,Complete audit trail in logs,
+
+TC_WDX_021,Verify Missing sourceMandant Field Handling,Negative,Verify system behavior when sourceMandant is missing from request,Adapter running,1,Prepare TransferEinsatzRequest without sourceMandant field,Request missing sourceMandant,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request sent to Adapter,
+,,,,,3,Verify Adapter behavior for missing required field,Insufficient information to determine exact error response,
+
+TC_WDX_022,Verify Missing targetMandant Field Handling,Negative,Verify system behavior when targetMandant is missing from request,Adapter running,1,Prepare TransferEinsatzRequest without targetMandant field,Request missing targetMandant,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request sent to Adapter,
+,,,,,3,Verify Adapter behavior for missing required field,Insufficient information to determine exact error response,
+
+TC_WDX_023,Verify Missing einsatzId Field Handling,Negative,Verify system behavior when einsatzId is missing from request,Adapter running,1,Prepare TransferEinsatzRequest without einsatzId field,Request missing einsatzId,High
+,,,,,2,Send request to Adapter via /einsatztransfer/erzeugeEinsatz,Request sent to Adapter,
+,,,,,3,Verify Adapter behavior for missing operation identifier,Insufficient information to determine exact error response,
+
+TC_WDX_024,Verify Invalid Certificate Handling,Negative,Verify system behavior when invalid or expired certificates are used,Adapter with invalid/expired certificates configured,1,Replace valid certificates with invalid ones in certs/ directory,Invalid certificates in place,High
+,,,,,2,Attempt to start Adapter Integration Service,Service attempts connection,
+,,,,,3,Verify TLS handshake fails,Certificate error logged,
+,,,,,4,Verify connection to WDX is not established,Connection fails with authentication error,
+
+TC_WDX_025,Verify WDX Connectivity Failure Handling,Negative,Verify system behavior when WDX3 Flottenserver is unreachable,Adapter running; WDX endpoint unreachable,1,Configure Adapter with WDX endpoint that is unreachable,Invalid or blocked endpoint configured,Medium
+,,,,,2,Start Adapter and attempt to send mission request,Request processing attempted,
+,,,,,3,Verify Adapter behavior when WDX is unavailable,Insufficient information to determine exact error handling (no retry logic in prototype),
+
+TC_WDX_026,Verify Empty Payload Handling,Negative,Verify system behavior when empty payload is sent,Adapter running,1,Send empty JSON payload to /einsatztransfer/erzeugeEinsatz,Empty {} sent,Medium
+,,,,,2,Verify Adapter response to empty payload,Insufficient information to determine exact error response,
+
+TC_WDX_027,Verify Malformed JSON Handling,Negative,Verify system behavior when malformed JSON is sent,Adapter running,1,Send malformed JSON to /einsatztransfer/erzeugeEinsatz,Invalid JSON syntax sent,Medium
+,,,,,2,Verify Adapter response to malformed JSON,Insufficient information to determine exact error response,
+
+TC_WDX_028,Verify Application Startup with Valid Configuration,Functional,Verify Adapter Integration Service starts successfully with valid configuration,Java 17+ installed; Valid application.properties; Valid certificates; Logs directory writable,1,Verify Java 17+ is available,Java version confirmed,High
+,,,,,2,Verify application.properties is properly configured,Configuration file valid,
+,,,,,3,Verify logs directory exists and is writable,Directory access confirmed,
+,,,,,4,Start adapter-integration-1.0.0-SNAPSHOT-runner.jar,JAR executed,
+,,,,,5,Verify service starts without errors,Service running and healthy,
+
+TC_WDX_029,Verify Logs Directory Pre-Deployment Check,Functional,Verify logs directory exists and is writable before service start,Logs path configured in application.properties,1,Check configured log path: /opt/local/acp/logs/adapter-integration/,Path configuration read,Medium
+,,,,,2,Verify directory exists,Directory present,
+,,,,,3,Verify directory is writable by service user,Write permissions confirmed,
+,,,,,4,Start service and verify logs are written,adapter-integration.log created and updated,
+
+TC_WDX_030,Verify gRPC over HTTP/2 Protocol to WDX,Functional,Verify Adapter communicates with WDX using gRPC over HTTP/2,Adapter running; WDX accessible,1,Initiate communication from Adapter to WDX,Connection initiated,High
+,,,,,2,Capture network traffic or connection logs,Protocol details logged,
+,,,,,3,Verify HTTP/2 protocol is used,HTTP/2 confirmed in connection,
+,,,,,4,Verify gRPC messaging format,gRPC request/response format confirmed,
+
+TC_WDX_031,Verify REST API for IPL-Facing Interface,Functional,Verify Adapter exposes REST API for IPL communication,Adapter running,1,Send HTTP request to /einsatztransfer/erzeugeEinsatz endpoint,HTTP request sent,High
+,,,,,2,Verify endpoint accepts REST POST request,POST method accepted,
+,,,,,3,Verify JSON payload is accepted,JSON content-type processed,
+,,,,,4,Verify REST response is returned,HTTP response received,
+
+TC_WDX_032,Verify Protobuf Message Format to WDX,Functional,Verify Adapter uses Protocol Buffers for WDX communication,Adapter running; WDX communication active,1,Send mission request through Adapter,Request processed and forwarded to WDX,Medium
+,,,,,2,Capture outgoing message format,Message format logged,
+,,,,,3,Verify message is serialized in Protobuf format,Protobuf serialization confirmed,
+
+TC_WDX_033,Verify Streaming Connection Remains Active,Edge,Verify WDX streaming connection remains active over extended period,Adapter connected to WDX; Connection monitoring available,1,Establish streaming connection from Adapter to WDX,Connection established,Medium
+,,,,,2,Wait for extended period without sending messages,Idle time elapses,
+,,,,,3,Verify streaming connection remains active,Connection still open and healthy,
+,,,,,4,Send a message after idle period,Message sent successfully,
+,,,,,5,Verify message is processed correctly,Response received,
+
+TC_WDX_034,Verify Multiple Sequential Requests,Functional,Verify Adapter handles multiple sequential mission requests correctly,Adapter running; WDX accessible,1,Send first TransferEinsatzRequest,First request processed,Medium
+,,,,,2,Verify first request reaches WDX,First CreateRequest confirmed,
+,,,,,3,Send second TransferEinsatzRequest with different data,Second request processed,
+,,,,,4,Verify second request reaches WDX,Second CreateRequest confirmed,
+,,,,,5,Verify both requests processed independently,No data mixing between requests,
+
+TC_WDX_035,Verify Network Outbound HTTPS Access Requirement,Functional,Verify Adapter requires outbound HTTPS access to WDX endpoint,Network configuration available for review,1,Verify network allows outbound HTTPS to wdx3-test.cloud.ise-cobra.de:443,Network access confirmed,High
+,,,,,2,Start Adapter Integration Service,Service starts,
+,,,,,3,Verify connection to WDX over HTTPS port 443,HTTPS connection established,
+,,,,,4,Verify secure communication,TLS encryption active,

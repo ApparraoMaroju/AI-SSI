@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Multi-Release: true
+
+Name: org/apache/xmlbeans/
+Implementation-Title: Apache XmlBeans
+Implementation-Version: 5.2.0
+Specification-Vendor: The Apache Software Foundation
+Specification-Title: Apache XmlBeans
+Implementation-Vendor-Id: The Apache Software Foundation
+Comment: Apache XmlBeans version 5.2.0
+Specification-Version: 5.2.0
+Implementation-Vendor: org.apache.xmlbeans
+
