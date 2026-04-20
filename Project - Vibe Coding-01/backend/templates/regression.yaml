@@ -1,0 +1,28 @@
+# Regression Testing Template
+# Focused on preventing regressions in existing functionality
+
+name: "Regression"
+description: "Regression testing to ensure existing functionality is not broken by changes"
+
+coverage_categories:
+  - "Core Features"
+  - "Integration Points"
+  - "Data Integrity"
+  - "Backward Compatibility"
+  - "Previously Reported Bugs"
+
+depth: "deep"
+tone: "technical"
+
+focus_areas:
+  - "Critical business flows"
+  - "API contracts"
+  - "Database operations"
+  - "Third-party integrations"
+  - "Configuration changes"
+  - "Migration scenarios"
+
+exclude_areas:
+  - "New features not yet released"
+  - "Cosmetic changes"
+  - "Documentation"

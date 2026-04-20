@@ -1,0 +1,27 @@
+# Smoke Testing Template
+# Quick sanity checks for critical functionality
+
+name: "Smoke"
+description: "Quick sanity tests to verify critical functionality works at a basic level"
+
+coverage_categories:
+  - "Critical Path"
+  - "Core Features"
+  - "Basic Connectivity"
+
+depth: "shallow"
+tone: "casual"
+
+focus_areas:
+  - "Application starts successfully"
+  - "User can log in"
+  - "Primary feature accessible"
+  - "Basic data operations work"
+  - "Critical integrations respond"
+
+exclude_areas:
+  - "Edge cases"
+  - "Detailed validation"
+  - "Error scenarios"
+  - "Performance"
+  - "Security"

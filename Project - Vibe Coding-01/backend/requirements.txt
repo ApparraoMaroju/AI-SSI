@@ -1,0 +1,24 @@
+# FastAPI and server
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.1
+python-multipart>=0.0.9
+
+# Jira integration
+atlassian-python-api>=3.41.11
+httpx>=0.27.0
+
+# Anthropic Claude API
+anthropic>=0.25.0
+
+# Data validation and serialization
+pydantic>=2.7.0
+pydantic-settings>=2.2.1
+
+# YAML parsing for templates
+pyyaml>=6.0.1
+
+# CORS support
+starlette>=0.36.3
+
+# Logging
+python-json-logger>=2.0.7

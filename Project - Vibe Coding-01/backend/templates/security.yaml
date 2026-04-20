@@ -1,0 +1,33 @@
+# Security Testing Template
+# Focus on security vulnerabilities and protection mechanisms
+
+name: "Security"
+description: "Security-focused testing for vulnerabilities and protection mechanisms"
+
+coverage_categories:
+  - "Authentication"
+  - "Authorization"
+  - "Input Sanitization"
+  - "Data Protection"
+  - "Session Management"
+  - "API Security"
+
+depth: "deep"
+tone: "technical"
+
+focus_areas:
+  - "SQL injection prevention"
+  - "XSS vulnerability checks"
+  - "CSRF protection"
+  - "Authentication bypass attempts"
+  - "Privilege escalation"
+  - "Sensitive data exposure"
+  - "Insecure direct object references"
+  - "Session fixation/hijacking"
+  - "Rate limiting"
+  - "Input validation bypass"
+
+exclude_areas:
+  - "Performance testing"
+  - "UI/UX validation"
+  - "Business logic (unless security-related)"

@@ -1,0 +1,87 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_9030_001,Case1 - Stage Transition with All Required Fields Populated,Functional,Verify successful stage transition from Prospecting to Bid Creation when all eight mandatory fields are populated,Opportunity exists in Prospecting stage; User has Opportunity Owner/Bid Manager permissions,1,Navigate to the Opportunity record in Prospecting stage,Opportunity record opens successfully,High
+,,,,,2,"Populate all eight fields: Nearshore/Offshore, (Expected) Contract Type, Bid Manager, Surveillance Director, Bid/No Bid Decision, Pre-Sales Risk Level, Expected Submission Date, Project Margin (%)",All fields accept values and are saved,
+,,,,,3,Change the Stage picklist value to Bid Creation,Stage transition is successful without validation errors,
+,,,,,4,Save the Opportunity record,Record saves successfully; Opportunity is now in Bid Creation stage,
+
+TC_9030_002,Case1 - Stage Transition with Missing Nearshore/Offshore Field,Negative,Verify validation error when Nearshore/Offshore is empty during stage transition to Bid Creation,"Opportunity in Prospecting stage; All fields populated EXCEPT Nearshore/Offshore; User has edit permissions",1,Navigate to the Opportunity record in Prospecting stage,Opportunity record opens successfully,High
+,,,,,2,Leave Nearshore/Offshore field empty; populate all other seven mandatory fields,Fields are set as specified,
+,,,,,3,Change the Stage picklist value to Bid Creation and click Save,"Validation error appears at Nearshore/Offshore field level: ""To move to the ""Bid Creation"" stage or any subsequent stage, a value in this field is required.""",
+
+TC_9030_003,Case1 - Stage Transition with Multiple Missing Fields,Negative,Verify all validation errors displayed when multiple mandatory fields are empty during stage transition,"Opportunity in Qualification stage; Bid Manager, Pre-Sales Risk Level, and Project Margin fields are empty",1,Navigate to the Opportunity record in Qualification stage,Opportunity record opens successfully,High
+,,,,,2,"Leave Bid Manager, Pre-Sales Risk Level, and Project Margin (%) fields empty",Fields remain empty,
+,,,,,3,Change the Stage picklist value to Negotiation and click Save,"Three validation errors appear at respective field levels, each showing: ""To move to the ""Bid Creation"" stage or any subsequent stage, a value in this field is required.""",
+
+TC_9030_004,Case1 - Stage Transition from Qualification to Closed Won,Functional,Verify successful direct transition from Qualification to Closed Won with all fields populated,Opportunity in Qualification stage; All eight mandatory fields are populated,1,Navigate to the Opportunity record in Qualification stage,Opportunity record opens successfully,High
+,,,,,2,Verify all eight mandatory fields have values,All fields contain valid values,
+,,,,,3,Change the Stage picklist value to Closed Won and click Save,Stage transition is successful; Opportunity is now in Closed Won stage,
+
+TC_9030_005,Case2 - Prevent Clearing Field in Bid Creation Stage,Negative,Verify that Nearshore/Offshore field cannot be cleared while in Bid Creation stage,Opportunity exists in Bid Creation stage with all mandatory fields populated,1,Navigate to the Opportunity record in Bid Creation stage,Opportunity record opens with all fields populated,High
+,,,,,2,Clear the Nearshore/Offshore field (remove existing value),Field value is removed in edit mode,
+,,,,,3,Click Save,"Validation error appears at field level: ""In the ""Bid Creation"", ""Negotiation"", and ""Awarded"" stages, a value in this field is required.""",
+
+TC_9030_006,Case2 - Update Field Value in Negotiation Stage,Functional,Verify that field values can be updated (not cleared) while in Negotiation stage,Opportunity exists in Negotiation stage with all mandatory fields populated,1,Navigate to the Opportunity record in Negotiation stage,Opportunity record opens successfully,Medium
+,,,,,2,Change the Bid Manager field to a different valid user,Field accepts the new value,
+,,,,,3,Click Save,Record saves successfully; Bid Manager field shows updated value,
+
+TC_9030_007,Case2 - Prevent Clearing Multiple Fields in Awarded Stage,Negative,Verify validation errors when attempting to clear multiple fields in Awarded stage,"Opportunity in Awarded stage; Expected Contract Type, Expected Submission Date populated",1,Navigate to the Opportunity record in Awarded stage,Opportunity record opens successfully,High
+,,,,,2,Clear both Expected Contract Type and Expected Submission Date fields,Fields are cleared in edit mode,
+,,,,,3,Click Save,"Two validation errors appear at respective field levels, each showing: ""In the ""Bid Creation"", ""Negotiation"", and ""Awarded"" stages, a value in this field is required.""",
+
+TC_9030_008,Case3 - Prevent Clearing Surveillance Director After Closed Won,Negative,Verify Surveillance Director cannot be cleared after Opportunity reaches Closed Won,Opportunity in Closed Won stage with Surveillance Director field populated,1,Navigate to the Opportunity record in Closed Won stage,Opportunity record opens successfully,High
+,,,,,2,Clear the Surveillance Director field,Field value is removed in edit mode,
+,,,,,3,Click Save,"Validation error appears at field level: ""After the Opportunity is closed, this field can be edited but must have a value.""",
+
+TC_9030_009,Case3 - Update Surveillance Director After Closed Won,Functional,Verify Surveillance Director can be updated (not cleared) after Closed Won,Opportunity in Closed Won stage with Surveillance Director populated,1,Navigate to the Opportunity record in Closed Won stage,Opportunity record opens successfully,Medium
+,,,,,2,Change the Surveillance Director field to a different valid user,Field accepts the new value,
+,,,,,3,Click Save,Record saves successfully; Surveillance Director field shows updated value,
+
+TC_9030_010,Case3 - Prevent Clearing Project Margin After Closed Lost,Negative,Verify Project Margin cannot be cleared after Opportunity reaches Closed Lost,Opportunity in Closed Lost stage with Project Margin (%) field populated,1,Navigate to the Opportunity record in Closed Lost stage,Opportunity record opens successfully,High
+,,,,,2,Clear the Project Margin (%) field,Field value is removed in edit mode,
+,,,,,3,Click Save,"Validation error appears at field level: ""After the Opportunity is closed, this field can be edited but must have a value.""",
+
+TC_9030_011,Case3 - Update Project Margin After Closed Lost,Functional,Verify Project Margin can be updated (not cleared) after Closed Lost,Opportunity in Closed Lost stage with Project Margin (%) populated,1,Navigate to the Opportunity record in Closed Lost stage,Opportunity record opens successfully,Medium
+,,,,,2,Change the Project Margin (%) field to a different valid percentage,Field accepts the new value,
+,,,,,3,Click Save,Record saves successfully; Project Margin field shows updated value,
+
+TC_9030_012,New Opportunity Creation - Bypass Case 1-3 Rules,Functional,Verify that Case 1-3 validation rules are suppressed during new Opportunity creation when selecting Bid Creation stage,User has permission to create new Opportunities,1,Click New Opportunity button to create a new record,New Opportunity creation form opens,High
+,,,,,2,"Fill required Opportunity fields but leave all eight governance fields empty, select Bid Creation as Stage",Fields are set as specified,
+,,,,,3,Click Save,"Creation stage warning from SFSUPPORTDE_BLM-8973 is displayed (NOT Case 1-3 validation errors); Warning indicates new Opportunities may only be created in Prospecting or Qualification stages",
+
+TC_9030_013,Amount Threshold Removal - Expected Submission Date Validation,Functional,Verify Expected Submission Date validation works for opportunities below 199999 EUR threshold,"Opportunity in Prospecting stage with Amount less than 199,999 EUR; Expected Submission Date is empty",1,"Create/Navigate to Opportunity in Prospecting stage with Amount = 50,000 EUR",Opportunity record opens/created successfully,High
+,,,,,2,"Populate all mandatory fields EXCEPT Expected Submission Date, then change Stage to Bid Creation",Fields are set as specified,
+,,,,,3,Click Save,"Validation error appears for Expected Submission Date field: ""To move to the ""Bid Creation"" stage or any subsequent stage, a value in this field is required."" (threshold no longer bypasses validation)",
+
+TC_9030_014,No Conflict with Editable_Fields_if_Closed Rule,Edge,Verify no duplicate validation errors occur with Editable_Fields_if_Closed rule when clearing Surveillance Director after Closed Won,Opportunity in Closed Won stage; Surveillance Director populated; Editable_Fields_if_Closed rule is active,1,Navigate to the Opportunity record in Closed Won stage,Opportunity record opens successfully,High
+,,,,,2,Clear the Surveillance Director field,Field value is removed in edit mode,
+,,,,,3,Click Save,"Only ONE validation error appears from SurveillanceDirector_NoClearingAfterClose rule (no duplicate or conflicting error from Editable_Fields_if_Closed)",
+
+TC_9030_015,German Error Message Verification - Case 1,Functional,Verify correct German error message displays for Case 1 validation,Opportunity in Prospecting stage; User interface set to German language; Project Margin field is empty,1,Switch Salesforce user interface language to German,Interface displays in German,Medium
+,,,,,2,Navigate to Opportunity in Prospecting stage with Project Margin empty,Opportunity opens in German interface,
+,,,,,3,Change Stage to Bid Creation and click Save,"German validation error appears: ""Für den Wechsel in die Phase „Angebotserstellung" oder eine folgende Phase ist eine Angabe in diesem Feld erforderlich.""",
+
+TC_9030_016,German Error Message Verification - Case 2,Functional,Verify correct German error message displays for Case 2 validation,Opportunity in Bid Creation stage; User interface set to German language; Bid Manager field is populated,1,Switch Salesforce user interface language to German,Interface displays in German,Medium
+,,,,,2,Navigate to Opportunity in Bid Creation stage,Opportunity opens in German interface,
+,,,,,3,Clear Bid Manager field and click Save,"German validation error appears: ""In den Phasen „Angebotserstellung", „Verhandlung" und „Mündliche Zusage" ist eine Angabe in diesem Feld erforderlich.""",
+
+TC_9030_017,German Error Message Verification - Case 3,Functional,Verify correct German error message displays for Case 3 validation,Opportunity in Closed Won stage; User interface set to German language; Project Margin populated,1,Switch Salesforce user interface language to German,Interface displays in German,Medium
+,,,,,2,Navigate to Opportunity in Closed Won stage,Opportunity opens in German interface,
+,,,,,3,Clear Project Margin field and click Save,"German validation error appears: ""Dieses Feld kann nach Abschluss der Opportunity bearbeitet werden, darf jedoch nicht leer bleiben.""",
+
+TC_9030_018,Old Validation Rules Deprecated with zdelete_ Prefix,Functional,Verify all eight old validation rules have been renamed with zdelete_ prefix,Access to Salesforce Setup > Object Manager > Opportunity > Validation Rules,1,Navigate to Setup > Object Manager > Opportunity > Validation Rules,Validation Rules list displays,High
+,,,,,2,"Search for old rule names: Nearshore_Offshore_before_Bid_Creation, Expected_Contract_Type_Bid_Creation, Bid_Manager_Qualification, Surveillance_Director, Set_Bid_to_change_stage, Pre_Sales_Risk_Level_before_Bid_MGMT, Expected_Submission_Date, Project_Margin_required_after_bid_creati",No rules found with these exact original names,
+,,,,,3,"Search for rules with prefix zdelete_*","All eight deprecated rules are found with zdelete_ prefix (e.g., zdelete_Nearshore_Offshore_before_Bid_Creation)",
+
+TC_9030_019,Case1 - All Eight Fields Validation - Comprehensive Check,Boundary,Verify each of the eight fields individually triggers validation during stage transition,Opportunity in Prospecting stage; User has edit permissions,1,Create eight separate test attempts - each with only ONE of the eight fields empty while others are populated,Test data prepared for each field,High
+,,,,,2,"Test 1: Leave only Nearshore/Offshore empty, attempt transition to Bid Creation",Validation error on Nearshore/Offshore field only,
+,,,,,3,"Test 2: Leave only (Expected) Contract Type empty, attempt transition",Validation error on (Expected) Contract Type field only,
+,,,,,4,"Test 3: Leave only Bid Manager empty, attempt transition",Validation error on Bid Manager field only,
+,,,,,5,"Test 4: Leave only Surveillance Director empty, attempt transition",Validation error on Surveillance Director field only,
+,,,,,6,"Test 5: Leave only Bid/No Bid Decision empty, attempt transition",Validation error on Bid/No Bid Decision field only,
+,,,,,7,"Test 6: Leave only Pre-Sales Risk Level empty, attempt transition",Validation error on Pre-Sales Risk Level field only,
+,,,,,8,"Test 7: Leave only Expected Submission Date empty, attempt transition",Validation error on Expected Submission Date field only,
+,,,,,9,"Test 8: Leave only Project Margin (%) empty, attempt transition",Validation error on Project Margin field only,
+
+TC_9030_020,Stage Transition Path - Prospecting to Awarded Direct,Functional,Verify validation applies when transitioning directly from Prospecting to Awarded stage,Opportunity in Prospecting stage with all eight fields populated,1,Navigate to Opportunity in Prospecting stage with all mandatory fields filled,Opportunity opens successfully,Medium
+,,,,,2,Change Stage directly from Prospecting to Awarded,Stage selection changes to Awarded,
+,,,,,3,Click Save,Stage transition is successful; Opportunity is now in Awarded stage (Case 1 validation passed),

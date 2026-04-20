@@ -1,0 +1,30 @@
+# Edge Case Testing Template
+# Focus on boundary conditions and unusual scenarios
+
+name: "Edge"
+description: "Edge case and boundary testing for unusual inputs and scenarios"
+
+coverage_categories:
+  - "Boundary Values"
+  - "Null/Empty Inputs"
+  - "Maximum Limits"
+  - "Minimum Limits"
+  - "Special Characters"
+  - "Concurrent Operations"
+
+depth: "deep"
+tone: "technical"
+
+focus_areas:
+  - "Numeric boundaries (0, -1, MAX_INT)"
+  - "String boundaries (empty, whitespace, max length)"
+  - "Date boundaries (past, future, leap years)"
+  - "Collection boundaries (empty, single, max size)"
+  - "Concurrent access patterns"
+  - "Timeout scenarios"
+  - "Network interruptions"
+
+exclude_areas:
+  - "Happy path scenarios"
+  - "Standard user flows"
+  - "Basic functionality"

@@ -1,0 +1,28 @@
+# Functional Testing Template
+# Default template for comprehensive functional test coverage
+
+name: "Functional"
+description: "Comprehensive functional testing covering all feature requirements and user flows"
+
+coverage_categories:
+  - "Happy Path"
+  - "Input Validation"
+  - "Business Logic"
+  - "Data Persistence"
+  - "User Interface"
+  - "Error Handling"
+
+depth: "standard"
+tone: "formal"
+
+focus_areas:
+  - "Primary user workflows"
+  - "Data validation rules"
+  - "State transitions"
+  - "Integration points"
+  - "Error messages and recovery"
+
+exclude_areas:
+  - "Performance metrics"
+  - "Load testing"
+  - "Infrastructure"
