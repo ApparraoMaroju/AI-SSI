@@ -10,8 +10,8 @@ Generate **[NUMBER]** detailed test cases for **[FEATURE]** and structure them f
 - The output must be formatted as a table suitable for Excel (`.xls`).
 - Include a timestamp in the file name:  
   **TestCases_<YYYYMMDD_HHMMSS>.xls**
-- Each test step must be written in a separate row.
-- There must be **one blank row between each test case**.
+## - Each test step must be written in a separate row.
+## - There must be **one blank row between each test case**.
 
 ---
 

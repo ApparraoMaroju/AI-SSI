@@ -5,10 +5,16 @@
 		},
 		{
 			"path": "Templates"
+		},
+		{
+			"path": "../AI-SSI-2"
 		}
 	],
 	"settings": {
 		"java.compile.nullAnalysis.mode": "automatic",
-		"java.configuration.updateBuildConfiguration": "interactive"
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"chat.tools.terminal.autoApprove": {
+			"&": true
+		}
 	}
 }

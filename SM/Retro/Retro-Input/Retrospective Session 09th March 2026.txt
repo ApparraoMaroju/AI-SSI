@@ -1,0 +1,150 @@
+Board Name: Retrospective Session 09th March 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6992f8e675e59dc86d5e25fd
+
+Participants: (9) 
+
+  - Apparao (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan Pratap (Team Member)
+  - Simran (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (5)
+
+Group Card: Group
+
+Card Type: Comment
+
+  - Text: production releases are happening smoothly nowadays.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Continuous releases went smoothly and on time
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Group Card: Group
+
+Card Type: Comment
+
+  - Text: Successful rebuild of the Account Hierarchy  which was a critical functionality for the system and strong collaboration between Development and Testing teams throughout the implementation.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Redesigned the account hierarchy  introduced several new features  and optimized the code —reducing SOQL queries from over 150 to just 47–48 even for the largest hierarchies.. Introduced entry criteria for most of the trigger logics resulted performance.
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Successful delivery of one of the critical user stories  Account Hierarchy  leading to another smooth and successful production release.
+  - Author: Charu BISHT
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: The team has been adding initial solutions to user stories  either before estimation or right after the first discussion  which helps streamline our workflow and move stories efficiently into “Ready for Sprint.”
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Implemented additional criteria to filter users in the deactivation scheduler  effectively reducing license consumption. Also learned how to perform dry run in production.
+  - Author: Simran
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Implementing new Lightning Web components in our salesforce system which will be beneficial for our users.
+  - Author: Anonymous
+  - UpVotes: 1 ( Ila Gaba )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (3)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: There’s room to enhance acknowledgment of tasks and communication  ensuring everyone stays aligned and informed throughout the sprint.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Create a centralized reference document for existing functionality to prevent tester blockers and confusion on current behavior during implementation  issue resolution  or testing—reducing time on manual code/flow/dev checks.(something like current behaviour reference document ) this might be helpfull for both dev and testers
+  - Author: Elakiya Krishnan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We should improve existing code/ process quality if we work around that functionality.. We should raise those to Christoph
+  - Author: Ila Gaba
+  - UpVotes: 1 (  )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (3)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Whenever workarounds are applied  document the change  discuss possible improvements  and raise quality concerns to Christoph (or the relevant owner) to ensure long-term maintainability.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Implement a habit of confirming task ownership and progress updates—this can include short daily check-ins  explicit acknowledgment of tasks in Jira/Teams
+  - Author: Anonymous
+  - UpVotes: 1 ( Elakiya Krishnan )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Encourage team members to have cameras on during meetings and ceremonies whenever possible  while being mindful of personal constraints  to foster better connection and engagement.
+  - Author: Anonymous
+  - UpVotes: 1 ( Elakiya Krishnan )
+  - DownVotes: 0
+  - Comments: None
+
+

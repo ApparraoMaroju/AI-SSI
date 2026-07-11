@@ -1,0 +1,159 @@
+Board Name: Retrospective Session 1st June 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6a154877b054049cd4667b21
+
+Participants: (9) 
+
+  - Apparao Maroju (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan Pratap (Team Member)
+  - Shashwat (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (6)
+
+Group Card: Group
+
+Card Type: Comment
+
+  - Text: Received project access on time  completed KT successfully  and started contributing to User Stories and getting good team support.  
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We successfully onboarded new team members and continued meeting our goals.
+  - Author: Ila Gaba
+  - UpVotes: 3 ( Anonymous , Manmohan Pratap , Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Delivered Email and Phone Withdrawal enhancements as per business requirements that added the value.. Resolved deployment and test class issues to support smooth releases.. Collaborated effectively with team members during development and testing.
+  - Author: Manmohan Pratap
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Few difficult tickets are delivered succesfully without any prod bugs   also two tickets were highly dependent where we have showcase the team work to resolve the dependent issues before moving tickets to INT.
+  - Author: Sunaina
+  - UpVotes: 2 ( Elakiya Krishnan , Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Sunaina and Manmohan played a key role in the success of the last release  ensuring a smooth deployment with zero production defects or bugs.
+  - Author: Charu BISHT
+  - UpVotes: 1 ( Elakiya Krishnan )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The new enhancement related to bid/ no bid decision and pre sales risk level went well   Manmohan was able to grab it very nicely.
+  - Author: Rishabh Bhatt
+  - UpVotes: 3 ( Anonymous , Elakiya Krishnan , Manmohan Pratap )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The previous release went well without any issues.
+  - Author: Elakiya Krishnan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (6)
+
+Group Card: Group
+
+Card Type: Comment
+
+  - Text: End moments meetings time change should be avoided  to maintain the complete day plan accordingly.
+  - Author: Sunaina
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Meetings should be on planned date and time
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Group Card: Group
+
+Card Type: Comment
+
+  - Text: Better clarity on requirements and acceptance criteria at the beginning of the User Story to help reduce delays during acceptance.
+  - Author: Shashwat
+  - UpVotes: 1 ( Manmohan Pratap )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team should ask more questions in refinement
+  - Author: Ila Gaba
+  - UpVotes: 1 ( Manmohan Pratap )
+  - DownVotes: 0
+  - Comments: None
+
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Consistently Logging the actual time with the respective stories
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Cross-functional knowledge-sharing sessions may be conducted so that all team members understand what we deliver  as we sometimes work independently with U.S
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Ticket and sub-task status updates were not always consistently maintained.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team members should keep their cameras on during meetings to improve engagement and collaboration.
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (0)
+
+

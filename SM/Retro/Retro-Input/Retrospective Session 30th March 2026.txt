@@ -1,0 +1,126 @@
+Board Name: Retrospective Session 30th March 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/69ca3e3202580147fef25bf2
+
+Participants: (9) 
+
+  - Apparao (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan Pratap (Team Member)
+  - Simran (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (8)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Received appreciation from the onshore team for the outstanding efforts of Sunaina and Simran. Kudos to them. :)
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We successfully delivered the KT session and received positive feedback  any additional areas will be incorporated and shared in the next version of the document
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team is able to manage release on time .
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The sprint progressed smoothly without major issues. Operational tickets are effectively handled and stayed under control  with timely resolution.
+  - Author: Charu BISHT
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: team is very approachable and works together very effectively.
+  - Author: Elakiya Krishnan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team is very supportive and take me through all the detailed KT sessions/ Provided detailed documents that help me to understand work and release process.
+  - Author: Manmohan Pratap
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The last release was completed successfully without major issues.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team is getting along really well and releases are happening smoothly.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (4)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Everyone should participate proactively during refinement.
+  - Author: Simran
+  - UpVotes: 1 (  )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: If we are on unplanned or emergency leave  we should inform in the common group so everyone is aware and any required handover can be taken promptly  avoiding delays and unnecessary follow-ups later in the day.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Taking regularly guidance from Hari and team member to better understanding the functionality implemented in past sprints.
+  - Author: Manmohan Pratap
+  - UpVotes: 1 (  )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: There is inconsistency in updating ticket and sub-task statuses . This creates uncertainty during sprint execution and affects visibility.
+  - Author: Anonymous
+  - UpVotes: 1 (  )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (0)
+
+

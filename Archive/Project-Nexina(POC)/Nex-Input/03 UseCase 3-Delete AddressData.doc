@@ -1,0 +1,442 @@
+Date: Wed, 13 May 2026 10:01:42 +0000 (UTC)
+Message-ID: <1687783686.15.1778666502288@7b57d19614f6>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_14_283542205.1778666502288"
+
+------=_Part_14_283542205.1778666502288
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>03 Use Case 3 - Delete Address Data</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>03 Use Case 3 - Delete Address Data</h1>
+    <div class=3D"Section1">
+        <h1 local-id=3D"3c5bccc5d511" id=3D"id-03UseCase3-DeleteAddressData=
+-Goal"><strong>Goal</strong></h1>
+<p local-id=3D"a0447d3861b2">As a user, I want to permanently delete a part=
+ner's existing address to remove incorrect, <span class=3D"inline-comment-m=
+arker" data-ref=3D"1877dd65-9d6f-4cda-8fbb-fdc5d0d9a941">outdated, or no lo=
+nger needed addresses</span> from the system.</p>
+<h1 local-id=3D"c76be542caa0" id=3D"id-03UseCase3-DeleteAddressData-Actors"=
+><strong>Actors</strong></h1>
+<p local-id=3D"5e2399ca91fe">Any user with access to the Partner Module and=
+ write permission to partner data can delete partner addresses.</p>
+<h1 local-id=3D"0a4e47765011" id=3D"id-03UseCase3-DeleteAddressData-MainFlo=
+w"><strong>Main Flow</strong></h1>
+<ol start=3D"1" local-id=3D"e0048ed9-fa5e-4216-9b95-cbdf8557f34a">
+<li local-id=3D"d05a37f9-7875-4cda-af93-3b2f574d882f">
+<p local-id=3D"e46b459aa96c">The user navigates to the partner module and o=
+pens the <strong>Address Data</strong> section.</p></li>
+<li local-id=3D"bbb6563a-6995-497c-9221-9c2bec3dcfc5">
+<p local-id=3D"a2ccdce43186">The user clicks the <strong>Delete</strong> ac=
+tion in the burger menu.</p></li>
+<li local-id=3D"ad0d5011-984d-4589-a99b-c096add595e9">
+<p local-id=3D"723f5ca3d631">The user confirms the deletion in the pop=E2=
+=80=91up dialogue.</p></li>
+<li local-id=3D"810c2ba2-aa19-4167-b05c-7187d78a9222">
+<p local-id=3D"980b04c0da15">The system permanently deletes the address and=
+ removes it from the overview.</p></li>
+</ol>
+<h1 local-id=3D"2e8d64dfb138" id=3D"id-03UseCase3-DeleteAddressData-Alterna=
+tiveFlowsand/orExceptions"><strong>Alternative Flows and/or Exceptions</str=
+ong></h1>
+<h3 local-id=3D"8aba0645a60a" id=3D"id-03UseCase3-DeleteAddressData-Usercan=
+celsthedeletion"><strong>User cancels the deletion</strong></h3>
+<ul local-id=3D"ee230f4a-98da-4b30-8f73-6528d15a018c">
+<li local-id=3D"8df1fc40-ed8c-4d82-bc83-6aa259dbcca5">
+<p local-id=3D"db60ba500f34">The user presses <strong>Cancel</strong> in th=
+e pop=E2=80=91up.</p></li>
+<li local-id=3D"eb7b39af-fd98-4f4e-828a-f6cc201c13af">
+<p local-id=3D"2b80afe71278">The address remains unchanged.</p></li>
+</ul>
+<h3 local-id=3D"59881f4627e3" id=3D"id-03UseCase3-DeleteAddressData-Address=
+deletedbyanotheruser"><strong>Address deleted by another user</strong></h3>
+<ul local-id=3D"52156f36-4ed5-43ac-947d-628de49cf410">
+<li local-id=3D"37080f00-a50e-4d6e-a143-9cea9ad7620f">
+<p local-id=3D"f5b5d26a9e40">The user attempts to delete an address that an=
+other user has already deleted.</p></li>
+<li local-id=3D"ec26e2cb-8c2f-4ed8-9fe5-2115f1865cd5">
+<p local-id=3D"4cd1b3ba68b9">The system refreshes the view, and the address=
+ is no longer visible.</p></li>
+<li local-id=3D"0fc791df-a6d3-475b-8aa1-6df47cf906f3">
+<p local-id=3D"cd5339e2790f">No deletion operation takes place.</p></li>
+</ul>
+<h3 local-id=3D"ac13aff368ee" id=3D"id-03UseCase3-DeleteAddressData-Usertri=
+estodeleteadefaultaddress"><strong>User tries to delete a default address</=
+strong></h3>
+<ul local-id=3D"7ce66198-2e41-4c1b-88fd-07b936bd49cd">
+<li local-id=3D"008ba2fc-e104-4a6d-a1f4-39aa4e3ddce9">
+<p local-id=3D"e5296638dd3e">The user attempts to delete a default address.=
+</p></li>
+<li local-id=3D"7f770f4d25e4">
+<p local-id=3D"1791b65e2c6b">The system alerts the user that they are about=
+ to delete the default address.</p></li>
+<li local-id=3D"2fbaba644e22">
+<p local-id=3D"ddde1cbd7f1b">If other addresses exist, the user must set on=
+e of them as the default before deletion. Otherwise, the user must confirm =
+the deletion.</p></li>
+</ul>
+<h1 local-id=3D"77e6c02f95bb" id=3D"id-03UseCase3-DeleteAddressData-Precond=
+itions"><strong>Preconditions</strong></h1>
+<ul local-id=3D"a1314d44-fd8f-46e1-9a06-acb44cc46ca9">
+<li local-id=3D"4258f595-5484-4155-b550-efb249931d52">
+<p local-id=3D"fe723c9d771a">The user has write access to the partner=E2=80=
+=99s address data.</p></li>
+<li local-id=3D"3bb2aa47-5015-44ff-8d0c-cfcb32d67d4e">
+<p local-id=3D"088735690978"><span class=3D"inline-comment-marker" data-ref=
+=3D"d33c285a-60bd-4525-9c65-6d4af0c02bb3">At least one address exists</span=
+> in the <strong>Address Data</strong> section.</p></li>
+</ul>
+<h1 local-id=3D"e2a420aad68a" id=3D"id-03UseCase3-DeleteAddressData-Postcon=
+ditions"><strong>Postconditions</strong></h1>
+<ul local-id=3D"84218cc1-5853-4ebd-aea5-80139d8d0461">
+<li local-id=3D"7b6af19b70cd">
+<p local-id=3D"04da80501f19">If the deletion is confirmed, the address is r=
+emoved and is no longer visible in the Address Data section.</p></li>
+<li local-id=3D"e2efc551-02f5-4834-8e00-090eec418a51">
+<p local-id=3D"73d0ccd4db70">If the deletion process is cancelled or not co=
+nfirmed, no changes are applied.</p></li>
+</ul>
+<hr local-id=3D"4919f98d-301a-47da-b599-20637f97c748">
+<h1 local-id=3D"5afcc5b2759d" id=3D"id-03UseCase3-DeleteAddressData-Non-fun=
+ctionalCross=E2=80=91ModuleAcceptanceCriteria"><strong>Non-functional Cross=
+=E2=80=91Module Acceptance Criteria</strong></h1>
+<p local-id=3D"0c7eff52371d"><em>(These are global criteria and always appl=
+y.)</em></p>
+<h3 local-id=3D"d29b50ed89c1" id=3D"id-03UseCase3-DeleteAddressData-=F0=9F=
+=94=92Authentication">=F0=9F=94=92 <strong>Authentication</strong></h3>
+<ul local-id=3D"b6a48909-0845-407f-bdc2-84cabb4c703f">
+<li local-id=3D"b06f223a-090d-4e7d-a701-ea6859627c5e">
+<p local-id=3D"a5cbdff05f1a">Access to protected functions is only possible=
+ for authenticated users.</p></li>
+<li local-id=3D"660daf1d-ff7b-4710-8a89-00adb0c78bf8">
+<p local-id=3D"45db6a478d47">If authentication is missing, the user is auto=
+matically redirected to the login page.</p></li>
+</ul>
+<h3 local-id=3D"c3401d1717e9" id=3D"id-03UseCase3-DeleteAddressData-=F0=9F=
+=95=92SessionManagement">=F0=9F=95=92 <strong>Session Management</strong></=
+h3>
+<ul local-id=3D"8f1924d2-642b-4819-90d8-8241b8e46c38">
+<li local-id=3D"cfbca71f-ea12-488d-8071-278e31a7c4eb">
+<p local-id=3D"bf96cb2e770d">Sessions expire after X minutes of inactivity =
+(e.g., 15 minutes).</p></li>
+<li local-id=3D"84beb170-f2eb-4b3e-a3ad-941a98da21cc">
+<p local-id=3D"10c4e05f1b71">When the session expires, the user is automati=
+cally logged out.</p></li>
+<li local-id=3D"8c7dc5a4-7455-45ec-ba97-8a5b18f89e90">
+<p local-id=3D"312b55601591">Active sessions are extended by user interacti=
+on.</p></li>
+</ul>
+<h3 local-id=3D"06f0d49ea48a" id=3D"id-03UseCase3-DeleteAddressData-=F0=9F=
+=A7=BEVersioning/AuditTrail">=F0=9F=A7=BE <strong>Versioning / Audit Trail<=
+/strong></h3>
+<ul local-id=3D"fc53007e-570d-431d-9adf-b6a056fcd30a">
+<li local-id=3D"4dd5fdb5-0f01-4774-a735-90940f882c48">
+<p local-id=3D"4607e72e748d">Changes to relevant data (e.g., partner data, =
+master data) are stored with versioning.</p></li>
+<li local-id=3D"921b7ba1-3496-41db-aec5-a9164d78e881">
+<p local-id=3D"947c7153cb2e">Each change contains a timestamp, user ID, and=
+=E2=80=94if needed=E2=80=94a reason for the change.</p></li>
+<li local-id=3D"77d74314-b683-4583-8640-162e68bf5370">
+<p local-id=3D"829239e81c68">Versioned data is readable and traceable.</p><=
+/li>
+</ul>
+<h3 local-id=3D"b0aa8942ac30" id=3D"id-03UseCase3-DeleteAddressData-=F0=9F=
+=A7=A0Logging">=F0=9F=A7=A0 <strong>Logging</strong></h3>
+<ul local-id=3D"216bba3a-aef5-40b5-8b77-3d4a4cc10890">
+<li local-id=3D"76b63c45-50f6-4119-ab3f-c885f57a403a">
+<p local-id=3D"a0497abc352b">All security=E2=80=91relevant actions (login, =
+data changes, errors) are logged.</p></li>
+<li local-id=3D"1f4d85b7-7882-45d3-a2e5-4af60104fb15">
+<p local-id=3D"b586e4728689">Logs include timestamp, user ID, and affected =
+functionality.</p></li>
+<li local-id=3D"e63ddbb6-e52a-4997-93e6-a4e4f62e89d2">
+<p local-id=3D"daf6d47924a0">Logs are revision=E2=80=91safe and GDPR=E2=80=
+=91compliant.</p></li>
+</ul>
+<h3 local-id=3D"132f2eda436f" id=3D"id-03UseCase3-DeleteAddressData-=E2=9A=
+=A0=EF=B8=8FFaultTolerance">=E2=9A=A0=EF=B8=8F <strong>Fault Tolerance</str=
+ong></h3>
+<ul local-id=3D"6550aa0a-9dd3-4416-a853-a0d5d14f0d19">
+<li local-id=3D"ecdab985-1e86-4ecf-b30c-9c83000570e3">
+<p local-id=3D"6a0d4833006c">The system detects and handles technical error=
+s (e.g., API failures, validation issues) gracefully.</p></li>
+<li local-id=3D"2e0e00d4-0eeb-4024-bc20-99cd57ab93b7">
+<p local-id=3D"52a1e5ea3937">Error messages are user=E2=80=91friendly and c=
+ontain no technical details.</p></li>
+<li local-id=3D"ab690e58-3bba-43b1-bb5e-94c9795f9e74">
+<p local-id=3D"6071988acbc5">Critical errors trigger logging and potentiall=
+y automated notifications.</p></li>
+</ul>
+<h3 local-id=3D"77c011edea5b" id=3D"id-03UseCase3-DeleteAddressData-=F0=9F=
+=9A=80Performance">=F0=9F=9A=80 <strong>Performance</strong></h3>
+<ul local-id=3D"c914d2d2-d3c9-4d7c-a9c7-6b3f3433ebd0">
+<li local-id=3D"aea41a76-eff1-4ca1-8c61-081c2487972f">
+<p local-id=3D"a6cabe867d91">Response times for user actions remain under X=
+ seconds (e.g., &lt; 2s for saving/deleting).</p></li>
+<li local-id=3D"2bbd7e47-dae4-4529-aff4-93503bd358a4">
+<p local-id=3D"09b1dc052f01">Loading times for screens and list views are o=
+ptimised.</p></li>
+<li local-id=3D"e1234938-0fe2-43e1-86b5-3b10f6fe7846">
+<p local-id=3D"f833b762ff56">The system stays stable under high load.</p></=
+li>
+</ul>
+<hr local-id=3D"c9703c17-f1da-4fbf-b1a0-c3a91605ae4e">
+<h1 local-id=3D"3fe403df0077" id=3D"id-03UseCase3-DeleteAddressData-Definit=
+ionofDone"><strong>Definition of Done</strong></h1>
+<ul local-id=3D"cfa9fdbe-127f-413c-ad89-dde0af56b339">
+<li local-id=3D"31142e48-56b2-49fe-8780-07ef70322228">
+<p local-id=3D"cb3f906ea379">All acceptance criteria are implemented in <st=
+rong>Gherkin format</strong></p></li>
+<li local-id=3D"ea8e1fa8-2bd7-4156-b302-f76a25412e32">
+<p local-id=3D"18a8cad22254"><span class=3D"inline-comment-marker" data-ref=
+=3D"20db6fec-e737-4bc3-940c-09225ffff343">Validations work correctly</span>=
+</p></li>
+<li local-id=3D"8038d15b-65dd-43e4-b8f3-ce9e6c3c3d51">
+<p local-id=3D"4279bf4d29c7">The Delete action is available in the burger m=
+enu of each address.</p></li>
+<li local-id=3D"aea250e4d990">
+<p local-id=3D"f6443bdc4207">An address with a valid=E2=80=91from date in t=
+he past is soft deleted.</p></li>
+<li local-id=3D"748c7e55c123">
+<p local-id=3D"a41ade5b06db">A default address can be deleted only after an=
+other address is set as the default, when available.</p></li>
+<li local-id=3D"f6a9a8ff76ef">
+<p local-id=3D"717c66b7f234">When only one address exists, it can be delete=
+d after confirmation.</p></li>
+<li local-id=3D"2ea25ffc1054">
+<p local-id=3D"315f5756a5f8">If the user cancels the delete action, the add=
+ress remains unchanged.</p></li>
+<li local-id=3D"676d0f9a2812">
+<p local-id=3D"40bf61e88506">The Address Data section reflects the updated =
+state immediately after deletion or cancellation.</p></li>
+<li local-id=3D"6192bfc1-5d40-4ce9-8a1a-b14c34b59b44">
+<p local-id=3D"20f9e1134186">Unit and integration tests are implemented</p>=
+</li>
+<li local-id=3D"cf95bbc1-c052-4a2b-a3e5-9f07a17170b8">
+<p local-id=3D"ca8a69126a1e">Documentation in Confluence is updated</p></li=
+>
+</ul>
+    </div>
+</body>
+</html>
+------=_Part_14_283542205.1778666502288--

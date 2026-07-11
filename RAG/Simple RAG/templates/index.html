@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Local RAG Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Local PDF RAG</p>
+        <h1>Simple RAG Dashboard</h1>
+        <p class="lede">Ingest PDFs from the data folder, inspect chunks, and ask grounded questions through ChromaDB and Groq.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="ingestBtn" class="primary">Ingest PDFs</button>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+    </header>
+
+    <section class="grid two-up">
+      <article class="card">
+        <div class="card-head">
+          <h2>PDF Viewer</h2>
+          <span id="pdfCount" class="badge">0 PDFs</span>
+        </div>
+        <div id="pdfList" class="stack"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Database Explorer</h2>
+          <span id="vectorCount" class="badge">0 vectors</span>
+        </div>
+        <div id="dbStats" class="stats-grid"></div>
+      </article>
+    </section>
+
+    <section class="grid two-up">
+      <article class="card">
+        <div class="card-head">
+          <h2>Chunk Viewer</h2>
+          <span id="chunkCount" class="badge">0 chunks</span>
+        </div>
+        <div id="chunkList" class="chunk-list"></div>
+      </article>
+
+      <article class="card query-card">
+        <div class="card-head">
+          <h2>Ask a Question</h2>
+          <span class="badge">Groq</span>
+        </div>
+        <label class="field-label" for="questionInput">Question</label>
+        <textarea id="questionInput" rows="6" placeholder="Ask something about the PDF content..."></textarea>
+        <div class="row">
+          <button id="askBtn" class="primary">Ask</button>
+          <label class="upload-button">
+            Upload PDF
+            <input id="pdfUpload" type="file" accept="application/pdf" hidden />
+          </label>
+        </div>
+        <div class="response-panel">
+          <div class="card-head compact">
+            <h3>Response</h3>
+            <span id="answerMeta" class="badge">Waiting</span>
+          </div>
+          <pre id="answerText" class="answer-box">Ask a question to see the generated answer here.</pre>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid two-up">
+      <article class="card">
+        <div class="card-head">
+          <h2>Retrieved Chunks</h2>
+          <span id="retrievedCount" class="badge">0 retrieved</span>
+        </div>
+        <div id="retrievedList" class="chunk-list"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>RAG Flow</h2>
+          <span class="badge">Pipeline</span>
+        </div>
+        <div class="flow">
+          <div class="flow-step">Question</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">Embedding</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">ChromaDB</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">Retrieved Chunks</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">Prompt Builder</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">Groq LLM</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step active" id="flowFinal">Final Answer</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid two-up">
+      <article class="card">
+        <div class="card-head">
+          <h2>Logs</h2>
+          <span class="badge">Live</span>
+        </div>
+        <div id="logList" class="log-list"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Notes</h2>
+          <span class="badge">Config</span>
+        </div>
+        <div id="configBox" class="config-box"></div>
+        <div id="errorsBox" class="errors-box"></div>
+      </article>
+    </section>
+  </div>
+
+  <script>
+    window.__INITIAL_DATA__ = {{ initial_data | tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

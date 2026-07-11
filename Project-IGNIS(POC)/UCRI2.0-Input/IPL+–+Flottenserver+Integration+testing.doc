@@ -1,0 +1,694 @@
+Date: Mon, 22 Jun 2026 06:54:51 +0000 (UTC)
+Message-ID: <666410989.3.1782111291238@91bdd39633f3>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_2_2081620412.1782111291238"
+
+------=_Part_2_2081620412.1782111291238
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>IPL =E2=80=93 Flottenserver Integration testing</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>IPL =E2=80=93 Flottenserver Integration testing</h1>
+    <div class=3D"Section1">
+        <p local-id=3D"3a9add1f8c76">As part of the end-to-end integration =
+testing phase, IPL was integrated with the Flottenserver mock services. The=
+ following test scenarios were carried out to validate the interface connec=
+tivity, data flow, and communication between the systems, ensuring that inf=
+ormation is exchanged, processed, and synchronized as expected within the i=
+ntegrated environment.</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"1513" data-layout=3D"center" data-local-id=3D"91=
+d91dcd-4d9a-4903-aaae-d1fa23373c61" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 273.0px;">
+<col style=3D"width: 287.0px;">
+<col style=3D"width: 422.0px;">
+<col style=3D"width: 409.0px;">
+<col style=3D"width: 120.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"fe12a5d1722a">
+<th data-local-id=3D"10dc1b45542c" class=3D"confluenceTh">
+<p local-id=3D"263d66d09dbb">Test</p></th>
+<th data-local-id=3D"590b88d5ab13" class=3D"confluenceTh">
+<p local-id=3D"2e41e4119d78">Pre-Requisite</p></th>
+<th data-local-id=3D"3057f3dbbef8" class=3D"confluenceTh">
+<p local-id=3D"3e4fc8be1387">Verification Detail</p></th>
+<th data-local-id=3D"580f1b3528ff" class=3D"confluenceTh">
+<p local-id=3D"bf4e38726d71">Expected Outcome</p></th>
+<th data-local-id=3D"9cd8b35b5972" class=3D"confluenceTh">
+<p local-id=3D"af223b784c0b">Reference &amp; Status</p></th>
+</tr>
+<tr data-local-id=3D"07f6882cf867">
+<td data-local-id=3D"3d1c0ab58b07" class=3D"confluenceTd">
+<p local-id=3D"013778d798e9"><strong>Verify Successful Transmission of IPL =
+Incident to Flottenserver and Incident Acceptance by Flottenserver.</strong=
+></p></td>
+<td data-local-id=3D"e0981e8d3e39" class=3D"confluenceTd">
+<ul local-id=3D"a7d052c6c28f">
+<li local-id=3D"249f38dd73c4">
+<p local-id=3D"b8e247534da5">IPL system or IPL Mock, Flottenserver are avai=
+lable.</p></li>
+<li local-id=3D"6f441e30e75e">
+<p local-id=3D"952739d95de5">Acceptance configuration enabled in Flottenser=
+ver.</p></li>
+</ul></td>
+<td data-local-id=3D"5a1b0d168d1f" class=3D"confluenceTd">
+<ul local-id=3D"d553a3dadde5">
+<li local-id=3D"5fa9aab0f0e3">
+<p local-id=3D"105877df7339">Send a valid IPL incident via REST API /IPL</p=
+></li>
+<li local-id=3D"422b5f3d1a96">
+<p local-id=3D"fb03de669fa2">Verify incident is received by Adapter</p></li=
+>
+<li local-id=3D"331eb47df65b">
+<p local-id=3D"7f7266bccdbe">Verify incident is forwarded to Flottenserver<=
+/p></li>
+<li local-id=3D"c3af22a8bbd9">
+<p local-id=3D"7a41c59ca983">Flottenserver processes incident acceptance</p=
+></li>
+<li local-id=3D"5704b730e7b1">
+<p local-id=3D"ba370d3b039f">Verify acceptance status flow back to IPL</p><=
+/li>
+</ul></td>
+<td data-local-id=3D"14581dc1ade9" class=3D"confluenceTd">
+<ul local-id=3D"42861b4aebae">
+<li local-id=3D"f9dd1fb0de1e">
+<p local-id=3D"5fb04f8aec5c">Incident is successfully transmitted end-to-en=
+d</p></li>
+</ul>
+<ul local-id=3D"7362ab0ab6a6">
+<li local-id=3D"6669afcc330e">
+<p local-id=3D"ab7fb4790620">Adapter and Flottenserver receive and process =
+the incident correctly</p></li>
+</ul>
+<ul local-id=3D"e4b687da8e06">
+<li local-id=3D"a45fb3462e6b">
+<p local-id=3D"ee4f1f74e905">Acceptance is completed by Partner Control Cen=
+ter/ Flottenserver</p></li>
+</ul>
+<ul local-id=3D"ffb2087c24d2">
+<li local-id=3D"aeb33d2e9673">
+<p local-id=3D"625cce39306d">IPL receives the Accept status</p></li>
+<li local-id=3D"f3883b802b10">
+<p local-id=3D"271b18b35e42">Flottenserver receives the acknowledgement for=
+ the status</p></li>
+</ul></td>
+<td data-local-id=3D"956b0dc8202e" class=3D"confluenceTd">
+<p local-id=3D"6537265c6239"></p>
+<table class=3D"confluenceTable">
+<thead>
+<tr>
+<th class=3D"confluenceTh">Type</th>
+<th class=3D"confluenceTh">Key</th>
+<th class=3D"confluenceTh">Summary</th>
+<th class=3D"confluenceTh">Assignee</th>
+<th class=3D"confluenceTh">Priority</th>
+<th class=3D"confluenceTh">Status</th>
+<th class=3D"confluenceTh">Updated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=3D"confluenceTd"><img src=3D"https://ignis-soprasteria.atlassian.=
+net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10931?size=3Dmed=
+ium" alt=3D"Test"></td>
+<td class=3D"confluenceTd"><a href=3D"https://ignis-soprasteria.atlassian.n=
+et/browse/IPL-26818">IPL-26818</a></td>
+<td class=3D"confluenceTd">Verify Successful Transmission of IPL Incident t=
+o Flottenserver and Incident Acceptance by Flottenserver.</td>
+<td class=3D"confluenceTd">MAROJU Apparao</td>
+<td class=3D"confluenceTd">Major</td>
+<td class=3D"confluenceTd">Open</td>
+<td class=3D"confluenceTd">10 Jun 2026, 15:08</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr data-local-id=3D"ee320ccf2fd6">
+<td data-highlight-colour=3D"#ffffff" data-local-id=3D"544ff7b2-8a56-458c-b=
+03d-5f869e3cbccd" class=3D"confluenceTd">
+<p local-id=3D"34b6afc899e7"><strong>Verify Successful Transmission of IPL =
+Incident to Flottenserver and Incident Rejection by Flottenserver.</strong>=
+</p></td>
+<td data-highlight-colour=3D"#ffffff" data-local-id=3D"6f39c5ca-8600-4077-b=
+c2c-b60098e8008a" class=3D"confluenceTd">
+<ul local-id=3D"1ce5cae6a218">
+<li local-id=3D"bf28400699d7">
+<p local-id=3D"654d8acd49c0">IPL system or IPL Mock, Flottenserver are avai=
+lable.</p></li>
+<li local-id=3D"460e960c5617">
+<p local-id=3D"60bcec9f2ff7">Rejection configuration enabled in Flottenserv=
+er.</p></li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" data-local-id=3D"e92f9ced-c8a8-46a1-b=
+548-a750f859ea6c" class=3D"confluenceTd">
+<ul local-id=3D"c530d1325c60">
+<li local-id=3D"f25eeeafff2b">
+<p local-id=3D"da8f3398d5eb">Send a valid IPL incident via REST API /IPL</p=
+></li>
+</ul>
+<ul local-id=3D"75342a8fb0f9">
+<li local-id=3D"eb5075153e9b">
+<p local-id=3D"cad79799b66b">Verify incident is received by Adapter</p></li=
+>
+</ul>
+<ul local-id=3D"57fd96cb8020">
+<li local-id=3D"7c765a4a99e1">
+<p local-id=3D"f59f63d1d898">Verify incident is forwarded to Flottenserver<=
+/p></li>
+</ul>
+<ul local-id=3D"1499b7846e91">
+<li local-id=3D"ebec492eb3db">
+<p local-id=3D"2b242c186a47">PFlottenserver processes incident Rejection</p=
+></li>
+</ul>
+<ul local-id=3D"0d964b0d82c9">
+<li local-id=3D"06319e50ffd5">
+<p local-id=3D"bb1ff86cf875">Verify Rejection status flow back to IPL</p></=
+li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" data-local-id=3D"d39e321f-be96-4d5e-b=
+fd0-15c50d2502ff" class=3D"confluenceTd">
+<ul local-id=3D"3024dda0a487">
+<li local-id=3D"128e9eeddb93">
+<p local-id=3D"fd35c99ff63e">Incident is successfully transmitted end-to-en=
+d</p></li>
+<li local-id=3D"77f6f04e274a">
+<p local-id=3D"28356a708845">Adapter and Flottenserver receive and process =
+the incident correctly</p></li>
+<li local-id=3D"cd5237fc8643">
+<p local-id=3D"8d695524832a">Acceptance is completed by Flottenserver</p></=
+li>
+<li local-id=3D"3bec43fd297e">
+<p local-id=3D"cba7b1ec6b17">IPL receives the Rejection status</p></li>
+<li local-id=3D"2e2adcf89358">
+<p local-id=3D"01ea8d052517">Flottenserver receives the acknowledgement for=
+ the status</p></li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" data-local-id=3D"b77c1b90-1a64-43a0-9=
+a20-a8c37ebeb5ef" class=3D"confluenceTd">
+<p local-id=3D"ffb2e9ee4623">JIRA Ticket Number</p></td>
+</tr>
+<tr data-local-id=3D"dd42e336c8b3">
+<td data-highlight-colour=3D"white" data-local-id=3D"6571083e-e53c-4e7f-a10=
+c-2b3dc0dc24a7" class=3D"confluenceTd">
+<p local-id=3D"d223fe62999b"><strong>Verify that IPL successfully sends a p=
+osition/location update operational event for an existing incident to Flott=
+enserver.</strong></p></td>
+<td data-local-id=3D"e4fd7941-0948-462d-afc3-76cfe917118c" class=3D"conflue=
+nceTd">
+<p local-id=3D"67f976b068eb">=C2=B7&nbsp;&nbsp; IPL system or IPL Mock, Flo=
+ttenserver are available.</p>
+<p local-id=3D"560931c3fb1b">&nbsp;</p></td>
+<td data-local-id=3D"1487695e-e761-49a6-9eec-57182b6eced0" class=3D"conflue=
+nceTd">
+<ul local-id=3D"2750b7a46876">
+<li local-id=3D"75a071496ab4">
+<p local-id=3D"db26d7316f58">Send a valid Update IPL event via REST API/IPL=
+</p></li>
+</ul>
+<ul local-id=3D"49f820f83ba4">
+<li local-id=3D"7f119bd79ecd">
+<p local-id=3D"fe6ae015ce65">Verify the update incident is received by Adap=
+ter</p></li>
+</ul>
+<ul local-id=3D"6cc99aaf7468">
+<li local-id=3D"a57071273a5d">
+<p local-id=3D"73ccc16021b5">Verify incident is forwarded to Flottenserver<=
+/p></li>
+</ul>
+<ul local-id=3D"d58e760a153f">
+<li local-id=3D"2cacd533b396">
+<p local-id=3D"32f36b0aac95">Flottenserver processes incident acceptance</p=
+></li>
+</ul>
+<ul local-id=3D"2f947dc35e53">
+<li local-id=3D"0e9a0b2f8ac5">
+<p local-id=3D"1ce26371a734">Verify acceptance status flow back to IPL</p><=
+/li>
+</ul></td>
+<td data-local-id=3D"cc4fb064-2679-4e2b-86f5-36b018a7535c" class=3D"conflue=
+nceTd">
+<ul local-id=3D"0234ca65c51f">
+<li local-id=3D"01ab69cfe365">
+<p local-id=3D"63ed069ba73b">Incident/event updates are successfully transm=
+itted end-to-end</p></li>
+</ul>
+<ul local-id=3D"f1617bc2e613">
+<li local-id=3D"75d2a6a598f2">
+<p local-id=3D"3cffb455dbe9">Adapter and Flottenserver receive and process =
+the incident correctly</p></li>
+</ul>
+<ul local-id=3D"275c41e2ca82">
+<li local-id=3D"f7782cb7c3dd">
+<p local-id=3D"8735ad0e36b1">Acceptance is completed by Flottenserver</p></=
+li>
+</ul>
+<ul local-id=3D"f72bb2ae3f19">
+<li local-id=3D"d7214327a257">
+<p local-id=3D"008de1d25541">IPL receives the Accept status</p></li>
+</ul>
+<ul local-id=3D"d29af9dbee7a">
+<li local-id=3D"5fcbfcecfa40">
+<p local-id=3D"a3d427b17584">Flottenserver receives the acknowledgement for=
+ the status</p></li>
+</ul></td>
+<td data-local-id=3D"8ea0d738-ebb7-413c-ae8a-80021371823d" class=3D"conflue=
+nceTd">
+<p local-id=3D"9ddc6de68c38">JIRA Ticket Number</p></td>
+</tr>
+<tr data-local-id=3D"e98ebb752efb">
+<td data-highlight-colour=3D"white" data-local-id=3D"2b3e2ad2-7261-47e8-885=
+9-9af819c2550b" class=3D"confluenceTd">
+<p local-id=3D"ec620c8b39ea"><strong>Verify IPL Successfully Receives the E=
+vent from Flottenserver and Accepts the Incident</strong></p></td>
+<td data-local-id=3D"49d0a8ad-2f6e-460c-afc1-66ba8e4732c1" class=3D"conflue=
+nceTd">
+<p local-id=3D"eb1256244079">=C2=B7&nbsp;&nbsp; IPL system or IPL Mock, Flo=
+ttenserver are available.</p>
+<p local-id=3D"e684cb310e78">&nbsp;</p></td>
+<td data-local-id=3D"12d25c43-3cfb-456a-a24d-255f0e2b23aa" class=3D"conflue=
+nceTd">
+<ul local-id=3D"d2862811f770">
+<li local-id=3D"0b5854c6c568">
+<p local-id=3D"e067d4f20955">Trigger a new incident event from Flottenserve=
+r &nbsp;test system (FLOTTENSERVER to IPL flow)</p></li>
+</ul>
+<ul local-id=3D"f1242573ae51">
+<li local-id=3D"7e6b40fed8a7">
+<p local-id=3D"beced4638dfa">Verify the event is generated and transmitted =
+from Flottenserver</p></li>
+</ul>
+<ul local-id=3D"5b1a7fdb5136">
+<li local-id=3D"bcef126fc472">
+<p local-id=3D"970b1fcc90f7">Verify IPL receives the incident from Flottens=
+erver</p></li>
+</ul>
+<ul local-id=3D"0b6baf8f636a">
+<li local-id=3D"f93a040fe678">
+<p local-id=3D"450e1c18583d">Verify IPL for the incoming incident and perfo=
+rms Accepts the handover</p></li>
+</ul>
+<ul local-id=3D"d0233a5ba5b6">
+<li local-id=3D"ac7300581707">
+<p local-id=3D"3b5d4ffe51ef">Verify logs in Flottenserver received event ac=
+knowledgement and Acceptance details.</p></li>
+</ul></td>
+<td data-local-id=3D"2b730458-af8d-481e-befe-d867a70ed323" class=3D"conflue=
+nceTd">
+<ul local-id=3D"537cac97e646">
+<li local-id=3D"fb0fc2caa3f5">
+<p local-id=3D"fba2b293baa7">Flottenserver successfully sends the incident =
+event</p></li>
+</ul>
+<ul local-id=3D"646a017a2260">
+<li local-id=3D"ee131839388d">
+<p local-id=3D"0e8ce7c8baa5">IPL receives the incident correctly</p></li>
+</ul>
+<ul local-id=3D"d3a7346cb575">
+<li local-id=3D"3240ac949e7e">
+<p local-id=3D"1b59c7df44ec">IPL processes the incident and Acceptance it a=
+s per business rules</p></li>
+</ul>
+<ul local-id=3D"281daecfa180">
+<li local-id=3D"f066d100e472">
+<p local-id=3D"d4fe2f3ad0e4">Acceptance status is generated and logged in I=
+PL system</p></li>
+</ul>
+<ul local-id=3D"a0cfeadfd106">
+<li local-id=3D"e80f088570fd">
+<p local-id=3D"52af5779b52a">Flottenserver receives Acceptance details and =
+sends an acknowledgement to IPL</p></li>
+</ul>
+<p local-id=3D"df56c7878c54">&nbsp;</p></td>
+<td data-local-id=3D"eecd8976-346a-44b7-9e71-381b860a5192" class=3D"conflue=
+nceTd">
+<p local-id=3D"f413241c3dd2">JIRA Ticket Number</p></td>
+</tr>
+<tr data-local-id=3D"e14f73b823e8">
+<td data-highlight-colour=3D"white" data-local-id=3D"cfd82bd9-7fb7-48ff-981=
+5-593f0179bd1d" class=3D"confluenceTd">
+<p local-id=3D"6a1c93d9c573"><strong>Verify IPL Successfully Receives the E=
+vent from Flottenserver and Rejects the Incident</strong></p></td>
+<td data-local-id=3D"71b4b468-e93e-4db0-9fbf-3fcb1a38a3af" class=3D"conflue=
+nceTd">
+<p local-id=3D"551f0a04feae">=C2=B7&nbsp;&nbsp; IPL system or IPL Mock, Flo=
+ttenserver are available.</p>
+<p local-id=3D"588c25951d68">&nbsp;</p></td>
+<td data-local-id=3D"315be8ec-6c14-4933-b1c1-6655e1385432" class=3D"conflue=
+nceTd">
+<ul local-id=3D"78e3d3f0fb5d">
+<li local-id=3D"90b3544ed37c">
+<p local-id=3D"30f245f078b2">Trigger a new incident event from Flottenserve=
+r /Fleetserver test system (Flottenserver to IPL flow)</p></li>
+</ul>
+<ul local-id=3D"8a922707f7ad">
+<li local-id=3D"a5ba01f546b1">
+<p local-id=3D"fcc55be557bb">Verify the event is generated and transmitted =
+from Flottenserver</p></li>
+</ul>
+<ul local-id=3D"478110b9cb6c">
+<li local-id=3D"9d1c412e30c4">
+<p local-id=3D"6fec552de4bd">Verify IPL receives the incident Flottenserver=
+</p></li>
+</ul>
+<ul local-id=3D"517629e9f857">
+<li local-id=3D"98d3b6f2af5f">
+<p local-id=3D"01bab08b513b">Verify IPL for the incoming incident and perfo=
+rms Rejection the handover</p></li>
+</ul>
+<ul local-id=3D"7a739a995a89">
+<li local-id=3D"a03de653e83e">
+<p local-id=3D"8b0e3ccf1fdd">Verify logs in Flottenserver received event ac=
+knowledgement and Rejection details.</p></li>
+</ul></td>
+<td data-local-id=3D"a0495855-8457-4c1b-8507-1db89d206e44" class=3D"conflue=
+nceTd">
+<ul local-id=3D"4f4f189f2319">
+<li local-id=3D"fa3d7bb0a0be">
+<p local-id=3D"65c43776fa1f">Flottenserver /Fleetserver successfully sends =
+the incident event</p></li>
+</ul>
+<ul local-id=3D"183bcc8b8705">
+<li local-id=3D"7c285c0ce614">
+<p local-id=3D"d57a51548bb1">IPL receives the incident correctly</p></li>
+</ul>
+<ul local-id=3D"4daba064d4fc">
+<li local-id=3D"3c0c03b017e8">
+<p local-id=3D"b593d27a89bd">IPL processes the incident and Rejection it as=
+ per business rules</p></li>
+</ul>
+<ul local-id=3D"683daa8542bc">
+<li local-id=3D"e9c099fd8bc1">
+<p local-id=3D"da6f080976e4">Rejection status is generated and logged in IP=
+L system</p></li>
+</ul>
+<ul local-id=3D"f152923e3887">
+<li local-id=3D"e09bd65c65e1">
+<p local-id=3D"5ea4636edb11">Flottenserver receives Rejection details and s=
+ends an acknowledgement to IPL</p></li>
+</ul>
+<p local-id=3D"582fcf1cdccf">&nbsp;</p></td>
+<td data-local-id=3D"63fec291-f7c6-4b04-b9a9-2351b8f73fa6" class=3D"conflue=
+nceTd">
+<p local-id=3D"e80db5840864">JIRA Ticket Number</p></td>
+</tr>
+<tr data-local-id=3D"9176f7260ff1">
+<td data-highlight-colour=3D"white" data-local-id=3D"935ba1d7-6fdb-4ff5-ad8=
+3-cddb5a895bac" class=3D"confluenceTd">
+<p local-id=3D"982083cc2b90"><strong>Validate Successful Transmission of Po=
+sition/Location Update Event from Flottenserver to IPL and Bidirectional Up=
+date Synchronization</strong></p></td>
+<td data-local-id=3D"81b7487b-ef2c-44e3-a9b1-8b0c196a33e9" class=3D"conflue=
+nceTd">
+<p local-id=3D"6103fda0eff7">=C2=B7&nbsp;&nbsp; IPL system or IPL Mock, Flo=
+ttenserver are available.</p>
+<p local-id=3D"a9944b01cd72">&nbsp;</p></td>
+<td data-local-id=3D"d9ccd14f-7db6-49ab-a881-6221d719d02a" class=3D"conflue=
+nceTd">
+<ul local-id=3D"bffc6a73a216">
+<li local-id=3D"e3c4d9995a9a">
+<p local-id=3D"3347f80c5faf">Trigger an update event from Flottenserver &nb=
+sp;test system (Flottenserver to IPL flow) to change/update Position and/or=
+ Location</p></li>
+</ul>
+<ul local-id=3D"7640a14058fc">
+<li local-id=3D"062e206e25fd">
+<p local-id=3D"adf34b02501b">Verify the event is generated and transmitted =
+from Flottenserver &nbsp;</p></li>
+</ul>
+<ul local-id=3D"18eea3f3d78d">
+<li local-id=3D"78b75d76550d">
+<p local-id=3D"d9d37fc0a785">Verify IPL receives the incident from Flottens=
+erver</p></li>
+</ul>
+<ul local-id=3D"2adaa2cda472">
+<li local-id=3D"f38d0971019d">
+<p local-id=3D"1885e6a992b7">Verify IPL for the incoming incident and perfo=
+rms Accepts the handover</p></li>
+</ul>
+<ul local-id=3D"b35bc12bf960">
+<li local-id=3D"e26f5099ddad">
+<p local-id=3D"68009252e075">Verify logs in Flottenserver &nbsp;received ev=
+ent acknowledgement and Acceptance details.</p></li>
+</ul></td>
+<td data-local-id=3D"1c3ac5d7-76ab-49d3-94b3-e69c78a82e2a" class=3D"conflue=
+nceTd">
+<ul local-id=3D"160b45c7bc18">
+<li local-id=3D"87187ef1b92e">
+<p local-id=3D"23bc8e0fd092">Flottenserver &nbsp;successfully sends the upd=
+ate event</p></li>
+</ul>
+<ul local-id=3D"818eb7d12121">
+<li local-id=3D"a14cb9dc7a2e">
+<p local-id=3D"fbea111cfe53">IPL receives the event correctly</p></li>
+</ul>
+<ul local-id=3D"eefcfb7926f6">
+<li local-id=3D"e35957abb400">
+<p local-id=3D"e2b88c93fe2c">IPL processes the and Acceptance it as per bus=
+iness rules</p></li>
+</ul>
+<ul local-id=3D"1bca617c7793">
+<li local-id=3D"cb2c6bcd37a2">
+<p local-id=3D"9bbf7b423460">Acceptance status is generated and logged in I=
+PL system</p></li>
+</ul>
+<ul local-id=3D"604ecc489f32">
+<li local-id=3D"d2afa91c79bf">
+<p local-id=3D"7101f2adc43c">Flottenserver receives Acceptance details and =
+sends an acknowledgement to IPL</p></li>
+</ul>
+<p local-id=3D"78b8cd56b31c">&nbsp;</p></td>
+<td data-local-id=3D"d74598e7-1a1e-47c7-930a-109fc1cd800a" class=3D"conflue=
+nceTd">
+<p local-id=3D"04176673eeaf">JIRA Ticket Number</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p local-id=3D"4ea59e961516"></p>
+    </div>
+</body>
+</html>
+------=_Part_2_2081620412.1782111291238--

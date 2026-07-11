@@ -1,0 +1,446 @@
+Date: Wed, 13 May 2026 10:10:58 +0000 (UTC)
+Message-ID: <34873260.15.1778667058164@b177a194e73e>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_14_1032477490.1778667058164"
+
+------=_Part_14_1032477490.1778667058164
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>03 User Story 1 - Delete Address Data</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>03 User Story 1 - Delete Address Data</h1>
+    <div class=3D"Section1">
+        <h1 local-id=3D"59c0dbb39d9a" id=3D"id-03UserStory1-DeleteAddressDa=
+ta-Description"><strong>Description</strong></h1>
+<p local-id=3D"d9991aa1dbce">As a user, I want to permanently delete a part=
+ner's existing address to remove incorrect, outdated, or no longer needed a=
+ddress information from the system.</p>
+<hr local-id=3D"a87f7063-8161-46a4-aba5-4277d3645545">
+<h1 local-id=3D"b4aaaf57d3cf" id=3D"id-03UserStory1-DeleteAddressData-Addit=
+ionalInformation"><strong>Additional Information</strong></h1>
+<p local-id=3D"f4058568a680">The address data is located in the <strong>Add=
+ress Data</strong> section within the partner module.</p>
+<p local-id=3D"aa9cec2eec09">The user can open or close this section using =
+the <strong>chevron</strong>.</p>
+<p local-id=3D"795c93d19dbe">Each address is displayed as a <strong>compact=
+ address card</strong>, e.g., <em>=E2=80=9CMailbox 1234, 12345 Sample City=
+=E2=80=9D</em>.</p>
+<p local-id=3D"59ea92bd0366">For each address, a burger menu containing the=
+ following actions is available:</p>
+<ul local-id=3D"ec6a8b06-5277-46bc-9891-4f96b6ecb539">
+<li local-id=3D"f1b8a54e-8c72-45b1-95db-023582be5868">
+<p local-id=3D"339828405f39"><strong>Edit</strong> (see <a data-card-appear=
+ance=3D"inline" href=3D"https://iss-soprasteria.atlassian.net/wiki/x/QoArFQ=
+" local-id=3D"2d605f1d6b56" rel=3D"nofollow">https://iss-soprasteria.atlass=
+ian.net/wiki/x/QoArFQ</a>)</p></li>
+<li local-id=3D"6fd06880-fc96-415f-8cf4-f36436eea215">
+<p local-id=3D"4cda4610c07a"><strong><span class=3D"inline-comment-marker" =
+data-ref=3D"f0146b89-72b5-4aa5-97b1-d85dbc0be8bb">Delete</span></strong></p=
+></li>
+<li local-id=3D"886099a7-68a6-4c80-aa25-823a887786c9">
+<p local-id=3D"ca75c61cd047"><strong>Relocation</strong> (see <a data-card-=
+appearance=3D"inline" href=3D"https://iss-soprasteria.atlassian.net/wiki/x/=
+YwAsJg" local-id=3D"b7ac61ec-81c3-4798-b16e-300a3d785fc3" rel=3D"nofollow">=
+https://iss-soprasteria.atlassian.net/wiki/x/YwAsJg</a>)</p></li>
+</ul>
+<hr local-id=3D"fd852a05-86d9-4e92-9bcf-7d48e6962a2d">
+<h1 local-id=3D"4fe535ebbd4e" id=3D"id-03UserStory1-DeleteAddressData-Accep=
+tanceCriteria"><strong>Acceptance Criteria</strong></h1>
+<ul local-id=3D"ec27799f1c52">
+<li local-id=3D"3d2518cae823">
+<p local-id=3D"86436c54c73e">Clicking the <strong>Delete</strong> action in=
+ the burger menu initiates the deletion process.</p></li>
+<li local-id=3D"1cc1e6abf754">
+<p local-id=3D"1dc437143960">Delete action is available only for current an=
+d future reference dates.</p></li>
+<li local-id=3D"cfb54ca29452">
+<p local-id=3D"8f4196423588">When the selected address is <strong>not</stro=
+ng> a default address, a confirmation pop=E2=80=91up dialogue is displayed =
+with the following message:</p>
+<p local-id=3D"849526745048"><strong>=E2=80=9C<span style=3D"background-col=
+or: rgb(198,237,251);">Delete the address?</span></strong></p>
+<p local-id=3D"244522fd7d33"><strong><span style=3D"background-color: rgb(1=
+98,237,251);"> </span></strong><span style=3D"background-color: rgb(198,237=
+,251);">&lt;compact address&gt; will be permanently deleted</span><strong>=
+=E2=80=9D</strong></p>
+<ul local-id=3D"ba8a18deb190">
+<li local-id=3D"fc6ddf4b3d91">
+<p local-id=3D"7f3772a51d6e">Below this message, options to Cancel or Confi=
+rm the deletion are available.</p></li>
+<li local-id=3D"bd063c43-68fb-4e35-a47d-682be1a2c35a">
+<p local-id=3D"ff3150d0b2bd">The user can abort the process by clicking =E2=
+=80=9C<strong>Cancel=E2=80=9D,</strong> or confirm the deletion by clicking=
+ <strong>=E2=80=9CYes, delete=E2=80=9D</strong>.</p></li>
+</ul></li>
+<li local-id=3D"091ec64de1c9">
+<p local-id=3D"fc9d8d5d0b53">When the selected address is the default addre=
+ss and other addresses exist, a pop=E2=80=91up dialogue is displayed with t=
+he following message:</p>
+<p local-id=3D"260502315890">=E2=80=9C<strong><span style=3D"background-col=
+or: rgb(198,237,251);">Replace Default Address</span></strong></p>
+<p local-id=3D"6f277408b9e8"><span style=3D"background-color: rgb(198,237,2=
+51);">&lt;compact address&gt; is currently the default address. Please choo=
+se a different address as the default.</span>=E2=80=9D</p>
+<ul local-id=3D"aa640affc684">
+<li local-id=3D"e5befbb09307">
+<p local-id=3D"14374b698399">A dropdown titled <strong>=E2=80=9CNew Default=
+ Address=E2=80=9D</strong> is displayed, allowing the user to select anothe=
+r address of the partner to set as the default.</p></li>
+<li local-id=3D"9cd717799a48">
+<p local-id=3D"4ff3b0235ad3">The dropdown lists all other addresses of the =
+partner, excluding the address to be deleted.</p></li>
+<li local-id=3D"6cf46e13e5c7">
+<p local-id=3D"001908d05c4e">The user can confirm the deletion and default =
+address change by clicking <strong>=E2=80=9CDelete &amp; Replace Default=E2=
+=80=9D</strong>, or cancel the operation by clicking <strong>=E2=80=9CCance=
+l=E2=80=9D</strong>.</p></li>
+</ul></li>
+<li local-id=3D"d48dae1b-4681-41d3-8970-981d6079e300">
+<p local-id=3D"fea007139422">When the selected address is the only address =
+of the partner, a pop=E2=80=91up dialogue is displayed with the following m=
+essage:</p>
+<p local-id=3D"770fc7c316d8">=E2=80=9C<strong><span style=3D"background-col=
+or: rgb(198,237,251);">Delete the only address?</span></strong></p></li>
+</ul>
+<p local-id=3D"1277c40a885e" style=3D"margin-left: 30.0px;"><span style=3D"=
+background-color: rgb(198,237,251);">&lt;compact address&gt; is the only ad=
+dress. Do you want to delete it?</span>=E2=80=9D</p>
+<ul local-id=3D"c88f9c21-6059-48f9-a8e8-01f2c89b5123">
+<li local-id=3D"80b78669-9f40-4e3f-b861-f3d1b14fb831">
+<p local-id=3D"5ca36c16f214">The user can confirm the deletion by clicking =
+<strong>=E2=80=9CYes, delete=E2=80=9D</strong>, or cancel the operation by =
+clicking <strong>=E2=80=9CCancel=E2=80=9D</strong>.</p></li>
+<li local-id=3D"dca4415a-6bbb-4e0d-a9d1-3d9161aee871">
+<p local-id=3D"0158774095ed">The address is permanently removed from the sy=
+stem only after confirmation.</p></li>
+<li local-id=3D"626a37104824">
+<p local-id=3D"5d7e3133fe78">Deletion is irreversible.</p></li>
+<li local-id=3D"ca1ab1aa-13c6-47ab-a246-7af55c808b61">
+<p local-id=3D"71f21daf025a">After deletion, the address is removed immedia=
+tely from the address overview.</p></li>
+<li local-id=3D"4b491ee9-de17-41fb-9898-6fc89b08084d">
+<p local-id=3D"cf73c1d2628c">The deletion creates a new session/version, wh=
+ich is visible in the <strong>Change History </strong>(see <a data-card-app=
+earance=3D"inline" href=3D"https://iss-soprasteria.atlassian.net/wiki/x/FQC=
+PHg" local-id=3D"47929f77187e" rel=3D"nofollow">https://iss-soprasteria.atl=
+assian.net/wiki/x/FQCPHg</a>).</p></li>
+<li local-id=3D"233521ba-2123-4f08-8dd2-f09ae4815628">
+<p local-id=3D"4f9df502f080">If the user cancels the process at any stage, =
+no changes are made.</p></li>
+</ul>
+<hr local-id=3D"2b4480d7-4898-4306-bd06-efa0a5fc15aa">
+<h1 local-id=3D"c280ed0fddab" id=3D"id-03UserStory1-DeleteAddressData-Alter=
+nativeFlows"><strong>Alternative Flows</strong></h1>
+<h3 local-id=3D"ac1765413a7e" id=3D"id-03UserStory1-DeleteAddressData-Userc=
+ancelsthedeletion"><strong>User cancels the deletion</strong></h3>
+<p local-id=3D"46243b8da6cf">The user clicks the Delete action but cancels =
+the dialogue via <strong>Cancel</strong>. The address remains unchanged.</p=
+>
+<h3 local-id=3D"b1faee7c38f7" id=3D"id-03UserStory1-DeleteAddressData-Addre=
+ssdeletedbyanotheruser"><strong>Address deleted by another user</strong></h=
+3>
+<p local-id=3D"645a50e66cad">The user attempts to delete an address that ha=
+s already been removed in the background.<br>
+After confirmation, the system refreshes the view and the address is no lon=
+ger displayed.<br>
+No deletion process occurs since the address no longer exists.</p>
+<h3 local-id=3D"81946eda5664" id=3D"id-03UserStory1-DeleteAddressData-Brows=
+erclosedbeforeconfirmation"><strong>Browser closed before confirmation</str=
+ong></h3>
+<ul local-id=3D"cf9a7af19cbf">
+<li local-id=3D"310dd15c61e1">
+<p local-id=3D"70abdd9b8cf1">The user initiates the deletion process but cl=
+oses the browser before confirming the action.</p></li>
+<li local-id=3D"f48f48826964">
+<p local-id=3D"97e6c5c7aeb0">No deletion takes place.</p></li>
+</ul>
+<h3 local-id=3D"e4cb2644e4a5" id=3D"id-03UserStory1-DeleteAddressData-Attem=
+pttodeleteadefaultaddress"><strong>Attempt to delete a default address</str=
+ong></h3>
+<p local-id=3D"1293c4c448ec">When the user attempts to delete a default add=
+ress, the system prompts them to select another address as the default. Del=
+etion is allowed only after a new default address is selected. If the defau=
+lt address is the only address, deletion is allowed after confirmation.</p>
+<hr local-id=3D"59eced78-7b08-4c4d-b80d-7f1a7bb6f580">
+<h1 local-id=3D"8dbac68d84e1" id=3D"id-03UserStory1-DeleteAddressData-TestD=
+ata"><strong>Test Data</strong></h1>
+<h3 local-id=3D"f3b09be790fd" id=3D"id-03UserStory1-DeleteAddressData-Stand=
+ardCase"><strong>Standard Case</strong></h3>
+<p local-id=3D"aa49127e6f2d">The user opens the burger menu of a non=E2=80=
+=91default address for a partner with multiple addresses and clicks the Del=
+ete action. The confirmation dialogue appears, and the user confirms the de=
+letion.<br><strong>Expected Result: </strong>The address is permanently del=
+eted and immediately removed from the overview.</p>
+<h3 local-id=3D"8cf4934e09d0" id=3D"id-03UserStory1-DeleteAddressData-Alter=
+nativeCase:Usercancels"><strong>Alternative Case: User cancels</strong></h3=
+>
+<p local-id=3D"872748504696">The user clicks the Delete action but cancels =
+the operation in the pop=E2=80=91up dialogue.<br><strong>Expected Result: <=
+/strong>All addresses remain unchanged in the Address Data section.</p>
+<h3 local-id=3D"52528b2a891c" id=3D"id-03UserStory1-DeleteAddressData-Alter=
+nativeCase:Defaultaddress(Multipleaddresses)"><strong>Alternative Case: Def=
+ault address (Multiple addresses)</strong></h3>
+<p local-id=3D"37e20eb48a74">The user opens the burger menu of a default ad=
+dress for a partner with multiple addresses and clicks the Delete action. A=
+ confirmation dialogue appears along with the option to replace the default=
+ address. The user selects a new default address and confirms the deletion.=
+<br><strong>Expected Result: </strong>The default address is updated, and t=
+he deleted address is permanently removed and immediately disappears from t=
+he overview.</p>
+<h3 local-id=3D"9d8c3e7d98ab" id=3D"id-03UserStory1-DeleteAddressData-Alter=
+nativeCase:Onlyaddress"><strong>Alternative Case: Only address</strong></h3=
+>
+<p local-id=3D"04db419fc474">The user opens the burger menu of the only add=
+ress for a partner and clicks the <strong>Delete</strong> action.<br>
+A confirmation dialogue appears, and the user confirms the deletion.<br><st=
+rong>Expected Result: </strong>The address is permanently deleted and immed=
+iately disappears from the overview.</p>
+<hr local-id=3D"d7e1fbe4-9022-464f-ae82-04feaa0bd466">
+<h1 local-id=3D"3288c45b520e" id=3D"id-03UserStory1-DeleteAddressData-Narra=
+tiveoftheUserStory:"><strong>Narrative of the User Story:</strong></h1>
+<p local-id=3D"1cc76ca12904">Users can manage partner address information i=
+n the Address Data section of the Partner module, where each address is dis=
+played as a compact card with actions available via a burger menu. The Dele=
+te action allows users to remove addresses that are incorrect, outdated, or=
+ no longer required.</p>
+<p local-id=3D"cb9405e6c256">When a user selects Delete, the system initiat=
+es a confirmation process. For non=E2=80=91default addresses, a confirmatio=
+n dialogue is shown indicating that the selected address will be permanentl=
+y removed. The deletion is executed only after the user explicitly confirms=
+ the action. If the user cancels, no changes are applied, and the address r=
+emains unchanged.</p>
+<p local-id=3D"eac4647715e6">If the address selected for deletion is the de=
+fault address, the system prevents immediate deletion and prompts the user =
+to select another address as the new default. Only after a new default addr=
+ess is chosen can the deletion proceed, ensuring that a valid default addre=
+ss is always maintained for the partner.</p>
+<p local-id=3D"f82711cc9722">If the selected address is the only address fo=
+r the partner, the system displays a confirmation message and executes the =
+deletion only after explicit user confirmation.</p>
+<p local-id=3D"f7ff48929e0b">Once confirmed, the deletion is irreversible. =
+The address is immediately removed from the address overview, and the actio=
+n is recorded as a new session/version in the Change History.</p>
+    </div>
+</body>
+</html>
+------=_Part_14_1032477490.1778667058164--
