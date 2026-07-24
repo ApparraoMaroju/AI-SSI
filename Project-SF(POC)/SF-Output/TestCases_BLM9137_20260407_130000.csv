@@ -1,0 +1,42 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC001,Add Area Offerings - Screen 1 Cancel Button Position,Functional,Verify Cancel button is positioned on the left side in the first screen of Add Area Offerings flow,User logged in as Opportunity Owner/Bid Manager; Opportunity record exists,1,Navigate to an Opportunity record,Opportunity record loads,High
+,,,,,2,Click Add Area Offerings button to launch the flow,Add Area Offerings dialog opens (Screen 1),
+,,,,,3,Locate the Cancel button,Cancel button is positioned on the LEFT side of the screen,
+
+TC002,Add Area Offerings - Screen 2 Button Layout,Functional,Verify Back renamed to Previous and button positions swapped with Cancel in second screen,User logged in; Add Area Offerings flow Screen 1 completed,1,Complete selections in Screen 1 and proceed to Screen 2,Screen 2 of Add Area Offerings displays,High
+,,,,,2,Verify button previously labeled "Back",Button is now labeled "Previous",
+,,,,,3,Verify button positions,Previous and Cancel have swapped positions (Previous on right side with action buttons),
+
+TC003,Edit Area Offerings - Screen 1 Dynamic Height and Button Labels,Functional,Verify window adjusts dynamically and buttons renamed correctly,Opportunity with existing Area Offerings,1,Navigate to Opportunity with multiple Area Offerings,Opportunity record loads,High
+,,,,,2,Click Edit Area Offerings,Edit Area Offerings dialog opens (Screen 1),
+,,,,,3,Observe window height with few Area Offerings,Window height adjusts to content - minimal grey space,
+,,,,,4,Verify button previously labeled "Save",Button is now labeled "Save & Close",
+,,,,,5,Verify button previously labeled "Add Area Offerings",Button is now labeled "Save & Add Area Offerings",
+,,,,,6,Test with Opportunity having many Area Offerings,Window height expands to accommodate more items,
+
+TC004,Edit Area Offerings - Save & Add Area Offerings Functionality,Functional,Verify Save & Add Area Offerings persists all modifications including deletions and field updates,Opportunity with existing Area Offerings; User can modify Amount/Quantity,1,Click Edit Area Offerings,Dialog opens with existing Area Offerings,Critical
+,,,,,2,Modify Amount value on one Area Offering,Amount value changed,
+,,,,,3,Modify Quantity value on another Area Offering,Quantity value changed,
+,,,,,4,Mark one Area Offering for removal/deletion,Area Offering marked for removal,
+,,,,,5,Click "Save & Add Area Offerings" button,System saves and navigates to add screen,
+,,,,,6,Cancel out and verify Opportunity Area Offerings,Amount change persisted; Quantity change persisted; Deleted item removed,
+
+TC005,Edit Area Offerings - Screen 2 UI Elements,Functional,Verify X close icon and Cancel button position in second screen,User in Edit Area Offerings flow; proceeded to Screen 2,1,From Edit Screen 1 click Save & Add Area Offerings,Screen 2 displays,High
+,,,,,2,Look at upper right corner of dialog,X close icon is visible,
+,,,,,3,Click X icon,Dialog closes,
+,,,,,4,Reopen flow and navigate to Screen 2 again,Screen 2 displays,
+,,,,,5,Locate Cancel button,Cancel button is positioned on the LEFT side,
+
+TC006,Edit Area Offerings - Screen 3 UI and Button Layout,Functional,Verify dynamic height - X icon - Previous renamed - button positions in third screen,User in Edit Area Offerings flow; selections made in Screen 2,1,Complete Screen 2 selections and proceed to Screen 3,Screen 3 displays,High
+,,,,,2,Observe window height with few selections,Window adjusts to number of selected Area Offerings - minimal grey space,
+,,,,,3,Look at upper right corner,X close icon is visible,
+,,,,,4,Click X icon,Dialog closes,
+,,,,,5,Reopen and navigate to Screen 3,Screen 3 displays,
+,,,,,6,Verify button previously labeled "Back",Button is now labeled "Previous",
+,,,,,7,Verify button positions,Cancel is positioned directly next to Save button; Previous is on opposite side,
+
+TC007,Bilingual Labels - German Translation Verification,Functional,Verify German translations for renamed buttons in Edit flow,User logged in with German language setting,1,Set user language to German,Language changes to German,High
+,,,,,2,Navigate to Opportunity and click Edit Area Offerings,Dialog opens in German,
+,,,,,3,Verify Save button label,Displays "Speichern & Schließen",
+,,,,,4,Verify Add Area Offerings button label,Displays "Speichern & Area Offerings hinzufügen",
+,,,,,5,Verify other labels not mentioned remain unchanged,All other German translations unchanged from before,

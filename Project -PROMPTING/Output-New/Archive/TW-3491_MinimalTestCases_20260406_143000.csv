@@ -1,0 +1,19 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TW-3491-TC001,Verify Processing Status Tile Present on Dashboard,Functional,Verify that a new tile named "Processing status" (Bearbeitungsstatus) is added to the dashboard,User is logged in and has access to dashboard,1,Navigate to the dashboard page,Dashboard page loads,High
+,,,,,2,Observe the dashboard tiles,A tile named "Processing status" (Bearbeitungsstatus) is present on the dashboard,
+
+TW-3491-TC002,Verify Processing Status Tile Displays All Action Statuses,Functional,Verify that the tile displays statuses of actions: saved - for approval - and approved,User is logged in and Processing status tile is visible on dashboard. Records exist in saved - for approval - and approved statuses,1,Navigate to the dashboard page,Dashboard page loads with Processing status tile visible,High
+,,,,,2,Observe the Processing status tile content for saved status,Tile displays saved status (indicated by save icon per Tributum context),
+,,,,,3,Observe the Processing status tile content for approval status,Tile displays for approval status (indicated by single orange tick icon per Tributum context),
+,,,,,4,Observe the Processing status tile content for approved status,Tile displays approved status (indicated by green double tick icon per Tributum context),
+
+TW-3491-TC003,Verify Pop-up Appears When Processing Status Tile is Activated,Functional,Verify that when the tile is activated a pop-up appears showing current actions being processed,User is logged in and Processing status tile is visible on dashboard,1,Navigate to the dashboard page,Dashboard page loads,High
+,,,,,2,Locate the Processing status (Bearbeitungsstatus) tile,Tile is visible on dashboard,
+,,,,,3,Activate (click) the Processing status tile,A pop-up appears,
+,,,,,4,Observe the pop-up content,Pop-up displays details of actions currently being processed,
+
+TW-3491-TC004,Verify Navigation from Pop-up to Original Mask for Release Process,Functional,Verify that users can select an area in the pop-up to navigate to the original mask for continuing the release process,User is logged in and Processing status pop-up is open with actions displayed,1,Open the Processing status tile pop-up from dashboard,Pop-up displays with list of actions being processed,High
+,,,,,2,Identify a selectable area in the pop-up,Selectable areas are present for each action in the pop-up,
+,,,,,3,Select (click) an area in the pop-up,Selection is registered,
+,,,,,4,Observe navigation behavior,User is navigated to the original mask (Bearbeiten page per Tributum context),
+,,,,,5,Verify release process can be continued,User can continue the release process from the original mask,

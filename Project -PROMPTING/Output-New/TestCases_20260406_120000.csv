@@ -1,0 +1,46 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_TW3491_001,Verify Processing Status Tile Visibility on Dashboard,Functional,Verify that the Processing Status (Bearbeitungsstatus) tile is displayed on the dashboard,User is logged in and dashboard is accessible,1,Navigate to the dashboard,Dashboard is displayed with all tiles,High
+,,,,2,Locate the Processing Status (Bearbeitungsstatus) tile,Processing Status tile is visible on the dashboard,
+,,,,3,Verify the tile name displays as Bearbeitungsstatus,Tile name is displayed correctly as Bearbeitungsstatus,
+
+TC_TW3491_002,Verify Tile Displays All Three Status Types,Functional,Verify that the Processing Status tile displays actions with saved - for approval - and approved statuses,User is logged in; Actions exist in saved - for approval - and approved states,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,2,Observe the Processing Status tile,Tile displays indicators for saved - for approval - and approved statuses,
+,,,,3,Verify all three status types are represented,All three statuses (saved - for approval - approved) are visible on the tile,
+
+TC_TW3491_003,Verify Pop-up Appears on Tile Activation,Functional,Verify that activating the Processing Status tile opens a pop-up with details,User is logged in and Processing Status tile is visible,1,Navigate to the dashboard,Dashboard with Processing Status tile is displayed,High
+,,,,2,Click/activate the Processing Status tile,Pop-up appears showing actions being processed,
+,,,,3,Verify the pop-up displays detailed information,Pop-up shows list of current actions being processed with details,
+
+TC_TW3491_004,Verify Pop-up Displays Saved Actions,Functional,Verify that the pop-up shows actions with saved status (Save icon),User is logged in; At least one action exists in saved state,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,2,Activate the Processing Status tile,Pop-up opens,
+,,,,3,Locate actions with saved status in the pop-up,Actions with save icon are displayed in the pop-up,
+,,,,4,Verify saved action details are visible,Saved actions show relevant details (area - timestamp - user info),
+
+TC_TW3491_005,Verify Pop-up Displays For Approval Actions,Functional,Verify that the pop-up shows actions with for approval status (single orange tick),User is logged in; At least one action exists in for approval state,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,2,Activate the Processing Status tile,Pop-up opens,
+,,,,3,Locate actions with for approval status in the pop-up,Actions with single orange tick icon are displayed in the pop-up,
+,,,,4,Verify for approval action details are visible,For approval actions show relevant details and orange tick icon,
+
+TC_TW3491_006,Verify Pop-up Displays Approved Actions,Functional,Verify that the pop-up shows actions with approved status (green double tick),User is logged in; At least one action exists in approved state,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,2,Activate the Processing Status tile,Pop-up opens,
+,,,,3,Locate actions with approved status in the pop-up,Actions with green double tick icon are displayed in the pop-up,
+,,,,4,Verify approved action details are visible,Approved actions show relevant details and green double tick icon,
+
+TC_TW3491_007,Verify Navigation from Pop-up to Original Mask,Functional,Verify that selecting an area in the pop-up navigates to the original mask (Bearbeiten page),User is logged in; Pop-up is displayed with at least one action,1,Navigate to the dashboard and activate Processing Status tile,Pop-up with actions is displayed,High
+,,,,2,Select an area/action entry in the pop-up,Navigation to the original mask (Bearbeiten page) is initiated,
+,,,,3,Verify the original mask (Bearbeiten page) is displayed,User is navigated to the Bearbeiten page for the selected action,
+,,,,4,Verify the correct record is displayed in the mask,The selected record details are shown in the edit page,
+
+TC_TW3491_008,Verify User Can Continue Release Process After Navigation,Functional,Verify that user can continue the release process from the navigated mask,Writer or Admin user is logged in; Action is in editable state after navigation,1,Navigate via Processing Status pop-up to an action in saved state,Bearbeiten page is displayed with the selected record,High
+,,,,2,Verify the Send for Approval button is available,Send for Approval button is enabled for the record,
+,,,,3,Click Send for Approval button,Record is sent for approval successfully,
+,,,,4,Verify status changes to for approval (single orange tick),Record status icon changes to single orange tick,
+
+TC_TW3491_009,Verify Pop-up Behavior When No Actions Are Being Processed,Edge,Verify the pop-up behavior when there are no actions in processing states,User is logged in; No actions exist in saved - for approval - or approved states,1,Navigate to the dashboard,Dashboard with Processing Status tile is displayed,Medium
+,,,,2,Activate the Processing Status tile,Pop-up opens,
+,,,,3,Verify the pop-up content when no actions exist,Pop-up displays an appropriate message or empty state indication (Insufficient information to determine exact message),
+
+TC_TW3491_010,Verify Viewer User Access to Processing Status Tile,Functional,Verify that Viewer user can access the Processing Status tile and view actions,Viewer user is logged in with view-only access,1,Login as Viewer user and navigate to dashboard,Dashboard is displayed with Processing Status tile visible,Medium
+,,,,2,Activate the Processing Status tile,Pop-up opens showing actions being processed,
+,,,,3,Verify Viewer can see action details in pop-up,All action statuses and details are visible in view mode,
+,,,,4,Select an area to navigate to original mask,Viewer is navigated to Bearbeiten page in view-only mode with all fields disabled,

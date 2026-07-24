@@ -1,0 +1,261 @@
+TID,Category,Description,Pre-conditions,Step#,Step Description,Expected Result,Priority
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,1,Navigate to https://www.saucedemo.com/,,High
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,2,Enter username: standard_user,,High
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,3,Enter password: (static password from UI),,High
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,4,Click Login button,User is redirected to product inventory page,High
+
+SD-F002,Functional,Auto-focus on username field,SauceDemo login page loads,1,Navigate to login page,,Medium
+SD-F002,Functional,Auto-focus on username field,SauceDemo login page loads,2,Observe cursor position without clicking,Cursor is auto-focused on username field,Medium
+
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,1,Navigate to login page,,Medium
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,2,Enter username,,Medium
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,3,Press Tab key,,Medium
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,4,Enter password,,Medium
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,5,Press Tab key,,Medium
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,6,Press Enter,User navigates through fields and submits form via keyboard,Medium
+
+SD-F004,Functional,Login with performance_glitch_user,Login page accessible,1,Enter username: performance_glitch_user,,Medium
+SD-F004,Functional,Login with performance_glitch_user,Login page accessible,2,Enter correct password,,Medium
+SD-F004,Functional,Login with performance_glitch_user,Login page accessible,3,Click Login,Login succeeds after simulated delay (~5-10 seconds),Medium
+
+SD-F005,Functional,Login with problem_user,Login page accessible,1,Enter username: problem_user,,Medium
+SD-F005,Functional,Login with problem_user,Login page accessible,2,Enter correct password,,Medium
+SD-F005,Functional,Login with problem_user,Login page accessible,3,Click Login,Login succeeds but UI issues appear after login,Medium
+
+SD-F006,Functional,Login with error_user,Login page accessible,1,Enter username: error_user,,Medium
+SD-F006,Functional,Login with error_user,Login page accessible,2,Enter correct password,,Medium
+SD-F006,Functional,Login with error_user,Login page accessible,3,Click Login,Simulated backend/UI errors occur,Medium
+
+SD-F007,Functional,Login with visual_user,Login page accessible,1,Enter username: visual_user,,Medium
+SD-F007,Functional,Login with visual_user,Login page accessible,2,Enter correct password,,Medium
+SD-F007,Functional,Login with visual_user,Login page accessible,3,Click Login,Login succeeds with visual inconsistencies displayed,Medium
+
+SD-F008,Functional,Verify test credentials displayed on UI,Login page loads,1,Navigate to login page,,Medium
+SD-F008,Functional,Verify test credentials displayed on UI,Login page loads,2,Observe the page content,Predefined test credentials are displayed on UI,Medium
+
+SD-N001,Negative,Login with locked_out_user,Login page accessible,1,Enter username: locked_out_user,,High
+SD-N001,Negative,Login with locked_out_user,Login page accessible,2,Enter correct password,,High
+SD-N001,Negative,Login with locked_out_user,Login page accessible,3,Click Login,Error message: User has been locked out,High
+
+SD-N002,Negative,Login with invalid credentials,Login page accessible,1,Enter invalid username,,High
+SD-N002,Negative,Login with invalid credentials,Login page accessible,2,Enter invalid password,,High
+SD-N002,Negative,Login with invalid credentials,Login page accessible,3,Click Login,Error message: Username and password do not match,High
+
+SD-N003,Negative,Login with empty username field,Login page accessible,1,Leave username field empty,,High
+SD-N003,Negative,Login with empty username field,Login page accessible,2,Enter any password,,High
+SD-N003,Negative,Login with empty username field,Login page accessible,3,Click Login,Error message: Username is required,High
+
+SD-N004,Negative,Login with empty password field,Login page accessible,1,Enter valid username,,High
+SD-N004,Negative,Login with empty password field,Login page accessible,2,Leave password field empty,,High
+SD-N004,Negative,Login with empty password field,Login page accessible,3,Click Login,Error message: Password is required,High
+
+SD-N005,Negative,Login with both fields empty,Login page accessible,1,Leave username field empty,,High
+SD-N005,Negative,Login with both fields empty,Login page accessible,2,Leave password field empty,,High
+SD-N005,Negative,Login with both fields empty,Login page accessible,3,Click Login,Error message displayed (Needs clarification),High
+
+SD-N006,Negative,Login with valid username and wrong password,Login page accessible,1,Enter username: standard_user,,High
+SD-N006,Negative,Login with valid username and wrong password,Login page accessible,2,Enter incorrect password,,High
+SD-N006,Negative,Login with valid username and wrong password,Login page accessible,3,Click Login,Error message: Username and password do not match,High
+
+SD-N007,Negative,Login with wrong username and valid password,Login page accessible,1,Enter invalid username,,High
+SD-N007,Negative,Login with wrong username and valid password,Login page accessible,2,Enter correct static password,,High
+SD-N007,Negative,Login with wrong username and valid password,Login page accessible,3,Click Login,Error message: Username and password do not match,High
+
+SD-B001,Boundary,Login with single character username,Login page accessible,1,Enter single character username,,Low
+SD-B001,Boundary,Login with single character username,Login page accessible,2,Enter any password,,Low
+SD-B001,Boundary,Login with single character username,Login page accessible,3,Click Login,Needs clarification: Character limits not specified,Low
+
+SD-B002,Boundary,Login with single character password,Login page accessible,1,Enter valid username,,Low
+SD-B002,Boundary,Login with single character password,Login page accessible,2,Enter single character password,,Low
+SD-B002,Boundary,Login with single character password,Login page accessible,3,Click Login,Needs clarification: Password length not specified,Low
+
+SD-B003,Boundary,Login with maximum length inputs,Login page accessible,1,Enter very long username,,Low
+SD-B003,Boundary,Login with maximum length inputs,Login page accessible,2,Enter very long password,,Low
+SD-B003,Boundary,Login with maximum length inputs,Login page accessible,3,Click Login,Needs clarification: Max limits not specified,Low
+
+SD-E001,Edge Case,Login with whitespace in username,Login page accessible,1,Enter username with leading/trailing spaces,,Medium
+SD-E001,Edge Case,Login with whitespace in username,Login page accessible,2,Enter correct password,,Medium
+SD-E001,Edge Case,Login with whitespace in username,Login page accessible,3,Click Login,Needs clarification: Whitespace handling not specified,Medium
+
+SD-E002,Edge Case,Login with special characters in username,Login page accessible,1,Enter username with special characters,,Medium
+SD-E002,Edge Case,Login with special characters in username,Login page accessible,2,Enter any password,,Medium
+SD-E002,Edge Case,Login with special characters in username,Login page accessible,3,Click Login,Needs clarification: Special char handling not specified,Medium
+
+SD-E003,Edge Case,Case sensitivity of username,Login page accessible,1,Enter username: STANDARD_USER (uppercase),,Medium
+SD-E003,Edge Case,Case sensitivity of username,Login page accessible,2,Enter correct password,,Medium
+SD-E003,Edge Case,Case sensitivity of username,Login page accessible,3,Click Login,Needs clarification: Case sensitivity not specified,Medium
+
+SD-E004,Edge Case,Case sensitivity of password,Login page accessible,1,Enter valid username,,Medium
+SD-E004,Edge Case,Case sensitivity of password,Login page accessible,2,Enter password in different case,,Medium
+SD-E004,Edge Case,Case sensitivity of password,Login page accessible,3,Click Login,Needs clarification: Password case sensitivity not specified,Medium
+
+SD-E005,Edge Case,Rapid multiple login attempts,Login page accessible,1,Enter valid credentials,,Medium
+SD-E005,Edge Case,Rapid multiple login attempts,Login page accessible,2,Click Login button multiple times rapidly,Needs clarification: Rate limiting not specified,Medium
+
+SD-E006,Edge Case,Browser back button after login,User has successfully logged in,1,Login successfully,,Low
+SD-E006,Edge Case,Browser back button after login,User has successfully logged in,2,Press browser back button,Needs clarification: Session behavior not specified,Low
+
+SD-P001,Performance,Verify page load time,Network connection available,1,Clear browser cache,,High
+SD-P001,Performance,Verify page load time,Network connection available,2,Navigate to login page,,High
+SD-P001,Performance,Verify page load time,Network connection available,3,Measure page load time,Page loads within 2 seconds,High
+
+SD-P002,Performance,Verify login response for normal users,Login page accessible,1,Enter standard_user credentials,,High
+SD-P002,Performance,Verify login response for normal users,Login page accessible,2,Click Login,,High
+SD-P002,Performance,Verify login response for normal users,Login page accessible,3,Measure response time,Login response < 1 second,High
+
+SD-P003,Performance,Verify delayed response for performance_glitch_user,Login page accessible,1,Enter performance_glitch_user credentials,,Medium
+SD-P003,Performance,Verify delayed response for performance_glitch_user,Login page accessible,2,Click Login,,Medium
+SD-P003,Performance,Verify delayed response for performance_glitch_user,Login page accessible,3,Measure response time,Simulated delay of ~5-10 seconds,Medium
+
+SD-A001,Accessibility,Verify proper labels for inputs,Login page accessible,1,Inspect username input field,,Medium
+SD-A001,Accessibility,Verify proper labels for inputs,Login page accessible,2,Inspect password input field,Proper labels exist for inputs,Medium
+
+SD-A002,Accessibility,Verify keyboard navigation support,Login page accessible,1,Use Tab key to navigate through elements,,Medium
+SD-A002,Accessibility,Verify keyboard navigation support,Login page accessible,2,Use Enter to submit,Basic keyboard navigation is supported,Medium
+
+SD-A003,Accessibility,Verify color contrast for readability,Login page accessible,1,Inspect text and background colors,,Medium
+SD-A003,Accessibility,Verify color contrast for readability,Login page accessible,2,Check contrast ratio,Color contrast provides readability,Medium
+
+SD-U001,UI,Verify minimalist UI design,Login page accessible,1,Navigate to login page,,Low
+SD-U001,UI,Verify minimalist UI design,Login page accessible,2,Observe UI elements,Minimalist UI design displayed,Low
+
+SD-U002,UI,Verify center-aligned login card,Login page accessible,1,Navigate to login page,,Low
+SD-U002,UI,Verify center-aligned login card,Login page accessible,2,Observe login card position,Login card is center-aligned,Low
+
+SD-U003,UI,Verify clear call-to-action button,Login page accessible,1,Navigate to login page,,Low
+SD-U003,UI,Verify clear call-to-action button,Login page accessible,2,Observe Login button,Clear call-to-action button is visible,Low
+
+SD-U004,UI,Verify credential hints visibility,Login page accessible,1,Navigate to login page,,Low
+SD-U004,UI,Verify credential hints visibility,Login page accessible,2,Observe credential information,Readable credential hints displayed,Low
+
+VWO-F001,Functional,Successful login with valid credentials,VWO login page (app.vwo.com) is accessible,1,Navigate to app.vwo.com,,High
+VWO-F001,Functional,Successful login with valid credentials,VWO login page (app.vwo.com) is accessible,2,Enter valid email address,,High
+VWO-F001,Functional,Successful login with valid credentials,VWO login page (app.vwo.com) is accessible,3,Enter valid password,,High
+VWO-F001,Functional,Successful login with valid credentials,VWO login page (app.vwo.com) is accessible,4,Click Login button,User is redirected to VWO main dashboard,High
+
+VWO-F002,Functional,Login with Remember Me enabled,VWO login page accessible,1,Enter valid email,,High
+VWO-F002,Functional,Login with Remember Me enabled,VWO login page accessible,2,Enter valid password,,High
+VWO-F002,Functional,Login with Remember Me enabled,VWO login page accessible,3,Check Remember Me checkbox,,High
+VWO-F002,Functional,Login with Remember Me enabled,VWO login page accessible,4,Click Login,Login succeeds with persistent session,High
+
+VWO-F003,Functional,Auto-focus on first input field,VWO login page loads,1,Navigate to login page,,Medium
+VWO-F003,Functional,Auto-focus on first input field,VWO login page loads,2,Observe cursor position without clicking,Cursor is auto-focused on email field,Medium
+
+VWO-F004,Functional,Navigate to free trial signup,VWO login page accessible,1,Navigate to login page,,Medium
+VWO-F004,Functional,Navigate to free trial signup,VWO login page accessible,2,Click on registration/free trial link,User directed to free trial signup page,Medium
+
+VWO-F005,Functional,Verify clickable labels,VWO login page accessible,1,Click on email field label,,Medium
+VWO-F005,Functional,Verify clickable labels,VWO login page accessible,2,Click on password field label,Clicking labels focuses corresponding inputs,Medium
+
+VWO-F006,Functional,Successful password reset flow,VWO login page accessible - valid user exists,1,Click Forgot Password link,,High
+VWO-F006,Functional,Successful password reset flow,VWO login page accessible - valid user exists,2,Enter registered email,,High
+VWO-F006,Functional,Successful password reset flow,VWO login page accessible - valid user exists,3,Submit request,Password reset email sent with secure token,High
+
+VWO-F007,Functional,Switch to Dark Mode,VWO login page accessible,1,Locate theme toggle,,Medium
+VWO-F007,Functional,Switch to Dark Mode,VWO login page accessible,2,Switch to Dark Mode,UI switches to Dark Mode,Medium
+
+VWO-F008,Functional,Switch to Light Mode,VWO login page in Dark Mode,1,Locate theme toggle,,Medium
+VWO-F008,Functional,Switch to Light Mode,VWO login page in Dark Mode,2,Switch to Light Mode,UI switches to Light Mode,Medium
+
+VWO-N001,Negative,Login with invalid email format,VWO login page accessible,1,Enter invalid email format (e.g. test@),,High
+VWO-N001,Negative,Login with invalid email format,VWO login page accessible,2,Move focus away from field,Real-time validation error displayed,High
+
+VWO-N002,Negative,Login with invalid credentials,VWO login page accessible,1,Enter invalid email,,High
+VWO-N002,Negative,Login with invalid credentials,VWO login page accessible,2,Enter invalid password,,High
+VWO-N002,Negative,Login with invalid credentials,VWO login page accessible,3,Click Login,Clear actionable error message displayed,High
+
+VWO-N003,Negative,Login with empty email field,VWO login page accessible,1,Leave email field empty,,High
+VWO-N003,Negative,Login with empty email field,VWO login page accessible,2,Enter password,,High
+VWO-N003,Negative,Login with empty email field,VWO login page accessible,3,Click Login,Validation error displayed,High
+
+VWO-N004,Negative,Login with empty password field,VWO login page accessible,1,Enter valid email,,High
+VWO-N004,Negative,Login with empty password field,VWO login page accessible,2,Leave password field empty,,High
+VWO-N004,Negative,Login with empty password field,VWO login page accessible,3,Click Login,Validation error displayed,High
+
+VWO-N005,Negative,Login with both fields empty,VWO login page accessible,1,Leave both fields empty,,High
+VWO-N005,Negative,Login with both fields empty,VWO login page accessible,2,Click Login,Validation errors for both fields,High
+
+VWO-N006,Negative,Verify brute force protection,VWO login page accessible,1,Enter valid email,,High
+VWO-N006,Negative,Verify brute force protection,VWO login page accessible,2,Enter wrong password,,High
+VWO-N006,Negative,Verify brute force protection,VWO login page accessible,3,Repeat multiple times,Rate limiting protection triggered,High
+
+VWO-B001,Boundary,Email with minimum valid format,VWO login page accessible,1,Enter shortest valid email (e.g. a@b.co),,Low
+VWO-B001,Boundary,Email with minimum valid format,VWO login page accessible,2,Enter password,,Low
+VWO-B001,Boundary,Email with minimum valid format,VWO login page accessible,3,Attempt login,Needs clarification: Min email length not specified,Low
+
+VWO-B002,Boundary,Password at minimum complexity,VWO login page accessible,1,Enter valid email,,Low
+VWO-B002,Boundary,Password at minimum complexity,VWO login page accessible,2,Enter password at minimum requirements,,Low
+VWO-B002,Boundary,Password at minimum complexity,VWO login page accessible,3,Attempt login,Needs clarification: Password complexity not specified,Low
+
+VWO-B003,Boundary,Maximum length email,VWO login page accessible,1,Enter very long email address,,Low
+VWO-B003,Boundary,Maximum length email,VWO login page accessible,2,Enter valid password,,Low
+VWO-B003,Boundary,Maximum length email,VWO login page accessible,3,Attempt login,Needs clarification: Max email length not specified,Low
+
+VWO-E001,Edge Case,Login with email containing special characters,VWO login page accessible,1,Enter email with special chars (e.g. test+1@domain.com),,Medium
+VWO-E001,Edge Case,Login with email containing special characters,VWO login page accessible,2,Enter password,,Medium
+VWO-E001,Edge Case,Login with email containing special characters,VWO login page accessible,3,Click Login,Needs clarification: Special char handling not specified,Medium
+
+VWO-E002,Edge Case,Session timeout handling,User logged in - session timed out,1,Leave session idle until timeout,,Medium
+VWO-E002,Edge Case,Session timeout handling,User logged in - session timed out,2,Attempt to perform action,Needs clarification: Timeout behavior not specified,Medium
+
+VWO-E003,Edge Case,Concurrent login from multiple devices,Valid user account exists,1,Login from Device A,,Medium
+VWO-E003,Edge Case,Concurrent login from multiple devices,Valid user account exists,2,Login from Device B with same credentials,Needs clarification: Concurrent session handling not specified,Medium
+
+VWO-E004,Edge Case,Password reset with unregistered email,VWO login page accessible,1,Click Forgot Password,,Medium
+VWO-E004,Edge Case,Password reset with unregistered email,VWO login page accessible,2,Enter unregistered email,,Medium
+VWO-E004,Edge Case,Password reset with unregistered email,VWO login page accessible,3,Submit,Needs clarification: Error handling not specified,Medium
+
+VWO-E005,Edge Case,SSO login attempt,VWO login page accessible - SSO configured,1,Select SSO login option,,Medium
+VWO-E005,Edge Case,SSO login attempt,VWO login page accessible - SSO configured,2,Complete SSO authentication,SSO integration works,Medium
+
+VWO-P001,Performance,Verify page load time,Network connection available,1,Clear browser cache,,High
+VWO-P001,Performance,Verify page load time,Network connection available,2,Navigate to login page,,High
+VWO-P001,Performance,Verify page load time,Network connection available,3,Measure page load time,Page loads within 2 seconds,High
+
+VWO-P002,Performance,Verify login response time,VWO login page accessible,1,Enter valid credentials,,Medium
+VWO-P002,Performance,Verify login response time,VWO login page accessible,2,Click Login,,Medium
+VWO-P002,Performance,Verify login response time,VWO login page accessible,3,Measure response time,Needs clarification: Login response time not defined,Medium
+
+VWO-P003,Performance,Verify uptime availability,Monitoring tool configured,1,Monitor login page availability over time,99.9% uptime maintained,High
+
+VWO-A001,Accessibility,Verify ARIA labels,VWO login page accessible,1,Use screen reader to navigate page,,Medium
+VWO-A001,Accessibility,Verify ARIA labels,VWO login page accessible,2,Verify all elements are announced,ARIA labels present and keyboard nav compatible,Medium
+
+VWO-A002,Accessibility,Verify high contrast mode,VWO login page accessible,1,Enable high contrast mode,,Medium
+VWO-A002,Accessibility,Verify high contrast mode,VWO login page accessible,2,Verify all elements are visible,High contrast mode accessibility available,Medium
+
+VWO-A003,Accessibility,Verify full keyboard navigation,VWO login page accessible,1,Use only keyboard to navigate,,Medium
+VWO-A003,Accessibility,Verify full keyboard navigation,VWO login page accessible,2,Access all interactive elements,Full keyboard accessibility for all elements,Medium
+
+VWO-U001,UI,Verify clean interface design,VWO login page accessible,1,Navigate to login page,,Low
+VWO-U001,UI,Verify clean interface design,VWO login page accessible,2,Observe UI,Modern minimalist form with VWO branding,Low
+
+VWO-U002,UI,Verify responsive design on mobile,Mobile device or emulator,1,Access login page on mobile device,,Medium
+VWO-U002,UI,Verify responsive design on mobile,Mobile device or emulator,2,Verify layout and touch controls,Mobile-optimized with touch-friendly controls,Medium
+
+VWO-U003,UI,Verify loading states,VWO login page accessible,1,Submit login form,,Medium
+VWO-U003,UI,Verify loading states,VWO login page accessible,2,Observe feedback during processing,Clear loading state displayed during auth,Medium
+
+VWO-U004,UI,Verify password strength indicator,VWO login page accessible,1,Enter password in password field,,Medium
+VWO-U004,UI,Verify password strength indicator,VWO login page accessible,2,Observe visual feedback,Visual feedback for password strength displayed,Medium
+
+VWO-U005,UI,Verify brand consistency,VWO login page accessible,1,Compare login page design with VWO branding,Design aligns with VWO design system,Low
+
+VWO-U006,UI,Verify product announcement banner,VWO login page accessible,1,Observe banner area on login page,Banner with Light/Dark Mode options visible,Low
+
+VWO-S001,Security,Verify HTTPS enforcement,Network inspection tool available,1,Access login page,,High
+VWO-S001,Security,Verify HTTPS enforcement,Network inspection tool available,2,Verify connection is HTTPS,SSL/TLS encryption for all communications,High
+
+VWO-S002,Security,Verify Multi-Factor Authentication,2FA enabled account,1,Login with valid credentials,,High
+VWO-S002,Security,Verify Multi-Factor Authentication,2FA enabled account,2,Complete 2FA verification,Optional 2FA support functions correctly,High
+
+VWO-S003,Security,Verify password not transmitted in plain text,Network monitoring tool,1,Submit login form,,High
+VWO-S003,Security,Verify password not transmitted in plain text,Network monitoring tool,2,Inspect network traffic,End-to-end encryption for auth data,High
+
+VWO-S004,Security,Verify secure session token,Browser developer tools,1,Login successfully,,High
+VWO-S004,Security,Verify secure session token,Browser developer tools,2,Inspect session token,Secure session token generated,High
+
+VWO-I001,Integration,Verify transition to main dashboard,Valid user credentials,1,Login successfully,Seamless transition to VWO main dashboard,High
+
+VWO-I002,Integration,Verify analytics integration for login tracking,Analytics configured,1,Attempt login (success and failure),,Medium
+VWO-I002,Integration,Verify analytics integration for login tracking,Analytics configured,2,Check analytics,Login success/failure tracked in analytics,Medium

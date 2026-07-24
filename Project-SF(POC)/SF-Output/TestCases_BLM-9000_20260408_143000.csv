@@ -1,0 +1,104 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+BLM-TC-001,Create Integration License User in Sandbox,Functional,Verify ability to create a new Salesforce user with Integration license in sandbox environment,"1. Sandbox org is available; 2. Admin access to sandbox",1,Navigate to Salesforce Setup > Users,Navigation to Users section successful,High
+,,,,,,2,Click New User,New User creation dialog opens,High
+,,,,,,3,Enter user details (email username first/last name),User details fields accept input without validation errors,High
+,,,,,,4,Assign Salesforce Integration license from license dropdown,Integration license option is available and selectable,High
+,,,,,,5,Click Save,System confirms user creation with message or success indicator,High
+,,,,,,,
+BLM-TC-002,Assign Copado Permissions to Integration User,Functional,Verify that required permission sets can be assigned to Integration license user,"1. Integration license user created in sandbox; 2. Integration user has no permissions yet",1,Navigate to Salesforce Setup > Permission Sets,Permission Sets page accessible,High
+,,,,,,2,Search for Copado-related permission set names,Insufficient information to determine - specific permission set names not provided in PRD,High
+,,,,,,3,Select and assign permission set to Integration user,Permission assignment completed without conflict errors,High
+,,,,,,4,Verify assigned permissions in user profile,Assigned permissions reflected in user record,High
+,,,,,,,
+BLM-TC-003,Validate Connected App Configuration for Integration User,Functional,Verify that connected apps maintain OAuth and API authentication access for Integration license user,"1. Integration user created with permissions assigned; 2. Current Copado API User connected apps documented",1,Navigate to Salesforce Setup > Connected Apps,Connected Apps page accessible,High
+,,,,,,2,Review list of connected apps,Insufficient information to determine - specific connected app names not provided in PRD,High
+,,,,,,3,Configure connected app access for Integration user,Connected app configuration completed without errors,High
+,,,,,,4,Verify OAuth access is maintained,OAuth tokens/authentication methods function for Integration user,High
+,,,,,,,
+BLM-TC-004,Execute Deployment in Sandbox with Integration User,Functional,Verify that Copado deployment operations execute successfully with Integration license user,"1. Integration user fully configured with permissions and connected apps; 2. Test deployment pipeline available in sandbox",1,Access Copado Deployment Pipeline Configuration,Copado dashboard and deployment pipeline accessible,High
+,,,,,,2,Select existing or create test deployment job,Deployment job selected/created without errors,High
+,,,,,,3,Execute deployment using Integration user credentials,Deployment initiates and begins processing,High
+,,,,,,4,Monitor deployment execution progress,Deployment progresses through stages without permission-related errors,High
+,,,,,,5,Verify deployment completion status,Deployment completes successfully (success indicator shown),High
+,,,,,,,
+BLM-TC-005,Execute Commit in Sandbox with Integration User,Functional,Verify that Copado commit operations function with Integration license user,"1. Integration user fully configured; 2. Test commit source available in sandbox",1,Access Copado CI/CD Job Configuration,Copado CI/CD interface accessible,High
+,,,,,,2,Select a commit job or create a test commit,Commit job selected/created without errors,High
+,,,,,,3,Execute commit operation using Integration user,Commit operation starts,High
+,,,,,,4,Monitor commit processing,Commit processes without permission denial errors,High
+,,,,,,5,Verify commit completed successfully,Commit completion confirmed in Copado logs/dashboard,High
+,,,,,,,
+BLM-TC-006,Execute Promotion in Sandbox with Integration User,Functional,Verify that Copado promotion operations function with Integration license user,"1. Integration user fully configured; 2. Promotion source and target environments available",1,Access Copado Deployment Pipeline Configuration,Promotion pipeline accessible,High
+,,,,,,2,Select a promotion job from pipeline,Promotion job selected without errors,High
+,,,,,,3,Execute promotion operation using Integration user,Promotion initiates,High
+,,,,,,4,Monitor promotion execution,Promotion progresses through environments without permission errors,High
+,,,,,,5,Verify promotion completed successfully,Promotion completion confirmed,High
+,,,,,,,
+BLM-TC-007,Execute Back Promotion in Sandbox with Integration User,Functional,Verify that Copado back promotion operations function with Integration license user,"1. Integration user fully configured; 2. Completed promotion available for back promotion",1,Access Copado Deployment Pipeline Configuration,Back promotion option accessible,High
+,,,,,,2,Select a back promotion job,Back promotion job selected without errors,High
+,,,,,,3,Execute back promotion operation using Integration user,Back promotion initiates,High
+,,,,,,4,Monitor back promotion execution,Back promotion processes without permission denial errors,High
+,,,,,,5,Verify back promotion completed successfully,Back promotion completion confirmed,High
+,,,,,,,
+BLM-TC-008,Execute Validation Job in Sandbox with Integration User,Functional,Verify that Copado validation jobs complete successfully with Integration license user,"1. Integration user fully configured; 2. Test validation job available",1,Access Copado CI/CD Job Configuration,Validation job interface accessible,High
+,,,,,,2,Select a validation job,Validation job selected without errors,High
+,,,,,,3,Execute validation job using Integration user,Validation job starts,High
+,,,,,,4,Monitor validation job progress,Validation job executes all checks without permission errors,High
+,,,,,,5,Verify validation job completed successfully,Validation results displayed (pass/fail status),High
+,,,,,,,
+BLM-TC-009,Execute CI Job in Sandbox with Integration User,Functional,Verify that Copado CI/CD jobs run successfully with Integration license user,"1. Integration user fully configured; 2. Test CI job available in sandbox",1,Access Copado CI/CD Job Configuration,CI job interface accessible,High
+,,,,,,2,Select a CI job,CI job selected without errors,High
+,,,,,,3,Execute CI job using Integration user,CI job initiates,High
+,,,,,,4,Monitor CI job execution,CI job runs through all stages without permission issues,High
+,,,,,,5,Verify CI job completed successfully,CI job completion status shown in interface,High
+,,,,,,,
+BLM-TC-010,Switch Copado API User License to Integration in Production,Functional,Verify that Copado API User license can be switched from full Salesforce to Integration license in production,"1. All sandbox tests have passed; 2. Production environment ready",1,Resolve credential access decision: password reset OR new dedicated Integration user needed,Credential decision documented and authorized,High
+,,,,,,2,Change Copado API User license assignment from full Salesforce license to Salesforce Integration license in Salesforce Setup > Users > License Assignment,License change applied without system errors,High
+,,,,,,3,Verify license change reflected in user record,User profile shows Salesforce Integration as assigned license,High
+,,,,,,4,Reassign all required permissions in Production,All permissions previously held reassigned to Integration user,High
+,,,,,,,
+BLM-TC-011,Validate API Authentication Post-License Switch,Functional,Verify that API authentication and system-to-system automation run without disruption after license switch,"1. License switch completed in production; 2. Copado automation workflows available",1,Initiate Copado API call using Integration user credentials,API request processes,High
+,,,,,,2,Monitor API response and authentication logs,Authentication succeeds without permission denial,High
+,,,,,,3,Execute system-to-system automation workflow,Automation workflow completes successfully,High
+,,,,,,,
+BLM-TC-012,Execute Production Copado Deployment Post-Migration,Functional,Verify that Copado deployment functionalities work reliably without errors after license switch,"1. License switch and API authentication validated; 2. Scheduled deployment available",1,Access Copado Deployment Pipeline Configuration in Production,Production pipeline accessible,High
+,,,,,,2,Execute deployment job using Integration user,Deployment starts without errors,High
+,,,,,,3,Monitor deployment execution,Deployment completes successfully,High
+,,,,,,,
+BLM-TC-013,Create/Review Salesforce-Jira-Copado Integration Documentation,Functional,Verify that complete documentation of Salesforce–Jira–Copado integration is created or updated,"1. Documentation requirements identified; 2. Organizational documentation standards available",1,Determine if integration documentation currently exists,Documentation existence status identified,High
+,,,,,,2,If documentation missing: Create new documentation following established structured layout standard,New documentation created with all required sections,High
+,,,,,,3,If documentation exists: Review and update for current Integration User configuration,Documentation reviewed and updated,High
+,,,,,,4,Verify documentation includes: user setup guide configuration details permission sets connected apps troubleshooting,All required documentation sections present,High
+,,,,,,,
+BLM-TC-014,Verify Documentation Audit Readiness and Compliance,Functional,Verify that documentation is complete audit-ready and aligned with organizational standards,"1. Integration documentation created/updated; 2. Organizational documentation standards defined",1,Review documentation for audit trail requirements,Audit-ready elements present (dates signatures change history),High
+,,,,,,2,Verify documentation is accessible (stored in standard location),Documentation accessible to authorized personnel,High
+,,,,,,3,Confirm documentation formatting aligns with organizational standards,Documentation formatting and layout consistent with established standards,High
+,,,,,,4,Verify documentation includes: API details permission mappings connected app configuration security settings,All required details documented,High
+,,,,,,,
+BLM-TC-015,Validate System Fails Gracefully When License is Insufficient,Negative,Verify that system behavior is documented when Integration license is insufficient for Copado operations,"1. Integration user with limited permissions created in sandbox; 2. Insufficient information to determine specific features requiring full license",1,Attempt to execute Copado operation that requires full license features,Operation triggers license validation,High
+,,,,,,2,Verify error message or log indicates license limitation,Expected behavior: system documents limitation per acceptance criteria,Medium
+,,,,,,3,Confirm fallback to full license is documented as viable option,Fallback procedure documented,Medium
+,,,,,,,
+BLM-TC-016,Validate System Handles Missing Permissions Gracefully,Negative,Verify that missing permission assignments are identified and reported clearly,"1. Integration user created with partial permission set assignments; 2. Known Copado operations available",1,Attempt to execute Copado operation,Operation initiates,High
+,,,,,,2,Monitor system response when required permission is missing,System identifies missing permission (log entry or error message),High
+,,,,,,3,Verify error handling directs to remediation: identify and assign required permission set,Error message or log indicates required permission,High
+,,,,,,,
+BLM-TC-017,Validate API Authentication Failure Handling,Negative,Verify that API authentication failures are handled correctly and connected app configuration can be verified,"1. Integration user has connected app access configured; 2. Sufficient information to determine connected app impact: NOT PROVIDED",1,Intentionally misconfigure connected app credentials or revoke temporary access,Misconfiguration applied,Medium
+,,,,,,2,Attempt Copado API operation,API call fails,High
+,,,,,,3,Verify error indicates authentication failure,Error message indicates authentication issue (insufficient information to specify exact message),High
+,,,,,,4,Confirm troubleshooting guidance references connected app configuration verification,Troubleshooting path available to resolve,High
+,,,,,,,
+BLM-TC-018,Validate Deployment Failure Detection Pre-Production Migration,Negative,Verify that deployment failures in sandbox are identified and investigated before production migration,"1. Integration user fully configured in sandbox; 2. Copado deployment job available",1,Intentionally create condition for deployment failure (insufficient information to specify exact condition),Failure condition created,Medium
+,,,,,,2,Execute deployment,Deployment fails,High
+,,,,,,3,Monitor failure logs and error reporting,Deployment failure logged and visible,High
+,,,,,,4,Verify failure is resolved before production migration authorization,Failure resolution documented before proceeding,High
+,,,,,,,
+BLM-TC-019,Fallback Procedure: Create New Production Integration User if License Switch Not Feasible,Edge,Verify that fallback procedure to create new dedicated Production Integration User is viable when license switch is not technically feasible,"1. Sandbox testing identified license switch not feasible; 2. Production environment ready",1,Authorize creation of new dedicated Production Integration user,Authorization obtained,Medium
+,,,,,,2,Create new Integration user with all required permissions and connected app access,New user created successfully,Medium
+,,,,,,3,Verify new user has equivalent configuration to original Copado API User,Configuration matches verified,Medium
+,,,,,,4,Obtain valid and accessible credentials for new Integration user,Credentials established and validated,Medium
+,,,,,,5,Execute Copado CI/CD operations using new user,Operations complete successfully,Medium
+,,,,,,,
+BLM-TC-020,Fallback Procedure: Password Reset Option for Credential Management,Edge,Verify that password reset is viable as credential management option if original credentials not available,"1. Credential decision point reached; 2. Team authorization obtained",1,Confirm original Copado API User credentials are not available,Credential unavailability confirmed,Low
+,,,,,,2,Execute password reset for Copado API User,Password reset completed,Low
+,,,,,,3,Generate new credentials and securely distribute,New credentials generated and delivered securely,Low
+,,,,,,4,Verify API authentication with new credentials,Authentication with new credentials succeeds,Low

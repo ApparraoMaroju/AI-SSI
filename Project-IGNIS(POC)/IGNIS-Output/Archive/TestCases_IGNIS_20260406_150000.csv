@@ -1,0 +1,211 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_IGNIS_001,Verify End-to-End Message Flow with In-Memory Transport,Functional,Verify complete message flow from Receiver through Handler to Dispatcher using in-memory transport,Configuration set: adapter.transport=in-memory; All modules enabled (receiver/handler/dispatcher=true); Application started,1,Set configuration adapter.transport=in-memory,Configuration is applied successfully,High
+,,,,,2,Send a valid event message with well-formed envelope containing payload and metadata via REST API,Event message is received by Receiver module,
+,,,,,3,Verify Receiver module ingests and validates the message,Message passes validation and is forwarded to Handler,
+,,,,,4,Verify Handler module processes the business logic,Handler processes message and forwards to Dispatcher,
+,,,,,5,Verify Dispatcher module routes and publishes the event,Event is successfully published via in-memory transport,
+,,,,,6,Verify correlation ID is maintained throughout the flow,Same correlation ID present in all processing stages,
+
+TC_IGNIS_002,Verify End-to-End Message Flow with Kafka Transport,Functional,Verify complete message flow from Receiver through Handler to Dispatcher using Kafka transport,Configuration set: adapter.transport=kafka; Kafka broker running; All modules enabled; Application started,1,Set configuration adapter.transport=kafka,Configuration is applied successfully,High
+,,,,,2,Send a valid event message with well-formed envelope containing payload and metadata via REST API,Event message is received by Receiver module,
+,,,,,3,Verify Receiver module ingests and validates the message,Message passes validation and is forwarded to Handler,
+,,,,,4,Verify Handler module processes the business logic,Handler processes message and forwards to Dispatcher,
+,,,,,5,Verify Dispatcher module routes and publishes the event to Kafka,Event is successfully published to Kafka topic,
+,,,,,6,Verify correlation ID is maintained throughout the flow,Same correlation ID present in all processing stages,
+
+TC_IGNIS_003,Verify Transport Switching from In-Memory to Kafka Without Recompilation,Functional,Verify that transport can be switched from in-memory to Kafka via configuration only,Application running with adapter.transport=in-memory; Kafka broker available,1,Verify application is running with in-memory transport,Messages processed via in-memory transport,High
+,,,,,2,Change configuration from adapter.transport=in-memory to adapter.transport=kafka,Configuration change is accepted,
+,,,,,3,Restart application (no recompilation),Application starts with new configuration,
+,,,,,4,Send a valid event message via REST API,Message is processed via Kafka transport,
+,,,,,5,Verify no code changes or recompilation was required,Transport switch achieved via configuration only,
+
+TC_IGNIS_004,Verify Transport Switching from Kafka to In-Memory Without Recompilation,Functional,Verify that transport can be switched from Kafka to in-memory via configuration only,Application running with adapter.transport=kafka; Kafka broker available,1,Verify application is running with Kafka transport,Messages processed via Kafka transport,High
+,,,,,2,Change configuration from adapter.transport=kafka to adapter.transport=in-memory,Configuration change is accepted,
+,,,,,3,Restart application (no recompilation),Application starts with new configuration,
+,,,,,4,Send a valid event message via REST API,Message is processed via in-memory transport,
+,,,,,5,Verify no code changes or recompilation was required,Transport switch achieved via configuration only,
+
+TC_IGNIS_005,Verify Receiver Module Enable via Configuration,Functional,Verify Receiver module can be enabled via configuration,Configuration set: adapter.receiver.enabled=true; Application started,1,Set configuration adapter.receiver.enabled=true,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send a valid event message via REST API,Event message is received and processed by Receiver module,
+,,,,,4,Verify Receiver module is active and processing events,Receiver module ingests and validates incoming messages,
+
+TC_IGNIS_006,Verify Receiver Module Disable via Configuration,Functional,Verify Receiver module can be disabled via configuration,Configuration set: adapter.receiver.enabled=false; Application started,1,Set configuration adapter.receiver.enabled=false,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send an event message via REST API,Event message is not processed by Receiver module (Insufficient information to determine exact behavior when disabled),
+
+TC_IGNIS_007,Verify Handler Module Enable via Configuration,Functional,Verify Handler module can be enabled via configuration,Configuration set: adapter.handler.enabled=true; Receiver enabled; Application started,1,Set configuration adapter.handler.enabled=true,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send a valid event message via REST API,Event message reaches Handler module,
+,,,,,4,Verify Handler module processes business logic,Handler module actively processes the event,
+
+TC_IGNIS_008,Verify Handler Module Disable via Configuration,Functional,Verify Handler module can be disabled via configuration,Configuration set: adapter.handler.enabled=false; Receiver enabled; Application started,1,Set configuration adapter.handler.enabled=false,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send an event message via REST API,Event message is not processed by Handler module (Insufficient information to determine exact behavior when disabled),
+
+TC_IGNIS_009,Verify Dispatcher Module Enable via Configuration,Functional,Verify Dispatcher module can be enabled via configuration,Configuration set: adapter.dispatcher.enabled=true; Receiver and Handler enabled; Application started,1,Set configuration adapter.dispatcher.enabled=true,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send a valid event message via REST API,Event message reaches Dispatcher module,
+,,,,,4,Verify Dispatcher module routes and publishes the event,Dispatcher module actively publishes events,
+
+TC_IGNIS_010,Verify Dispatcher Module Disable via Configuration,Functional,Verify Dispatcher module can be disabled via configuration,Configuration set: adapter.dispatcher.enabled=false; Receiver and Handler enabled; Application started,1,Set configuration adapter.dispatcher.enabled=false,Configuration is applied,High
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send an event message via REST API,Event message is not published by Dispatcher module (Insufficient information to determine exact behavior when disabled),
+
+TC_IGNIS_011,Verify Message Envelope Validation with Valid Payload and Metadata,Functional,Verify Receiver validates well-formed message envelope with complete payload and metadata,Receiver module enabled; Application started with valid transport configuration,1,Create a valid message envelope with complete payload,Message envelope is well-formed,High
+,,,,,2,Include all required metadata in the envelope,Metadata is complete and properly formatted,
+,,,,,3,Include a unique correlation ID,Correlation ID is present in the envelope,
+,,,,,4,Include key-value headers,Headers are properly set,
+,,,,,5,Send the message via REST API,Message is accepted by Receiver module,
+,,,,,6,Verify validation passes,Receiver validates and accepts the message envelope,
+
+TC_IGNIS_012,Verify Message Envelope Validation Fails with Malformed Envelope,Negative,Verify Receiver rejects malformed message envelope,Receiver module enabled; Application started,1,Create a malformed message envelope (incomplete structure),Malformed envelope is prepared,High
+,,,,,2,Send the malformed message via REST API,Message is received by Receiver module,
+,,,,,3,Verify Receiver validation fails,Receiver rejects the malformed message (Insufficient information to determine specific error response),
+
+TC_IGNIS_013,Verify Message Envelope Validation Fails with Incomplete Envelope,Negative,Verify Receiver rejects incomplete message envelope missing required fields,Receiver module enabled; Application started,1,Create an incomplete message envelope missing required fields,Incomplete envelope is prepared,High
+,,,,,2,Send the incomplete message via REST API,Message is received by Receiver module,
+,,,,,3,Verify Receiver validation fails due to missing fields,Receiver rejects the incomplete message (Insufficient information to determine specific error response),
+
+TC_IGNIS_014,Verify Correlation ID Propagation Through All Modules,Functional,Verify correlation ID is propagated and maintained from Receiver through Handler to Dispatcher,All modules enabled; Application started,1,Create a valid message with a unique correlation ID,Message with correlation ID is prepared,High
+,,,,,2,Send the message via REST API,Message is processed by Receiver,
+,,,,,3,Verify correlation ID is preserved in Receiver module,Correlation ID matches original value,
+,,,,,4,Verify correlation ID is preserved in Handler module,Correlation ID matches original value,
+,,,,,5,Verify correlation ID is preserved in Dispatcher module,Correlation ID matches original value in published event,
+
+TC_IGNIS_015,Verify Headers Metadata Propagation Through Message Flow,Functional,Verify key-value headers are propagated through the entire message flow,All modules enabled; Application started,1,Create a valid message with key-value headers metadata,Message with headers is prepared,High
+,,,,,2,Send the message via REST API,Message is processed by Receiver,
+,,,,,3,Verify headers are preserved in Receiver module,Headers match original values,
+,,,,,4,Verify headers are preserved in Handler module,Headers match original values,
+,,,,,5,Verify headers are preserved in Dispatcher output,Headers match original values in published event,
+
+TC_IGNIS_016,Verify EventPublisherPort Abstraction with In-Memory Transport,Functional,Verify EventPublisherPort works correctly with in-memory transport implementation,Configuration: adapter.transport=in-memory; Dispatcher enabled; Application started,1,Configure system to use in-memory transport,In-memory transport is active,High
+,,,,,2,Trigger event publishing through EventPublisherPort,Event is published via port abstraction,
+,,,,,3,Verify event is published via in-memory transport,Event successfully delivered using in-memory mechanism,
+
+TC_IGNIS_017,Verify EventPublisherPort Abstraction with Kafka Transport,Functional,Verify EventPublisherPort works correctly with Kafka transport implementation,Configuration: adapter.transport=kafka; Kafka broker running; Dispatcher enabled; Application started,1,Configure system to use Kafka transport,Kafka transport is active,High
+,,,,,2,Trigger event publishing through EventPublisherPort,Event is published via port abstraction,
+,,,,,3,Verify event is published to Kafka,Event successfully delivered to Kafka topic,
+
+TC_IGNIS_018,Verify EventSubscriberPort Abstraction with In-Memory Transport,Functional,Verify EventSubscriberPort works correctly with in-memory transport implementation,Configuration: adapter.transport=in-memory; Application started,1,Configure system to use in-memory transport,In-memory transport is active,High
+,,,,,2,Subscribe to events through EventSubscriberPort,Subscription is established via port abstraction,
+,,,,,3,Publish an event to validate subscription,Event is received by subscriber,
+,,,,,4,Verify event is received via in-memory transport,Event successfully received using in-memory mechanism,
+
+TC_IGNIS_019,Verify EventSubscriberPort Abstraction with Kafka Transport,Functional,Verify EventSubscriberPort works correctly with Kafka transport implementation,Configuration: adapter.transport=kafka; Kafka broker running; Application started,1,Configure system to use Kafka transport,Kafka transport is active,High
+,,,,,2,Subscribe to events through EventSubscriberPort,Subscription is established via port abstraction,
+,,,,,3,Publish an event to Kafka topic,Event is published to Kafka,
+,,,,,4,Verify event is received via Kafka transport,Event successfully received from Kafka topic,
+
+TC_IGNIS_020,Verify EventReceiverPort Abstraction Functionality,Functional,Verify EventReceiverPort correctly receives and processes incoming events,Receiver module enabled; Application started,1,Send a valid event message to Receiver,Event is sent via REST API,High
+,,,,,2,Verify EventReceiverPort receives the event,Port abstraction receives incoming event,
+,,,,,3,Verify event is passed for validation,Event undergoes validation in Receiver module,
+,,,,,4,Verify validated event is forwarded to Handler,Event successfully passed to Handler module,
+
+TC_IGNIS_021,Verify Adapter Delegation Layer Delegates to Active Transport,Functional,Verify adapter delegation layer correctly delegates to the active transport based on configuration,Application started with specific transport configuration,1,Configure adapter.transport=in-memory,In-memory transport configuration set,High
+,,,,,2,Verify adapter delegation layer uses in-memory transport,Delegation layer routes to in-memory implementation,
+,,,,,3,Change configuration to adapter.transport=kafka and restart,Kafka transport configuration set,
+,,,,,4,Verify adapter delegation layer uses Kafka transport,Delegation layer routes to Kafka implementation,
+
+TC_IGNIS_022,Verify Only One Messaging Adapter Per Port,Functional,Verify that only one messaging adapter is active per port at any time,Application started with transport configuration,1,Start application with adapter.transport=in-memory,Application starts with single transport,High
+,,,,,2,Verify only in-memory adapter is active for messaging ports,Single adapter (in-memory) is handling all port operations,
+,,,,,3,Restart with adapter.transport=kafka,Application restarts with Kafka configuration,
+,,,,,4,Verify only Kafka adapter is active for messaging ports,Single adapter (Kafka) is handling all port operations; in-memory adapter is not active,
+
+TC_IGNIS_023,Verify Logging Cross-Cutting Concern via Decorator,Functional,Verify logging is implemented via decorator pattern for cross-cutting concerns,All modules enabled; Logging decorator configured; Application started,1,Send a valid event message via REST API,Message is processed through the system,Medium
+,,,,,2,Verify logging occurs at Receiver module,Log entries generated for Receiver processing,
+,,,,,3,Verify logging occurs at Handler module,Log entries generated for Handler processing,
+,,,,,4,Verify logging occurs at Dispatcher module,Log entries generated for Dispatcher processing,
+,,,,,5,Verify logging is consistent across modules (decorator pattern),Logging behavior is uniform and implemented via decorator,
+
+TC_IGNIS_024,Verify Retry Cross-Cutting Concern via Decorator,Functional,Verify retry mechanism is implemented via decorator pattern for cross-cutting concerns,Retry decorator configured; Application started,1,Create a condition that triggers retry (Inference - low confidence: temporary failure scenario),Retry condition is established,Medium
+,,,,,2,Send a message that triggers the retry scenario,Message processing encounters retryable condition,
+,,,,,3,Verify retry decorator activates retry mechanism,Retry is attempted based on decorator configuration,
+,,,,,4,Verify retry behavior is consistent (decorator pattern),Retry mechanism operates uniformly via decorator,
+
+TC_IGNIS_025,Verify Metrics Cross-Cutting Concern via Decorator,Functional,Verify metrics collection is implemented via decorator pattern for cross-cutting concerns,Metrics decorator configured; Application started,1,Send a valid event message via REST API,Message is processed through the system,Medium
+,,,,,2,Verify metrics are collected at Receiver module,Metrics captured for Receiver processing,
+,,,,,3,Verify metrics are collected at Handler module,Metrics captured for Handler processing,
+,,,,,4,Verify metrics are collected at Dispatcher module,Metrics captured for Dispatcher processing,
+,,,,,5,Verify metrics collection is consistent (decorator pattern),Metrics behavior is uniform and implemented via decorator,
+
+TC_IGNIS_026,Verify Domain Logic Independence from Infrastructure,Functional,Verify domain logic in Handler module has no transport-specific dependencies,Application code available for inspection; Handler module code accessible,1,Review Handler module code for transport-specific imports,No Kafka or in-memory transport imports in Handler,High
+,,,,,2,Verify Handler processes messages without knowledge of transport,Handler uses only port abstractions,
+,,,,,3,Run Handler tests with in-memory transport,Tests pass without transport-specific dependencies,
+,,,,,4,Run same Handler tests with Kafka transport,Same tests pass demonstrating transport independence,
+
+TC_IGNIS_027,Verify No Transport-Specific Dependencies in Domain Module,Functional,Verify domain module contains no transport-specific dependencies,Domain module code accessible for review,1,Inspect domain module for Kafka dependencies,No Kafka libraries or imports present,High
+,,,,,2,Inspect domain module for in-memory transport dependencies,No in-memory transport specific code present,
+,,,,,3,Verify domain module uses only port interfaces,All external communication via port abstractions only,
+
+TC_IGNIS_028,Verify Architecture Guardrails Enforcement - Build Failure on Violation,Functional,Verify that architecture guardrails cause build failure when violated,Architecture validation tool integrated; Build pipeline accessible,1,Introduce a deliberate architecture violation (transport dependency in domain),Violation is introduced in code,High
+,,,,,2,Trigger build process,Build process starts with automated architecture checks,
+,,,,,3,Verify architecture validation detects the violation,Violation is detected by guardrail checks,
+,,,,,4,Verify build fails due to architecture violation,Build fails with architecture violation error,
+,,,,,5,Remove the violation and rebuild,Build succeeds after violation is removed,
+
+TC_IGNIS_029,Verify Hexagonal Architecture Port and Adapter Pattern,Functional,Verify system follows Hexagonal Architecture with proper ports and adapters separation,Application architecture accessible for review,1,Verify EventPublisherPort exists as port interface,Port interface is defined in domain/application layer,High
+,,,,,2,Verify EventSubscriberPort exists as port interface,Port interface is defined in domain/application layer,
+,,,,,3,Verify EventReceiverPort exists as port interface,Port interface is defined in domain/application layer,
+,,,,,4,Verify In-memory adapter implements port interfaces,In-memory adapter exists in infrastructure layer implementing ports,
+,,,,,5,Verify Kafka adapter implements port interfaces,Kafka adapter exists in infrastructure layer implementing ports,
+
+TC_IGNIS_030,Verify In-Memory Transport Requires No External Dependencies,Functional,Verify in-memory transport operates without external system dependencies,Configuration: adapter.transport=in-memory; No Kafka broker running,1,Ensure no Kafka broker is running,Kafka broker is stopped/unavailable,High
+,,,,,2,Configure application for in-memory transport,adapter.transport=in-memory is set,
+,,,,,3,Start the application,Application starts successfully without external dependencies,
+,,,,,4,Send a valid event message,Message is processed end-to-end,
+,,,,,5,Verify complete message flow works,Message processed via in-memory transport without external systems,
+
+TC_IGNIS_031,Verify Kafka Transport Requires Running Broker,Functional,Verify Kafka transport requires Kafka broker to be running,Configuration: adapter.transport=kafka,1,Stop Kafka broker (if running),Kafka broker is unavailable,High
+,,,,,2,Configure application for Kafka transport,adapter.transport=kafka is set,
+,,,,,3,Attempt to start the application or send message,Application behavior when Kafka unavailable (Insufficient information to determine specific error),
+,,,,,4,Start Kafka broker,Kafka broker is running,
+,,,,,5,Verify Kafka transport works when broker is available,Messages processed successfully via Kafka transport,
+
+TC_IGNIS_032,Verify Same Test Suite Runs on Both Transports,Functional,Verify same integration tests can run successfully on both in-memory and Kafka transports,Test framework configured to support transport switching; Both transports available,1,Configure test environment for in-memory transport,adapter.transport=in-memory for tests,High
+,,,,,2,Run integration test suite,All tests execute on in-memory transport,
+,,,,,3,Verify all tests pass on in-memory transport,Test suite passes,
+,,,,,4,Configure test environment for Kafka transport,adapter.transport=kafka for tests,
+,,,,,5,Run same integration test suite,All tests execute on Kafka transport,
+,,,,,6,Verify all tests pass on Kafka transport,Same test suite passes on both transports,
+
+TC_IGNIS_033,Verify Message Flow When Only Receiver is Enabled,Edge,Verify system behavior when only Receiver module is enabled,Configuration: receiver.enabled=true; handler.enabled=false; dispatcher.enabled=false,1,Set configuration to enable only Receiver module,Only Receiver is enabled,Medium
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send a valid event message via REST API,Message is received by Receiver module,
+,,,,,4,Verify message is ingested and validated by Receiver,Receiver processes the message (Insufficient information to determine behavior when downstream modules disabled),
+
+TC_IGNIS_034,Verify Message Flow When Handler is Disabled Mid-Chain,Edge,Verify system behavior when Handler is disabled while Receiver and Dispatcher are enabled,Configuration: receiver.enabled=true; handler.enabled=false; dispatcher.enabled=true,1,Set configuration: Receiver and Dispatcher enabled but Handler disabled,Handler is disabled in chain,Medium
+,,,,,2,Start the application,Application starts successfully,
+,,,,,3,Send a valid event message via REST API,Message is processed by Receiver,
+,,,,,4,Verify message flow behavior without Handler,Insufficient information to determine exact behavior when Handler is skipped,
+
+TC_IGNIS_035,Verify Empty Correlation ID Handling,Edge,Verify system behavior when correlation ID is empty or missing,All modules enabled; Application started,1,Create a valid message envelope with empty correlation ID,Message with empty correlation ID prepared,Medium
+,,,,,2,Send the message via REST API,Message is sent to Receiver,
+,,,,,3,Verify system behavior with empty correlation ID,Insufficient information to determine if empty correlation ID is accepted or rejected,
+
+TC_IGNIS_036,Verify Empty Headers Metadata Handling,Edge,Verify system behavior when headers metadata is empty,All modules enabled; Application started,1,Create a valid message envelope with empty headers,Message with no headers prepared,Medium
+,,,,,2,Send the message via REST API,Message is sent to Receiver,
+,,,,,3,Verify system behavior with empty headers,Insufficient information to determine if empty headers are accepted or rejected,
+
+TC_IGNIS_037,Verify Invalid Transport Configuration Value,Negative,Verify system behavior when invalid transport configuration is provided,Configuration: adapter.transport=invalid_value,1,Set configuration adapter.transport=invalid_value,Invalid transport value is configured,High
+,,,,,2,Attempt to start the application,Application startup is attempted,
+,,,,,3,Verify system behavior with invalid transport,Insufficient information to determine specific error behavior for invalid transport configuration,
+
+TC_IGNIS_038,Verify All Modules Disabled Configuration,Edge,Verify system behavior when all modules are disabled,Configuration: all modules disabled (receiver/handler/dispatcher=false),1,Set all module configurations to false,All modules disabled,Medium
+,,,,,2,Start the application,Application startup is attempted,
+,,,,,3,Verify system behavior with all modules disabled,Insufficient information to determine exact behavior when all modules disabled,
+
+TC_IGNIS_039,Verify REST API Endpoint for Event Ingestion,Functional,Verify REST API endpoint correctly receives event messages for ingestion,REST API available; Receiver module enabled; Application started,1,Identify the REST API endpoint for event ingestion,REST endpoint is available (Insufficient information on exact endpoint path),High
+,,,,,2,Send HTTP POST request with valid event payload,Request is processed,
+,,,,,3,Verify REST API accepts the request,HTTP response indicates successful acceptance,
+,,,,,4,Verify event is forwarded to Receiver module,Event enters the processing pipeline,
+
+TC_IGNIS_040,Verify Modular Monolith Deployment Mode,Functional,Verify application operates correctly in modular monolith deployment mode,Application configured for modular monolith deployment,1,Configure application for modular monolith mode,Modular monolith configuration is set,Medium
+,,,,,2,Deploy application as single unit,Application deployed as monolith,
+,,,,,3,Send valid event messages,Messages are processed,
+,,,,,4,Verify all modules (Receiver/Handler/Dispatcher) communicate within single deployment,Modules communicate internally without external network calls,
+
+TC_IGNIS_041,Verify Distributed Deployment Mode Support,Functional,Verify application supports distributed deployment mode,Infrastructure supports distributed deployment; Configuration available,1,Configure application for distributed deployment mode,Distributed deployment configuration is set (Insufficient information on specific configuration),Medium
+,,,,,2,Deploy Receiver/Handler/Dispatcher as separate services,Services deployed separately,
+,,,,,3,Send valid event messages,Messages are processed across services,
+,,,,,4,Verify message flow works across distributed components,Events flow from Receiver to Handler to Dispatcher across service boundaries,

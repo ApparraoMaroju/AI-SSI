@@ -1,0 +1,32 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TW-3491-TC001,Verify Processing Status Tile Displayed on Dashboard,Functional,Verify that a new tile named "Processing status" (Bearbeitungsstatus) is added to the dashboard,User is logged in and has access to dashboard,1,Navigate to the dashboard page,Dashboard page loads successfully,High
+,,,,,2,Locate the tile area on the dashboard,Tile section is visible,
+,,,,,3,Verify "Processing status" tile is present,New tile named "Processing status" (Bearbeitungsstatus) is displayed on the dashboard,
+,,,,,4,Verify tile is visible without scrolling (if applicable),Tile is accessible within the dashboard layout,
+
+TW-3491-TC002,Verify Processing Status Tile Shows Action Statuses,Functional,Verify that the tile shows the status of actions: saved - for approval - and approved,User is logged in and dashboard is accessible with actions in various statuses,1,Navigate to the dashboard page,Dashboard page loads successfully,High
+,,,,,2,Locate the "Processing status" tile,Tile is visible on dashboard,
+,,,,,3,Verify tile displays "saved" status count/indicator,Saved status is shown on the tile,
+,,,,,4,Verify tile displays "for approval" status count/indicator,For approval status is shown on the tile,
+,,,,,5,Verify tile displays "approved" status count/indicator,Approved status is shown on the tile,
+,,,,,6,Verify all three statuses are clearly distinguishable,All action statuses (saved - for approval - approved) are visible and distinguishable,
+
+TW-3491-TC003,Verify Pop-up Appears When Tile is Activated,Functional,Verify that when the tile is activated a pop-up appears with the current actions being processed,User is logged in and dashboard has Processing status tile visible,1,Navigate to the dashboard page,Dashboard page loads successfully,High
+,,,,,2,Locate the "Processing status" tile,Tile is visible on dashboard,
+,,,,,3,Click/activate the "Processing status" tile,Tile activation is triggered,
+,,,,,4,Verify pop-up window appears,Pop-up is displayed with details of actions being processed,
+,,,,,5,Verify pop-up contains list of current actions being processed,Actions currently being processed are shown in the pop-up,
+,,,,,6,Verify pop-up shows status details for each action,Each action displays its current processing status,
+
+TW-3491-TC004,Verify Navigation from Pop-up to Original Mask,Functional,Verify users can select an area in the pop-up to navigate to the original mask for continuing the release process,User is logged in - Processing status pop-up is open with actions listed,1,Navigate to dashboard and open Processing status tile pop-up,Pop-up is displayed with actions,High
+,,,,,2,Identify a selectable area/action in the pop-up,Selectable areas are visible and identifiable,
+,,,,,3,Click on a selectable area/action item,Click action is registered,
+,,,,,4,Verify navigation occurs to the original mask,User is navigated to the original mask/screen for the selected action,
+,,,,,5,Verify the release process can be continued from the mask,Original mask loads correctly and allows continuing the release process,
+
+TW-3491-TC005,Verify Performance of Processing Status Tile Loading,Performance,Verify that the Processing status tile loads efficiently without significant delay considering separate backend endpoint,User is logged in with multiple actions in processing state,1,Clear browser cache,Cache is cleared,Medium
+,,,,,2,Navigate to the dashboard page,Dashboard page starts loading,
+,,,,,3,Observe loading time of Processing status tile,Tile loads within acceptable time (Not specified - verify no significant delay),
+,,,,,4,Activate the tile to open pop-up,Pop-up loading is initiated,
+,,,,,5,Observe pop-up loading time with action data,Pop-up displays data without significant performance degradation,
+,,,,,6,Verify data is fetched from backend endpoint efficiently,Data retrieval does not cause noticeable lag or timeout,

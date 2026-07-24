@@ -1,0 +1,207 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+,,,,,,,,
+BLM9000-TC01,Create Integration License User in Sandbox,Functional,Verify ability to create a new Salesforce user with Integration license in sandbox environment,"1. Sandbox org is available; 2. Admin access to sandbox",1,Navigate to Salesforce Setup > Users,Navigation to Users section successful,High
+,,,,,,2,Click New User,New User creation dialog opens,High
+,,,,,,3,Enter user details (email username first/last name),User details fields accept input without validation errors,High
+,,,,,,4,Assign Salesforce Integration license from license dropdown,Integration license option is available and selectable,High
+,,,,,,5,Click Save,System confirms user creation with message or success indicator,High
+,,,,,,,,
+BLM9000-TC02,Assign Copado Permission Sets to Integration User,Functional,Verify that required permission sets can be assigned to Integration license user,"1. Integration license user created in sandbox; 2. Copado permission sets available",1,Navigate to Salesforce Setup > Permission Sets,Permission Sets page accessible,High
+,,,,,,2,Search for Copado-related permission sets,Copado permission sets are listed,High
+,,,,,,3,Select and assign permission set to Integration user,Permission assignment completed without conflict errors,High
+,,,,,,4,Verify assigned permissions in user profile,Assigned permissions reflected in user record,High
+,,,,,,,,
+BLM9000-TC03,Configure Connected App Access for Integration User,Functional,Verify that connected apps maintain OAuth and API authentication access for Integration license user,"1. Integration user created with permissions; 2. Connected apps configured for Copado",1,Navigate to Salesforce Setup > Connected Apps,Connected Apps page accessible,High
+,,,,,,2,Review list of connected apps for Copado integration,Copado connected apps visible,High
+,,,,,,3,Configure connected app access for Integration user,Connected app configuration completed without errors,High
+,,,,,,4,Verify OAuth access is maintained,OAuth tokens/authentication methods function for Integration user,High
+,,,,,,,,
+BLM9000-TC04,Execute Copado Deployment with Integration User,Functional,Verify that Copado deployment operations execute successfully with Integration license user,"1. Integration user fully configured; 2. Test deployment pipeline available",1,Access Copado Deployment Pipeline Configuration,Copado dashboard and deployment pipeline accessible,High
+,,,,,,2,Select existing or create test deployment job,Deployment job selected/created without errors,High
+,,,,,,3,Execute deployment using Integration user credentials,Deployment initiates and begins processing,High
+,,,,,,4,Monitor deployment execution progress,Deployment progresses without permission-related errors,High
+,,,,,,5,Verify deployment completion status,Deployment completes successfully,High
+,,,,,,,,
+BLM9000-TC05,Execute Copado Commit Operation,Functional,Verify that Copado commit operations function with Integration license user,"1. Integration user fully configured; 2. Test commit source available",1,Access Copado CI/CD Job Configuration,Copado CI/CD interface accessible,High
+,,,,,,2,Select a commit job or create a test commit,Commit job selected/created without errors,High
+,,,,,,3,Execute commit operation using Integration user,Commit operation starts,High
+,,,,,,4,Monitor commit processing,Commit processes without permission denial errors,High
+,,,,,,5,Verify commit completed successfully,Commit completion confirmed in Copado logs/dashboard,High
+,,,,,,,,
+BLM9000-TC06,Execute Copado Promotion Operation,Functional,Verify that Copado promotion operations function with Integration license user,"1. Integration user fully configured; 2. Promotion environments available",1,Access Copado Deployment Pipeline Configuration,Promotion pipeline accessible,High
+,,,,,,2,Select a promotion job from pipeline,Promotion job selected without errors,High
+,,,,,,3,Execute promotion operation using Integration user,Promotion initiates,High
+,,,,,,4,Monitor promotion execution,Promotion progresses without permission errors,High
+,,,,,,5,Verify promotion completed successfully,Promotion completion confirmed,High
+,,,,,,,,
+BLM9000-TC07,Execute Copado Back Promotion Operation,Functional,Verify that Copado back promotion operations function with Integration license user,"1. Integration user fully configured; 2. Completed promotion available",1,Access Copado Deployment Pipeline Configuration,Back promotion option accessible,High
+,,,,,,2,Select a back promotion job,Back promotion job selected without errors,High
+,,,,,,3,Execute back promotion operation using Integration user,Back promotion initiates,High
+,,,,,,4,Monitor back promotion execution,Back promotion processes without permission denial errors,High
+,,,,,,5,Verify back promotion completed successfully,Back promotion completion confirmed,High
+,,,,,,,,
+BLM9000-TC08,Execute Copado Validation Job,Functional,Verify that Copado validation jobs complete successfully with Integration license user,"1. Integration user fully configured; 2. Validation job available",1,Access Copado CI/CD Job Configuration,Validation job interface accessible,High
+,,,,,,2,Select a validation job,Validation job selected without errors,High
+,,,,,,3,Execute validation job using Integration user,Validation job starts,High
+,,,,,,4,Monitor validation job progress,Validation job executes without permission errors,High
+,,,,,,5,Verify validation job completed successfully,Validation results displayed (pass/fail status),High
+,,,,,,,,
+BLM9000-TC09,Execute Copado CI Job,Functional,Verify that Copado CI/CD jobs run successfully with Integration license user,"1. Integration user fully configured; 2. CI job available",1,Access Copado CI/CD Job Configuration,CI job interface accessible,High
+,,,,,,2,Select a CI job,CI job selected without errors,High
+,,,,,,3,Execute CI job using Integration user,CI job initiates,High
+,,,,,,4,Monitor CI job execution,CI job runs without permission issues,High
+,,,,,,5,Verify CI job completed successfully,CI job completion status shown,High
+,,,,,,,,
+BLM9000-TC10,Switch License to Integration in Production,Functional,Verify that Copado API User license can be switched to Integration license in production,"1. All sandbox tests passed; 2. Production environment ready",1,Resolve credential access decision (password reset OR new user),Credential decision documented and authorized,High
+,,,,,,2,Change Copado API User license from full Salesforce to Integration in Setup > Users > License Assignment,License change applied without system errors,High
+,,,,,,3,Verify license change reflected in user record,User profile shows Salesforce Integration license,High
+,,,,,,4,Reassign all required permissions in Production,All permissions reassigned to Integration user,High
+,,,,,,,,
+BLM9000-TC11,Validate API Authentication Post-License Switch,Functional,Verify that API authentication runs without disruption after license switch,"1. License switch completed; 2. Copado automation workflows available",1,Initiate Copado API call using Integration user credentials,API request processes,High
+,,,,,,2,Monitor API response and authentication logs,Authentication succeeds without permission denial,High
+,,,,,,3,Execute system-to-system automation workflow,Automation workflow completes successfully,High
+,,,,,,,,
+BLM9000-TC12,Create Integration Documentation,Functional,Verify that complete Salesforce-Jira-Copado integration documentation is created/updated,"1. Documentation requirements identified; 2. Documentation standards available",1,Determine if integration documentation currently exists,Documentation existence status identified,High
+,,,,,,2,Create or update documentation following established structured layout,Documentation created/updated with all required sections,High
+,,,,,,3,Verify documentation includes user setup permission sets connected apps troubleshooting,All required sections present,High
+,,,,,,4,Verify documentation is audit-ready and accessible,Documentation meets compliance standards,High
+,,,,,,,,
+BLM9000-TC13,Handle License Insufficient Scenario,Negative,Verify system behavior when Integration license is insufficient for Copado operations,"1. Integration user created; 2. Limited permissions scenario",1,Attempt Copado operation that requires full license features,Operation triggers license validation,Medium
+,,,,,,2,Verify error indicates license limitation,System documents limitation clearly,Medium
+,,,,,,3,Confirm fallback to full license is documented,Fallback procedure available,Medium
+,,,,,,,,
+BLM9000-TC14,Handle Missing Permissions Gracefully,Negative,Verify that missing permission assignments are identified and reported,"1. Integration user with partial permissions; 2. Copado operations available",1,Attempt Copado operation with missing permission,Operation initiates,High
+,,,,,,2,Monitor system response for missing permission,System identifies missing permission,High
+,,,,,,3,Verify error handling directs to remediation,Error indicates required permission,High
+,,,,,,,,
+BLM9000-TC15,Handle API Authentication Failure,Negative,Verify that API authentication failures are handled correctly,"1. Integration user configured; 2. Connected app access configured",1,Intentionally misconfigure connected app credentials,Misconfiguration applied,Medium
+,,,,,,2,Attempt Copado API operation,API call fails,High
+,,,,,,3,Verify error indicates authentication failure,Error message indicates authentication issue,High
+,,,,,,4,Confirm troubleshooting references connected app verification,Troubleshooting path available,High
+,,,,,,,,
+BLM9000-TC16,Fallback - Create New Production Integration User,Edge,Verify fallback procedure to create new Production Integration User if license switch not feasible,"1. License switch identified as not feasible; 2. Production ready",1,Authorize creation of new dedicated Production Integration user,Authorization obtained,Medium
+,,,,,,2,Create new Integration user with all required permissions,New user created successfully,Medium
+,,,,,,3,Verify new user configuration matches original Copado API User,Configuration matches verified,Medium
+,,,,,,4,Execute Copado CI/CD operations using new user,Operations complete successfully,Medium
+,,,,,,,,
+,,,,,,,,
+BLM9030-TC01,Case 1 - Nearshore/Offshore Required on Stage Transition,Functional,Verify Nearshore/Offshore field requires value when moving to Bid Creation or later stages,"1. Opportunity in Prospecting or Qualification stage; 2. Nearshore/Offshore field is empty",1,Open Opportunity in Prospecting stage,Opportunity record opens successfully,High
+,,,,,,2,Leave Nearshore/Offshore field empty,Field remains empty,High
+,,,,,,3,Attempt to change stage to Bid Creation,Stage change initiated,High
+,,,,,,4,Verify validation rule NearshoreOffshore_ReqOnBidCreation triggers,"Error displayed: ""To move to the Bid Creation stage or any subsequent stage a value in this field is required.""",High
+,,,,,,5,Populate Nearshore/Offshore field and retry stage change,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC02,Case 1 - Expected Contract Type Required on Stage Transition,Functional,Verify Expected Contract Type field requires value when moving to Bid Creation or later stages,"1. Opportunity in Prospecting or Qualification; 2. Expected Contract Type field empty",1,Open Opportunity in Qualification stage,Opportunity record opens successfully,High
+,,,,,,2,Leave Expected Contract Type field empty,Field remains empty,High
+,,,,,,3,Attempt to change stage to Negotiation,Stage change initiated,High
+,,,,,,4,Verify validation rule ExpectedContractType_ReqOnBidCreation triggers,Error displayed at field level with Case 1 message,High
+,,,,,,5,Populate field and retry stage change,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC03,Case 1 - Bid Manager Required on Stage Transition,Functional,Verify Bid Manager field requires value when moving to Bid Creation or later stages,"1. Opportunity in Prospecting or Qualification; 2. Bid Manager field empty",1,Open Opportunity in Prospecting stage,Opportunity record opens,High
+,,,,,,2,Leave Bid Manager field empty,Field remains empty,High
+,,,,,,3,Attempt to change stage to Awarded,Stage change initiated,High
+,,,,,,4,Verify validation rule BidManager_ReqOnBidCreation triggers,Error displayed at field level with Case 1 message,High
+,,,,,,5,Populate field and retry,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC04,Case 1 - Surveillance Director Required on Stage Transition,Functional,Verify Surveillance Director field requires value when moving to Bid Creation or later stages,"1. Opportunity in Prospecting or Qualification; 2. Surveillance Director field empty",1,Open Opportunity in Qualification stage,Opportunity record opens,High
+,,,,,,2,Leave Surveillance Director field empty,Field remains empty,High
+,,,,,,3,Attempt to change stage to Closed Won,Stage change initiated,High
+,,,,,,4,Verify validation rule SurveillanceDirector_ReqOnBidCreation triggers,Error displayed at field level with Case 1 message,High
+,,,,,,5,Populate field and retry,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC05,Case 1 - All Eight Fields Required Together,Functional,Verify all eight fields are validated simultaneously when transitioning to Bid Creation,"1. Opportunity in Prospecting; 2. All eight governance fields empty",1,Open Opportunity with all eight fields empty,Opportunity record opens,High
+,,,,,,2,Attempt to change stage to Bid Creation,Stage change initiated,High
+,,,,,,3,Verify all applicable validation rules trigger,Errors displayed for all empty required fields,High
+,,,,,,4,Populate all eight fields,All fields contain values,High
+,,,,,,5,Retry stage change to Bid Creation,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC06,Case 2 - Nearshore/Offshore Cannot Be Cleared in Bid Stages,Functional,Verify Nearshore/Offshore field cannot be cleared while in Bid Creation stage,"1. Opportunity in Bid Creation stage; 2. Nearshore/Offshore field has value",1,Open Opportunity in Bid Creation stage,Opportunity record opens,High
+,,,,,,2,Edit Nearshore/Offshore field to clear the value,User attempts to remove value,High
+,,,,,,3,Attempt to save the record,Save initiated,High
+,,,,,,4,Verify validation rule NearshoreOffshore_NoClearingInBidStages triggers,"Error displayed: ""In the Bid Creation Negotiation and Awarded stages a value in this field is required.""",High
+,,,,,,5,Restore value and save,Save succeeds,High
+,,,,,,,,
+BLM9030-TC07,Case 2 - Expected Contract Type Cannot Be Cleared in Negotiation,Functional,Verify Expected Contract Type field cannot be cleared while in Negotiation stage,"1. Opportunity in Negotiation stage; 2. Expected Contract Type has value",1,Open Opportunity in Negotiation stage,Opportunity record opens,High
+,,,,,,2,Edit Expected Contract Type field to clear value,User attempts to remove value,High
+,,,,,,3,Attempt to save,Save initiated,High
+,,,,,,4,Verify validation rule ExpectedContractType_NoClearingInBidStages triggers,Error displayed at field level with Case 2 message,High
+,,,,,,5,Restore value and save,Save succeeds,High
+,,,,,,,,
+BLM9030-TC08,Case 2 - Project Margin Cannot Be Cleared in Awarded Stage,Functional,Verify Project Margin field cannot be cleared while in Awarded stage,"1. Opportunity in Awarded stage; 2. Project Margin has value",1,Open Opportunity in Awarded stage,Opportunity record opens,High
+,,,,,,2,Edit Project Margin field to clear value,User attempts to remove value,High
+,,,,,,3,Attempt to save,Save initiated,High
+,,,,,,4,Verify validation rule ProjectMargin_NoClearingInBidStages triggers,Error displayed at field level with Case 2 message,High
+,,,,,,5,Restore value and save,Save succeeds,High
+,,,,,,,,
+BLM9030-TC09,Case 2 - Field Update Allowed in Bid Stages,Functional,Verify fields can be updated (not cleared) while in Bid Creation/Negotiation/Awarded,"1. Opportunity in Bid Creation stage; 2. All eight fields have values",1,Open Opportunity in Bid Creation stage,Opportunity record opens,High
+,,,,,,2,Update Nearshore/Offshore to different valid value,Value changed to new valid value,High
+,,,,,,3,Update Bid Manager to different user,Value changed to new valid user,High
+,,,,,,4,Save the record,Save initiated,High
+,,,,,,5,Verify save succeeds without validation errors,Record saved successfully with updated values,High
+,,,,,,,,
+BLM9030-TC10,Case 3 - Surveillance Director Cannot Be Cleared After Closed Won,Functional,Verify Surveillance Director cannot be cleared after Opportunity is Closed Won,"1. Opportunity in Closed Won stage; 2. Surveillance Director has value",1,Open Opportunity in Closed Won stage,Opportunity record opens,High
+,,,,,,2,Edit Surveillance Director field to clear value,User attempts to remove value,High
+,,,,,,3,Attempt to save,Save initiated,High
+,,,,,,4,Verify validation rule SurveillanceDirector_NoClearingAfterClose triggers,"Error displayed: ""After the Opportunity is closed this field can be edited but must have a value.""",High
+,,,,,,5,Restore value and save,Save succeeds,High
+,,,,,,,,
+BLM9030-TC11,Case 3 - Project Margin Cannot Be Cleared After Closed Lost,Functional,Verify Project Margin cannot be cleared after Opportunity is Closed Lost,"1. Opportunity in Closed Lost stage; 2. Project Margin has value",1,Open Opportunity in Closed Lost stage,Opportunity record opens,High
+,,,,,,2,Edit Project Margin field to clear value,User attempts to remove value,High
+,,,,,,3,Attempt to save,Save initiated,High
+,,,,,,4,Verify validation rule ProjectMargin_NoClearingAfterClose triggers,Error displayed at field level with Case 3 message,High
+,,,,,,5,Restore value and save,Save succeeds,High
+,,,,,,,,
+BLM9030-TC12,Case 3 - Field Update Allowed After Close,Functional,Verify Surveillance Director and Project Margin can be updated (not cleared) after Closed Won/Lost,"1. Opportunity in Closed Won stage; 2. Both fields have values",1,Open Opportunity in Closed Won stage,Opportunity record opens,High
+,,,,,,2,Update Surveillance Director to different valid user,Value changed to new valid user,High
+,,,,,,3,Update Project Margin to different valid percentage,Value changed to new valid percentage,High
+,,,,,,4,Save the record,Save initiated,High
+,,,,,,5,Verify save succeeds without validation errors,Record saved with updated values,High
+,,,,,,,,
+BLM9030-TC13,New Opportunity Creation - BLM-8973 Rule Triggers Instead,Functional,Verify Case 1-3 rules suppressed when creating new Opportunity in Bid Creation stage,"1. User has permission to create Opportunities; 2. BLM-8973 validation rule active",1,Navigate to create new Opportunity,New Opportunity form opens,High
+,,,,,,2,Leave all eight governance fields empty,Fields remain empty,High
+,,,,,,3,Select Bid Creation as stage,Bid Creation selected,High
+,,,,,,4,Attempt to save new Opportunity,Save initiated,High
+,,,,,,5,Verify only BLM-8973 creation-stage warning triggers (not Case 1-3 rules),Warning shown that new Opportunities may only be created in Prospecting/Qualification,High
+,,,,,,,,
+BLM9030-TC14,Verify Old Rules Renamed with zdelete_ Prefix,Functional,Verify existing validation rules have been renamed with zdelete_ prefix,"1. Admin access to Salesforce Setup; 2. Validation Rules accessible",1,Navigate to Setup > Object Manager > Opportunity > Validation Rules,Validation Rules list opens,High
+,,,,,,2,Search for Nearshore_Offshore_before_Bid_Creation,Rule not found OR found with zdelete_ prefix,High
+,,,,,,3,Search for Expected_Contract_Type_Bid_Creation,Rule not found OR found with zdelete_ prefix,High
+,,,,,,4,Search for all eight original rule names,All original rules renamed or removed,High
+,,,,,,5,Verify new unified rules exist with correct naming convention,New rules visible with correct names per Case 1/2/3 tables,High
+,,,,,,,,
+BLM9030-TC15,Verify Amount Threshold Removed from Expected Submission Date,Functional,Verify 199999 EUR threshold removed from Expected Submission Date validation,"1. Opportunity with Amount below 199999 EUR; 2. Opportunity in Prospecting stage",1,Create/open Opportunity with Amount = 50000 EUR,Opportunity record opens,High
+,,,,,,2,Leave Expected Submission Date empty,Field remains empty,High
+,,,,,,3,Attempt to change stage to Bid Creation,Stage change initiated,High
+,,,,,,4,Verify ExpectedSubmissionDate_ReqOnBidCreation triggers regardless of amount,Validation triggers for low-value Opportunity,High
+,,,,,,5,Populate Expected Submission Date and retry,Stage change succeeds,High
+,,,,,,,,
+BLM9030-TC16,Verify No Conflict with Editable_Fields_if_Closed Rule,Functional,Verify new validation rules do not conflict with Editable_Fields_if_Closed rule,"1. Opportunity in Closed Won stage; 2. Editable_Fields_if_Closed rule active",1,Open Opportunity in Closed Won stage,Opportunity record opens,High
+,,,,,,2,Attempt to clear Surveillance Director,User attempts to remove value,High
+,,,,,,3,Verify single appropriate error displays,Only SurveillanceDirector_NoClearingAfterClose triggers (no duplicate errors),High
+,,,,,,4,Attempt to edit Project Margin with valid value,User changes to new valid value,High
+,,,,,,5,Verify edit succeeds without conflicts,Edit saves successfully,High
+,,,,,,,,
+BLM9030-TC17,German Error Message Display - Case 1,Functional,Verify German error messages display correctly for Case 1 validation,"1. User language set to German; 2. Opportunity in Prospecting stage",1,Open Opportunity in Prospecting stage with German locale,Opportunity record opens,High
+,,,,,,2,Leave Nearshore/Offshore empty and attempt stage change to Bid Creation,Stage change initiated,High
+,,,,,,3,Verify German error message displays,"Error: ""Für den Wechsel in die Phase Angebotserstellung oder eine folgende Phase ist eine Angabe in diesem Feld erforderlich.""",High
+,,,,,,,,
+BLM9030-TC18,German Error Message Display - Case 2,Functional,Verify German error messages display correctly for Case 2 validation,"1. User language set to German; 2. Opportunity in Bid Creation stage",1,Open Opportunity in Bid Creation stage with German locale,Opportunity record opens,High
+,,,,,,2,Attempt to clear Bid Manager field,User removes value,High
+,,,,,,3,Verify German error message displays,"Error: ""In den Phasen Angebotserstellung Verhandlung und Mündliche Zusage ist eine Angabe in diesem Feld erforderlich.""",High
+,,,,,,,,
+BLM9030-TC19,German Error Message Display - Case 3,Functional,Verify German error messages display correctly for Case 3 validation,"1. User language set to German; 2. Opportunity in Closed Won stage",1,Open Opportunity in Closed Won stage with German locale,Opportunity record opens,High
+,,,,,,2,Attempt to clear Project Margin field,User removes value,High
+,,,,,,3,Verify German error message displays,"Error: ""Dieses Feld kann nach Abschluss der Opportunity bearbeitet werden darf jedoch nicht leer bleiben.""",High
+,,,,,,,,
+BLM9030-TC20,Boundary - Stage Transition from Qualification to Bid Creation,Boundary,Verify validation at exact boundary of Qualification to Bid Creation transition,"1. Opportunity exactly at Qualification stage; 2. All fields populated",1,Open Opportunity in Qualification stage with all fields populated,Opportunity record opens,High
+,,,,,,2,Change stage directly to Bid Creation,Stage change initiated,High
+,,,,,,3,Verify transition succeeds with all fields populated,Stage changes to Bid Creation successfully,High
+,,,,,,,,
+BLM9030-TC21,Boundary - Stage Transition from Qualification to Negotiation,Boundary,Verify validation allows skipping Bid Creation stage with all fields populated,"1. Opportunity in Qualification; 2. All eight fields have values",1,Open Opportunity in Qualification,Opportunity record opens,High
+,,,,,,2,Change stage directly to Negotiation (skipping Bid Creation),Stage change initiated,High
+,,,,,,3,Verify transition succeeds when all required fields populated,Stage changes to Negotiation successfully,High
+,,,,,,,,
+BLM9030-TC22,Edge - Rapid Stage Changes with Field Modifications,Edge,Verify validation consistency during rapid stage changes,"1. Opportunity in Prospecting; 2. All fields populated",1,Open Opportunity and populate all required fields,All fields have values,Medium
+,,,,,,2,Change to Bid Creation stage quickly,Stage changes,Medium
+,,,,,,3,Immediately edit and try to clear one field,Clear attempted,Medium
+,,,,,,4,Verify Case 2 validation triggers correctly,Error prevents clearing in Bid stage,Medium
