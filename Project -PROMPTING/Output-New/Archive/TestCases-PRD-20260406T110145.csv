@@ -1,0 +1,63 @@
+﻿TID,Category,Description,Pre-conditions,Step#,Step Description,Expected Result,Priority
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,1,Navigate to https://www.saucedemo.com/,Login page is displayed,High
+,,,,2,Enter username: standard_user,Username is entered in field,
+,,,,3,Enter password: (static password from UI),Password is entered in field,
+,,,,4,Click Login button,User is redirected to product inventory page,
+
+SD-F002,Functional,Auto-focus on username field,SauceDemo login page loads,1,Navigate to login page,Login page is displayed,Medium
+,,,,2,Observe cursor position without clicking,Cursor is auto-focused on username field,
+
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,1,Navigate to login page,Login page is displayed,Medium
+,,,,2,Enter username,Username is entered,
+,,,,3,Press Tab key,Focus moves to password field,
+,,,,4,Enter password,Password is entered,
+,,,,5,Press Tab key,Focus moves to Login button,
+,,,,6,Press Enter,User submits form via keyboard,
+
+SD-F004,Functional,Login with performance_glitch_user,Login page accessible,1,Enter username: performance_glitch_user,Username is entered,Medium
+,,,,2,Enter correct password,Password is entered,
+,,,,3,Click Login,Login succeeds after delay (~5-10 seconds),
+
+SD-F005,Functional,Login with problem_user,Login page accessible,1,Enter username: problem_user,Username is entered,Medium
+,,,,2,Enter correct password,Password is entered,
+,,,,3,Click Login,Login succeeds but UI issues appear,
+
+SD-F006,Functional,Login with error_user,Login page accessible,1,Enter username: error_user,Username is entered,Medium
+,,,,2,Enter correct password,Password is entered,
+,,,,3,Click Login,Simulated backend/UI errors occur,
+
+SD-F007,Functional,Login with visual_user,Login page accessible,1,Enter username: visual_user,Username is entered,Medium
+,,,,2,Enter correct password,Password is entered,
+,,,,3,Click Login,Login succeeds with visual inconsistencies,
+
+SD-F008,Functional,Verify test credentials displayed on UI,Login page loads,1,Navigate to login page,Login page is displayed,Medium
+,,,,2,Observe the page content,Predefined test credentials are displayed,
+
+SD-N001,Negative,Login with locked_out_user,Login page accessible,1,Enter username: locked_out_user,Username is entered,High
+,,,,2,Enter correct password,Password is entered,
+,,,,3,Click Login,Error: User has been locked out,
+
+SD-N002,Negative,Login with invalid credentials,Login page accessible,1,Enter invalid username,Invalid username is entered,High
+,,,,2,Enter invalid password,Invalid password is entered,
+,,,,3,Click Login,Error: Username and password do not match,
+
+SD-N003,Negative,Login with empty username field,Login page accessible,1,Leave username field empty,Username field remains empty,High
+,,,,2,Enter any password,Password is entered,
+,,,,3,Click Login,Error: Username is required,
+
+SD-N004,Negative,Login with empty password field,Login page accessible,1,Enter valid username,Username is entered,High
+,,,,2,Leave password field empty,Password field remains empty,
+,,,,3,Click Login,Error: Password is required,
+
+SD-N005,Negative,Login with both fields empty,Login page accessible,1,Leave username field empty,Username field remains empty,High
+,,,,2,Leave password field empty,Password field remains empty,
+,,,,3,Click Login,Error message displayed (Needs clarification),
+
+SD-N006,Negative,Login with valid username and wrong password,Login page accessible,1,Enter username: standard_user,Username is entered,High
+,,,,2,Enter incorrect password,Incorrect password is entered,
+,,,,3,Click Login,Error: Username and password do not match,
+
+SD-N007,Negative,Login with wrong username and valid password,Login page accessible,1,Enter invalid username,Invalid username is entered,High
+,,,,2,Enter correct static password,Correct password is entered,
+,,,,3,Click Login,Error: Username and password do not match,
+

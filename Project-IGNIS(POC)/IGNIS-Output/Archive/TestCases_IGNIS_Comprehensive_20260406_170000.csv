@@ -1,0 +1,273 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_INC_001,Verify End-to-End Incident CreateRequest Flow (IPL to WDX),Functional,Verify complete incident dispatch flow from IPL to WDX using CreateRequest,Adapter Integration Service running; WDX3 Flottenserver accessible; Valid certificates configured; IPL Mock Service running,1,Prepare a valid TransferEinsatzRequest JSON payload with incident data (sourceMandant - targetMandant - einsatzId - einsatznummerKurz - kategorie - einsatzStichwort),Valid JSON payload is prepared,High
+,,,,,2,Send POST request to /einsatztransfer/erzeugeEinsatz endpoint,Request is accepted by Adapter Integration Service,
+,,,,,3,Verify Adapter logs show incoming IPL request,IPL request payload logged,
+,,,,,4,Verify Adapter transforms IPL request to WDX CreateRequest format,Transformation logged with all field mappings,
+,,,,,5,Verify CreateRequest is sent to WDX3 Flottenserver via gRPC,CreateRequest sent successfully,
+,,,,,6,Verify WDX acknowledges receipt within 10 seconds,Acknowledgment received within timeout,
+
+TC_INC_002,Verify WDX AcceptOperation Feedback to IPL,Functional,Verify AcceptOperation event from WDX is correctly received and forwarded to IPL,Adapter running with active WDX streaming connection; IPL Mock Service running,1,Submit an incident via CreateRequest to WDX,Incident created in WDX,High
+,,,,,2,Trigger AcceptOperation event from WDX (partner accepts the incident),AcceptOperation sent by WDX,
+,,,,,3,Verify Adapter receives AcceptOperation via gRPC stream,Event received and logged in Adapter,
+,,,,,4,Verify Adapter translates AcceptOperation to IPL format,Translation logged correctly,
+,,,,,5,Verify translated acceptance is forwarded to /einsatztransfer/quittiereTranferEinsatz,IPL Mock Service receives acceptance,
+,,,,,6,Verify acceptance details logged in IPL Mock Service,All acceptance details visible,
+
+TC_INC_003,Verify WDX RejectOperation Feedback to IPL,Functional,Verify RejectOperation event from WDX is correctly received and forwarded to IPL,Adapter running with active WDX streaming connection; IPL Mock Service running,1,Submit an incident via CreateRequest to WDX,Incident created in WDX,High
+,,,,,2,Trigger RejectOperation event from WDX (partner rejects the incident),RejectOperation sent by WDX,
+,,,,,3,Verify Adapter receives RejectOperation via gRPC stream,Event received and logged in Adapter,
+,,,,,4,Verify Adapter translates RejectOperation to IPL format,Translation logged correctly,
+,,,,,5,Verify translated rejection is forwarded to IPL Mock Service,IPL Mock Service receives rejection,
+,,,,,6,Verify rejection details and reason logged in IPL Mock Service,All rejection details visible,
+
+TC_INC_004,Verify Incident Field Mapping - sourceMandant to sender_client_id,Functional,Verify 1:1 mapping of sourceMandant to header.sender_client_id,Adapter running,1,Prepare TransferEinsatzRequest with sourceMandant = TEST_SENDER_123,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify header.sender_client_id equals TEST_SENDER_123,Mapping correct,
+
+TC_INC_005,Verify Incident Field Mapping - targetMandant to receiver_client_id,Functional,Verify 1:1 mapping of targetMandant to header.receiver_client_id,Adapter running,1,Prepare TransferEinsatzRequest with targetMandant = TEST_RECEIVER_456,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify header.receiver_client_id equals TEST_RECEIVER_456,Mapping correct,
+
+TC_INC_006,Verify Incident Field Mapping - einsatzId to operation.id,Functional,Verify 1:1 mapping of transferEinsatz.einsatzId to operation.id,Adapter running,1,Prepare TransferEinsatzRequest with einsatzId = E2026040612345,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify operation.id equals E2026040612345,Mapping correct,
+
+TC_INC_007,Verify Incident Field Mapping - einsatznummerKurz to operation.name,Functional,Verify 1:1 mapping of einsatznummerKurz to operation.name,Adapter running,1,Prepare TransferEinsatzRequest with einsatznummerKurz = E-2026-0001,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify operation.name equals E-2026-0001,Mapping correct,
+
+TC_INC_008,Verify Incident Field Mapping - kategorie to occasion.type_1,Functional,Verify 1:1 mapping of kategorie to operation.occassion.type_1,Adapter running,1,Prepare TransferEinsatzRequest with kategorie = EMERGENCY,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify operation.occassion.type_1 equals EMERGENCY,Mapping correct,
+
+TC_INC_009,Verify Incident Field Mapping - einsatzStichwort to keyword_1,Functional,Verify 1:1 mapping of einsatzStichwort to operation.occassion.keyword_1,Adapter running,1,Prepare TransferEinsatzRequest with einsatzStichwort = RTW_NOTFALL,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify operation.occassion.keyword_1 equals RTW_NOTFALL,Mapping correct,
+
+TC_INC_010,Verify Incident Field Mapping - alarmierungsstichwortText,Functional,Verify 1:1 mapping of alarmierungsstichwortText to keyword_1_text,Adapter running,1,Prepare TransferEinsatzRequest with alarmierungsstichwortText = Rettungswagen Notfall,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest,Request logged,
+,,,,,4,Verify operation.occassion.keyword_1_text equals Rettungswagen Notfall,Mapping correct,
+
+TC_INC_011,Verify send_time Auto-Population by Adapter,Functional,Verify CreateRequest.send_time is automatically set by Adapter,Adapter running; No send_time in IPL request,1,Prepare TransferEinsatzRequest without send_time field,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture outgoing WDX CreateRequest with timestamp,Request logged,
+,,,,,4,Verify CreateRequest.send_time is populated with current timestamp,send_time present and valid,
+
+TC_INC_012,Verify 10-Second Acknowledgment Timeout Compliance,Functional,Verify all events are acknowledged within 10 seconds as per WDX specification,Adapter running; WDX accessible,1,Send CreateRequest to WDX,Request sent with timestamp recorded,High
+,,,,,2,Wait for WDX acknowledgment,Acknowledgment received,
+,,,,,3,Calculate time between request and acknowledgment,Time delta calculated,
+,,,,,4,Verify acknowledgment received within 10 seconds,Time delta <= 10 seconds,
+
+TC_INC_013,Verify Bi-directional Round Trip - Complete Incident Cycle,Functional,Verify complete round-trip: IPL sends incident - WDX accepts - IPL receives acceptance,All services running and connected,1,Send incident CreateRequest from Postman to Adapter,Request sent to /einsatztransfer/erzeugeEinsatz,High
+,,,,,2,Verify Adapter transforms and forwards to WDX,CreateRequest sent to WDX,
+,,,,,3,Wait for WDX to process and return AcceptOperation,AcceptOperation received,
+,,,,,4,Verify Adapter translates AcceptOperation to IPL format,Translation logged,
+,,,,,5,Verify IPL Mock Service receives acceptance confirmation,Acceptance received and logged,
+,,,,,6,Verify complete audit trail in logs,All stages logged,
+
+TC_PAT_001,Verify Incident with Patient Data - transferId Mapping,Functional,Verify patient transferId maps to Patient.id in WDX,Adapter running; Patient data processing enabled (future release),1,Prepare TransferEinsatzRequest including patient data with transferId = PAT_001,Request with patient data prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify patient data is extracted from incident,Patient data identified,
+,,,,,4,Verify Patient.id equals PAT_001 in WDX patient event,Patient ID mapping correct,
+
+TC_PAT_002,Verify Patient Data Mapping - vorname to firstname,Functional,Verify patient vorname maps to Patient.person_data.firstname,Adapter running; Patient data processing enabled,1,Prepare incident with patient vorname = Max,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture patient data in WDX format,Patient event logged,
+,,,,,4,Verify Patient.person_data.firstname equals Max,Firstname mapping correct,
+
+TC_PAT_003,Verify Patient Data Mapping - nachname to lastname,Functional,Verify patient nachname maps to Patient.person_data.lastname,Adapter running; Patient data processing enabled,1,Prepare incident with patient nachname = Mustermann,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture patient data in WDX format,Patient event logged,
+,,,,,4,Verify Patient.person_data.lastname equals Mustermann,Lastname mapping correct,
+
+TC_PAT_004,Verify Patient Data Mapping - geburtsdatum Date Conversion,Functional,Verify geburtsdatum (java.util.Date) converts to google.protobuf.Timestamp,Adapter running; Patient data processing enabled,1,Prepare incident with patient geburtsdatum = 1985-06-15 (java.util.Date format),Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture patient birth_date in WDX Protobuf format,Patient event logged,
+,,,,,4,Verify Patient.person_data.birth_date is valid google.protobuf.Timestamp,Timestamp format correct,
+,,,,,5,Verify Timestamp represents 1985-06-15,Date value preserved after conversion,
+
+TC_PAT_005,Verify Patient Data Mapping - geschlecht Enum Conversion,Functional,Verify geschlecht (GeschlechtEnum) maps to wdx.v1.Person gender enum,Adapter running; Patient data processing enabled,1,Prepare incident with patient geschlecht = MALE (GeschlechtEnum),Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Capture patient gender in WDX format,Patient event logged,
+,,,,,4,Verify Patient.person_data.gender corresponds to MALE in wdx.v1.Person enum,Gender enum mapping correct,
+
+TC_PAT_006,Verify Patient Data Mapping - geschlecht FEMALE Enum,Functional,Verify geschlecht FEMALE maps correctly to WDX gender enum,Adapter running; Patient data processing enabled,1,Prepare incident with patient geschlecht = FEMALE,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify Patient.person_data.gender corresponds to FEMALE,Gender mapping correct,
+
+TC_PAT_007,Verify Patient Address Parsing - wohnAdresse to street,Functional,Verify wohnAdresse free text is parsed to extract street name,Adapter running; Patient data processing enabled,1,Prepare incident with wohnAdresse = Hauptstraße 123,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify Patient.person_data.location.street equals Hauptstraße,Street name extracted correctly,
+
+TC_PAT_008,Verify Patient Address Parsing - wohnAdresse to house_number,Functional,Verify wohnAdresse free text is parsed to extract house number,Adapter running; Patient data processing enabled,1,Prepare incident with wohnAdresse = Hauptstraße 123,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify Patient.person_data.location.house_number equals 123,House number extracted correctly,
+
+TC_PAT_009,Verify Patient Address Parsing - Complex Address Format,Edge,Verify address parsing handles complex formats (e.g. Musterweg 45a),Adapter running; Patient data processing enabled,1,Prepare incident with wohnAdresse = Musterweg 45a,Complex address prepared,Medium
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify street = Musterweg and house_number = 45a,Best-effort parsing handles alphanumeric house number,
+
+TC_PAT_010,Verify Patient Postal Code - wohnPlz to postal_code,Functional,Verify wohnPlz maps to Patient.person_data.location.postal_code with digits extraction,Adapter running; Patient data processing enabled,1,Prepare incident with wohnPlz = 80331,Request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify Patient.person_data.location.postal_code equals 80331,Postal code mapping correct,
+
+TC_PAT_011,Verify Patient Postal Code - Digits Only Extraction,Functional,Verify postal code is extracted as digits only from wohnPlz,Adapter running; Patient data processing enabled,1,Prepare incident with wohnPlz = D-80331 (with prefix),Request prepared,Medium
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify Patient.person_data.location.postal_code equals 80331 (digits only),Digits extracted correctly,
+
+TC_PAT_012,Verify Incident with Complete Patient Data,Functional,Verify incident with all patient fields is correctly processed and mapped,Adapter running; Patient data processing enabled,1,Prepare complete incident with all patient fields (transferId - vorname - nachname - geburtsdatum - geschlecht - wohnAdresse - wohnPlz),Complete request prepared,High
+,,,,,2,Send request to Adapter,Request processed,
+,,,,,3,Verify all patient fields are mapped correctly,All mappings verified in logs,
+,,,,,4,Verify Patient event sent via ise.wdx.patient.v1.WDX3PatientService,Patient event transmitted,
+
+TC_PAT_013,Verify Separate Patient Event Stream,Functional,Verify patient events arrive on separate stream from operation events per WDX spec,Adapter running; Both streams active,1,Send incident with patient data,Incident sent,High
+,,,,,2,Verify operation event sent via WDX3OperationService,Operation on operation stream,
+,,,,,3,Verify patient event sent via WDX3PatientService,Patient on patient stream,
+,,,,,4,Confirm events arrive on independent streams,Stream separation verified,
+
+TC_PAT_014,Verify Patient Event Before Operation Event Processing,Functional,Verify patient events arrive first and are cached before operation events,Adapter running; Patient caching implemented,1,Observe incoming event sequence from WDX,Events received,Medium
+,,,,,2,Verify patient event received first,Patient event arrives first on stream,
+,,,,,3,Verify patient data stored in local cache,Patient data cached,
+,,,,,4,Verify operation event received with patient_id reference,Operation contains patient_id,
+,,,,,5,Verify system combines patient data with operation,Combined event created,
+
+TC_PAT_015,Verify Operation Event Without Matching Patient,Edge,Verify operation processing when no matching patient data found,Adapter running; Empty patient cache,1,Receive operation event with patient_id reference,Operation event received,Medium
+,,,,,2,Check cache for matching patient_id,No patient found in cache,
+,,,,,3,Verify system creates event based on operation data only,Operation-only event created,
+,,,,,4,Verify no error occurs,Processing continues successfully,
+
+TC_UPD_001,Verify Patient Data Update Event Reception,Functional,Verify Adapter can receive patient update events from WDX,Adapter running with patient streaming enabled; Patient data in WDX,1,Create initial patient with transferId = PAT_UPDATE_001,Initial patient created,High
+,,,,,2,Trigger patient update event from WDX (name change),Update event sent by WDX,
+,,,,,3,Verify Adapter receives patient update via patient stream,Update event received,
+,,,,,4,Verify updated patient data is logged,Updated data visible in logs,
+
+TC_UPD_002,Verify Patient Update - Firstname Change,Functional,Verify patient firstname update is correctly received and processed,Adapter running; Existing patient in system,1,Initial patient has vorname = Max,Initial state verified,High
+,,,,,2,Receive patient update with vorname = Maximilian,Update event received,
+,,,,,3,Verify Patient.person_data.firstname now equals Maximilian,Firstname updated correctly,
+
+TC_UPD_003,Verify Patient Update - Lastname Change,Functional,Verify patient lastname update is correctly received and processed,Adapter running; Existing patient in system,1,Initial patient has nachname = Mustermann,Initial state verified,High
+,,,,,2,Receive patient update with nachname = Schmidt,Update event received,
+,,,,,3,Verify Patient.person_data.lastname now equals Schmidt,Lastname updated correctly,
+
+TC_UPD_004,Verify Patient Update - Address Change,Functional,Verify patient address update is correctly received and processed,Adapter running; Existing patient in system,1,Initial patient has wohnAdresse = Hauptstraße 123,Initial address verified,High
+,,,,,2,Receive patient update with wohnAdresse = Nebenstraße 456,Update event received,
+,,,,,3,Verify location.street equals Nebenstraße,Street updated,
+,,,,,4,Verify location.house_number equals 456,House number updated,
+
+TC_UPD_005,Verify Patient Update - Postal Code Change,Functional,Verify patient postal code update is correctly received and processed,Adapter running; Existing patient in system,1,Initial patient has wohnPlz = 80331,Initial postal code verified,High
+,,,,,2,Receive patient update with wohnPlz = 10115,Update event received,
+,,,,,3,Verify location.postal_code equals 10115,Postal code updated,
+
+TC_UPD_006,Verify Patient Update - Multiple Fields Simultaneously,Functional,Verify multiple patient fields can be updated in single event,Adapter running; Existing patient in system,1,Initial patient with known values for all fields,Initial state verified,High
+,,,,,2,Receive patient update with changed vorname - nachname - wohnAdresse,Multi-field update received,
+,,,,,3,Verify all updated fields reflect new values,All fields updated correctly,
+,,,,,4,Verify non-updated fields remain unchanged,Unchanged fields preserved,
+
+TC_UPD_007,Verify Patient Update Translation to IPL Format,Functional,Verify patient updates from WDX are translated to IPL format,Adapter running; IPL Mock Service running,1,Receive patient update event from WDX,Update event received,High
+,,,,,2,Verify Adapter translates update to IPL format,Translation logged,
+,,,,,3,Verify translated update forwarded to IPL Mock Service,IPL receives update,
+,,,,,4,Verify IPL Mock Service logs updated patient data,Update details logged,
+
+TC_UPD_008,Verify Patient Update via GetPatient Operation,Functional,Verify patient data can be retrieved using GetPatient operation,Adapter running; Patient exists in WDX,1,Identify patient with known transferId,Patient ID known,Medium
+,,,,,2,Send GetPatient request to WDX via Adapter,GetPatient request sent,
+,,,,,3,Verify patient data retrieved successfully,Patient data returned,
+,,,,,4,Verify all patient fields present in response,Complete patient data received,
+
+TC_UPD_009,Verify Patient Update Acknowledgment within 10 Seconds,Functional,Verify patient update events are acknowledged within 10 seconds,Adapter running; Timing measurement enabled,1,Receive patient update event from WDX,Update event received with timestamp,High
+,,,,,2,Process the patient update,Update processed,
+,,,,,3,Send acknowledgment to WDX,Acknowledgment sent,
+,,,,,4,Verify acknowledgment sent within 10 seconds of receipt,Timing requirement met,
+
+TC_UPD_010,Verify Patient Update with Date Conversion,Functional,Verify patient birth date update correctly converts between formats,Adapter running; Existing patient in system,1,Initial patient has geburtsdatum = 1985-06-15,Initial date verified,High
+,,,,,2,Receive patient update with geburtsdatum = 1990-12-25,Update event received,
+,,,,,3,Verify java.util.Date converted to google.protobuf.Timestamp,Format conversion correct,
+,,,,,4,Verify Timestamp represents 1990-12-25,Date value correct after conversion,
+
+TC_NEG_001,Verify Incident Without Required sourceMandant,Negative,Verify system behavior when sourceMandant is missing,Adapter running,1,Prepare TransferEinsatzRequest without sourceMandant field,Invalid request prepared,High
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify Adapter error handling,Insufficient information to determine exact error response,
+
+TC_NEG_002,Verify Incident Without Required targetMandant,Negative,Verify system behavior when targetMandant is missing,Adapter running,1,Prepare TransferEinsatzRequest without targetMandant field,Invalid request prepared,High
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify Adapter error handling,Insufficient information to determine exact error response,
+
+TC_NEG_003,Verify Incident Without Required einsatzId,Negative,Verify system behavior when einsatzId is missing,Adapter running,1,Prepare TransferEinsatzRequest without einsatzId field,Invalid request prepared,High
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify Adapter error handling,Insufficient information to determine exact error response,
+
+TC_NEG_004,Verify Patient with Invalid geburtsdatum Format,Negative,Verify system handles invalid date format in geburtsdatum,Adapter running,1,Prepare incident with geburtsdatum = invalid_date_string,Invalid date prepared,Medium
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify date conversion error handling,Insufficient information to determine exact error handling,
+
+TC_NEG_005,Verify Patient with Invalid geschlecht Enum Value,Negative,Verify system handles invalid gender enum value,Adapter running,1,Prepare incident with geschlecht = UNKNOWN_GENDER,Invalid enum prepared,Medium
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify enum mapping error handling,Insufficient information to determine exact error handling,
+
+TC_NEG_006,Verify Patient with Empty wohnAdresse,Edge,Verify system handles empty address field,Adapter running,1,Prepare incident with wohnAdresse = (empty string),Empty address prepared,Medium
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify location.street and location.house_number handling,Fields may be empty or null - behavior not specified,
+
+TC_NEG_007,Verify Patient Address Without House Number,Edge,Verify address parsing when no house number present,Adapter running,1,Prepare incident with wohnAdresse = Hauptstraße (no number),Street only address,Medium
+,,,,,2,Send request to Adapter,Request submitted,
+,,,,,3,Verify location.street = Hauptstraße,Street extracted,
+,,,,,4,Verify location.house_number handling when missing,House number empty or null - best-effort parsing,
+
+TC_NEG_008,Verify WDX Connectivity Failure During Incident Submission,Negative,Verify incident submission behavior when WDX is unreachable,Adapter running; WDX endpoint unreachable,1,Configure Adapter with unreachable WDX endpoint,Network block configured,High
+,,,,,2,Send incident CreateRequest to Adapter,Request submitted,
+,,,,,3,Verify Adapter behavior,Insufficient information - no retry logic in prototype,
+
+TC_NEG_009,Verify Invalid Certificate During WDX Connection,Negative,Verify connection failure with invalid certificates,Invalid certificates in certs/ directory,1,Replace valid certificates with expired/invalid ones,Invalid certs in place,High
+,,,,,2,Start Adapter Integration Service,Service attempts connection,
+,,,,,3,Verify TLS handshake fails,Certificate error logged,
+,,,,,4,Verify connection to WDX not established,Connection fails,
+
+TC_NEG_010,Verify Malformed JSON Incident Request,Negative,Verify system handles malformed JSON payload,Adapter running,1,Send malformed JSON to /einsatztransfer/erzeugeEinsatz,Invalid JSON sent,Medium
+,,,,,2,Verify Adapter response,Insufficient information to determine exact error response,
+
+TC_STREAM_001,Verify WDX Streaming Connection Establishment,Functional,Verify streaming connection to WDX is established with correct filters,Adapter starting; WDX accessible,1,Start Adapter Integration Service,Service starting,High
+,,,,,2,Verify streaming connection initiated to WDX,Connection logged,
+,,,,,3,Verify stream filter configured with enum = NEW,Filter configuration logged,
+,,,,,4,Verify only NEW events are processed,Event filtering working,
+
+TC_STREAM_002,Verify Patient Stream Independent from Operation Stream,Functional,Verify patient and operation events use separate streams,Adapter running; Both streams configured,1,Send incident with patient data,Incident sent,High
+,,,,,2,Verify operation event on WDX3OperationService stream,Operation stream active,
+,,,,,3,Verify patient event on WDX3PatientService stream,Patient stream active,
+,,,,,4,Confirm stream independence,Events on separate channels,
+
+TC_STREAM_003,Verify Stream Recovery After Connection Drop,Edge,Verify stream reconnection after temporary connectivity loss,Adapter running; Stream established,1,Establish active streaming connection,Connection active,Medium
+,,,,,2,Simulate temporary network interruption,Connection dropped,
+,,,,,3,Restore network connectivity,Network restored,
+,,,,,4,Verify stream reconnection,Insufficient information - no retry logic in prototype,
+
+TC_AUTH_001,Verify Certificate-Based Authentication to WDX,Functional,Verify Adapter authenticates using valid TLS certificates,Valid certs in certs/ directory,1,Verify wdx3-test-client.crt present,Certificate present,High
+,,,,,2,Verify wdx3-test-client.pk8 present,Private key present,
+,,,,,3,Start Adapter and connect to WDX,Connection initiated,
+,,,,,4,Verify TLS handshake successful,Authentication successful,
+
+TC_AUTH_002,Verify ise_auth_token in Request Headers,Functional,Verify login token is included in all WDX requests,Adapter configured with auth token,1,Send incident CreateRequest to Adapter,Request processed,High
+,,,,,2,Capture outgoing gRPC request headers,Headers logged,
+,,,,,3,Verify ise_auth_token present in headers,Token included,
+,,,,,4,Verify WDX accepts authenticated request,Request processed by WDX,
+
+TC_AUTH_003,Verify WDX3Header Contains Required Client IDs,Functional,Verify every request includes WDX3Header with sender and receiver IDs,Adapter running,1,Send incident with sourceMandant and targetMandant,Request sent,High
+,,,,,2,Capture WDX request structure,Request logged,
+,,,,,3,Verify WDX3Header.sender_client_id present,Sender ID in header,
+,,,,,4,Verify WDX3Header.receiver_client_id present,Receiver ID in header,
+
+TC_LOG_001,Verify Comprehensive Logging of Message Conversions,Functional,Verify all message conversions are logged for audit trail,Adapter running with logging enabled,1,Send incident through Adapter,Incident processed,Medium
+,,,,,2,Check logs for incoming IPL payload,IPL request logged,
+,,,,,3,Check logs for transformation details,Mapping operations logged,
+,,,,,4,Check logs for outgoing WDX payload,WDX request logged,
+,,,,,5,Verify complete traceable audit trail,Full conversion history available,
+
+TC_LOG_002,Verify Patient Data Logging,Functional,Verify patient data transformations are logged,Adapter running; Patient processing logged,1,Send incident with patient data,Incident sent,Medium
+,,,,,2,Verify patient field mappings logged,All patient fields logged,
+,,,,,3,Verify date conversion logged,geburtsdatum conversion logged,
+,,,,,4,Verify address parsing logged,wohnAdresse parsing logged,

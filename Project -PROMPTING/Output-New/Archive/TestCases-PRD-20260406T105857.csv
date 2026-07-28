@@ -1,0 +1,130 @@
+﻿TID,Category,Description,Pre-conditions,Step#,Step Description,Expected Result,Priority
+SD-F001,Functional,Successful login with standard_user,SauceDemo login page is accessible,1,Navigate to https://www.saucedemo.com/,Login page is displayed,High
+,,,, 2,Enter username: standard_user,Username is entered in field,
+,,,, 3,Enter password: (static password from UI),Password is entered in field,
+,,,, 4,Click Login button,User is redirected to product inventory page,
+
+SD-F002,Functional,Auto-focus on username field,SauceDemo login page loads,1,Navigate to login page,Login page is displayed,Medium
+,,,, 2,Observe cursor position without clicking,Cursor is auto-focused on username field,
+
+SD-F003,Functional,Keyboard-friendly navigation,Login page is displayed,1,Navigate to login page,Login page is displayed,Medium
+,,,, 2,Enter username,Username is entered,
+,,,, 3,Press Tab key,Focus moves to password field,
+,,,, 4,Enter password,Password is entered,
+,,,, 5,Press Tab key,Focus moves to Login button,
+,,,, 6,Press Enter,User navigates through fields and submits form via keyboard,
+
+SD-F004,Functional,Login with performance_glitch_user,Login page accessible,1,Enter username: performance_glitch_user,Username is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Login succeeds after simulated delay (~5-10 seconds),
+
+SD-F005,Functional,Login with problem_user,Login page accessible,1,Enter username: problem_user,Username is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Login succeeds but UI issues appear after login,
+
+SD-F006,Functional,Login with error_user,Login page accessible,1,Enter username: error_user,Username is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Simulated backend/UI errors occur,
+
+SD-F007,Functional,Login with visual_user,Login page accessible,1,Enter username: visual_user,Username is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Login succeeds with visual inconsistencies displayed,
+
+SD-F008,Functional,Verify test credentials displayed on UI,Login page loads,1,Navigate to login page,Login page is displayed,Medium
+,,,, 2,Observe the page content,Predefined test credentials are displayed on UI,
+
+SD-N001,Negative,Login with locked_out_user,Login page accessible,1,Enter username: locked_out_user,Username is entered,High
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Error message: User has been locked out,
+
+SD-N002,Negative,Login with invalid credentials,Login page accessible,1,Enter invalid username,Invalid username is entered,High
+,,,, 2,Enter invalid password,Invalid password is entered,
+,,,, 3,Click Login,Error message: Username and password do not match,
+
+SD-N003,Negative,Login with empty username field,Login page accessible,1,Leave username field empty,Username field remains empty,High
+,,,, 2,Enter any password,Password is entered,
+,,,, 3,Click Login,Error message: Username is required,
+
+SD-N004,Negative,Login with empty password field,Login page accessible,1,Enter valid username,Username is entered,High
+,,,, 2,Leave password field empty,Password field remains empty,
+,,,, 3,Click Login,Error message: Password is required,
+
+SD-N005,Negative,Login with both fields empty,Login page accessible,1,Leave username field empty,Username field remains empty,High
+,,,, 2,Leave password field empty,Password field remains empty,
+,,,, 3,Click Login,Error message displayed (Needs clarification),
+
+SD-N006,Negative,Login with valid username and wrong password,Login page accessible,1,Enter username: standard_user,Username is entered,High
+,,,, 2,Enter incorrect password,Incorrect password is entered,
+,,,, 3,Click Login,Error message: Username and password do not match,
+
+SD-N007,Negative,Login with wrong username and valid password,Login page accessible,1,Enter invalid username,Invalid username is entered,High
+,,,, 2,Enter correct static password,Correct password is entered,
+,,,, 3,Click Login,Error message: Username and password do not match,
+
+SD-B001,Boundary,Login with single character username,Login page accessible,1,Enter single character username,Single character username is entered,Low
+,,,, 2,Enter any password,Password is entered,
+,,,, 3,Click Login,Needs clarification: Character limits not specified,
+
+SD-B002,Boundary,Login with single character password,Login page accessible,1,Enter valid username,Username is entered,Low
+,,,, 2,Enter single character password,Single character password is entered,
+,,,, 3,Click Login,Needs clarification: Password length not specified,
+
+SD-B003,Boundary,Login with maximum length inputs,Login page accessible,1,Enter very long username,Long username is entered,Low
+,,,, 2,Enter very long password,Long password is entered,
+,,,, 3,Click Login,Needs clarification: Max limits not specified,
+
+SD-E001,Edge Case,Login with whitespace in username,Login page accessible,1,Enter username with leading/trailing spaces,Username with spaces is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Needs clarification: Whitespace handling not specified,
+
+SD-E002,Edge Case,Login with special characters in username,Login page accessible,1,Enter username with special characters,Special character username is entered,Medium
+,,,, 2,Enter any password,Password is entered,
+,,,, 3,Click Login,Needs clarification: Special char handling not specified,
+
+SD-E003,Edge Case,Case sensitivity of username,Login page accessible,1,Enter username: STANDARD_USER (uppercase),Uppercase username is entered,Medium
+,,,, 2,Enter correct password,Password is entered,
+,,,, 3,Click Login,Needs clarification: Case sensitivity not specified,
+
+SD-E004,Edge Case,Case sensitivity of password,Login page accessible,1,Enter valid username,Username is entered,Medium
+,,,, 2,Enter password in different case,Password in different case is entered,
+,,,, 3,Click Login,Needs clarification: Password case sensitivity not specified,
+
+SD-E005,Edge Case,Rapid multiple login attempts,Login page accessible,1,Enter valid credentials,Credentials are entered,Medium
+,,,, 2,Click Login button multiple times rapidly,Needs clarification: Rate limiting not specified,
+
+SD-E006,Edge Case,Browser back button after login,User has successfully logged in,1,Login successfully,User is on inventory page,Low
+,,,, 2,Press browser back button,Needs clarification: Session behavior not specified,
+
+SD-P001,Performance,Verify page load time,Network connection available,1,Clear browser cache,Browser cache is cleared,High
+,,,, 2,Navigate to login page,Login page loads,
+,,,, 3,Measure page load time,Page loads within 2 seconds,
+
+SD-P002,Performance,Verify login response for normal users,Login page accessible,1,Enter standard_user credentials,Credentials are entered,High
+,,,, 2,Click Login,Login button is clicked,
+,,,, 3,Measure response time,Login response < 1 second,
+
+SD-P003,Performance,Verify delayed response for performance_glitch_user,Login page accessible,1,Enter performance_glitch_user credentials,Credentials are entered,Medium
+,,,, 2,Click Login,Login button is clicked,
+,,,, 3,Measure response time,Simulated delay of ~5-10 seconds,
+
+SD-A001,Accessibility,Verify proper labels for inputs,Login page accessible,1,Inspect username input field,Username field has proper label,Medium
+,,,, 2,Inspect password input field,Proper labels exist for inputs,
+
+SD-A002,Accessibility,Verify keyboard navigation support,Login page accessible,1,Use Tab key to navigate through elements,Focus moves sequentially through elements,Medium
+,,,, 2,Use Enter to submit,Basic keyboard navigation is supported,
+
+SD-A003,Accessibility,Verify color contrast for readability,Login page accessible,1,Inspect text and background colors,Colors are visible,Medium
+,,,, 2,Check contrast ratio,Color contrast provides readability,
+
+SD-U001,UI,Verify minimalist UI design,Login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,, 2,Observe UI elements,Minimalist UI design displayed,
+
+SD-U002,UI,Verify center-aligned login card,Login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,, 2,Observe login card position,Login card is center-aligned,
+
+SD-U003,UI,Verify clear call-to-action button,Login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,, 2,Observe Login button,Clear call-to-action button is visible,
+
+SD-U004,UI,Verify credential hints visibility,Login page accessible,1,Navigate to login page,Login page is displayed,Low
+,,,, 2,Observe credential information,Readable credential hints displayed,
+

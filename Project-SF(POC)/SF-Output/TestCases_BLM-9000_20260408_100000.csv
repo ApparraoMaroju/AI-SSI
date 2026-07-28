@@ -1,0 +1,90 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC-001,Verify Integration License User Creation in Sandbox,Functional,Validate that a new user with Salesforce Integration license can be created successfully,Access to Salesforce Sandbox with System Admin privileges; Salesforce Integration license available,1,Navigate to Salesforce Setup > Users,Users list page displays,High
+,,,,,2,Click 'New User' button,New User form opens,
+,,,,,3,Select 'Salesforce Integration' as User License,License type is selectable,
+,,,,,4,Fill in required user details (Name Email Username Alias),Form accepts all inputs,
+,,,,,5,Save the user,User is created successfully with Salesforce Integration license,
+,,,,,,,,
+TC-002,Verify Permission Set Assignment to Integration User,Functional,Validate that all Copado-required permission sets can be assigned to Integration license user,TC-001 completed; Copado permission sets available in Sandbox,1,Navigate to Setup > Users > Select Integration User,User detail page displays,High
+,,,,,2,Click 'Permission Set Assignments',Permission Set Assignments section opens,
+,,,,,3,Click 'Edit Assignments',Available permission sets display,
+,,,,,4,Assign all Copado-related permission sets (matching current API User),Permission sets are selectable,
+,,,,,5,Save assignments,All permission sets assigned successfully without license restriction errors,
+,,,,,,,,
+TC-003,Verify Connected App Access Configuration,Functional,Validate Integration User can be granted Connected App access for Copado,TC-002 completed; Copado Connected App exists,1,Navigate to Setup > Connected Apps > Manage Connected Apps,Connected Apps list displays,High
+,,,,,2,Select Copado Connected App,App details page opens,
+,,,,,3,Click 'Manage Profiles' or 'Manage Permission Sets',Profile/Permission Set assignment page opens,
+,,,,,4,Verify Integration User's profile/permission set has access,Access is granted or can be added,
+,,,,,5,Save configuration,Connected App access configured for Integration User,
+,,,,,,,,
+TC-004,Verify Copado Deployment Execution with Integration User,Functional,Validate that Copado deployment runs successfully using Integration license user,TC-001 TC-002 TC-003 completed; Copado deployment pipeline configured,1,Login to Copado as Integration User or configure Copado to use Integration User,Copado accessible/configured,High
+,,,,,2,Navigate to Copado Deployment Pipeline,Pipeline interface displays,
+,,,,,3,Select a deployment with metadata changes,Deployment selected,
+,,,,,4,Execute deployment to target environment,Deployment initiates,
+,,,,,5,Monitor deployment progress,Deployment completes successfully without permission or license errors,
+,,,,,,,,
+TC-005,Verify Copado Commit Operation with Integration User,Functional,Validate that Copado commit functionality works with Integration license user,TC-001 TC-002 TC-003 completed; Source control configured,1,Navigate to Copado User Story or Commit interface,Interface loads successfully,High
+,,,,,2,Select metadata components for commit,Components selectable,
+,,,,,3,Execute commit operation,Commit process initiates,
+,,,,,4,Verify commit completion,Commit completes successfully; changes reflected in repository,
+,,,,,,,,
+TC-006,Verify Copado Promotion with Integration User,Functional,Validate that Copado promotion functionality works with Integration license user,TC-005 completed; Committed changes available for promotion,1,Navigate to Copado Promotion interface,Promotion interface displays,High
+,,,,,2,Select User Story or changes to promote,Items selected for promotion,
+,,,,,3,Configure promotion target environment,Target environment configured,
+,,,,,4,Execute promotion,Promotion completes successfully,
+,,,,,,,,
+TC-007,Verify Copado Back Promotion with Integration User,Functional,Validate that Copado back promotion functionality works with Integration license user,TC-006 completed; Changes available for back promotion,1,Navigate to Copado Back Promotion interface,Interface displays,High
+,,,,,2,Select changes for back promotion,Changes selected,
+,,,,,3,Execute back promotion,Back promotion initiates,
+,,,,,4,Verify completion,Back promotion completes successfully without errors,
+,,,,,,,,
+TC-008,Verify Copado Validation Job with Integration User,Functional,Validate that Copado validation jobs execute successfully with Integration license user,TC-001 TC-002 TC-003 completed; Validation job configured,1,Navigate to Copado Continuous Integration or Jobs interface,Jobs interface displays,High
+,,,,,2,Select or trigger a validation job,Validation job selected,
+,,,,,3,Execute validation job,Job initiates,
+,,,,,4,Monitor job execution,Validation job completes successfully,
+,,,,,,,,
+TC-009,Verify Copado CI Job Execution with Integration User,Functional,Validate that Copado CI jobs run successfully with Integration license user,TC-001 TC-002 TC-003 completed; CI job configured,1,Navigate to Copado CI Jobs,CI Jobs interface displays,High
+,,,,,2,Trigger or schedule a CI job,CI job triggered,
+,,,,,3,Monitor CI job progress,Job executes without API or permission errors,
+,,,,,4,Verify job results,CI job completes successfully with expected results,
+,,,,,,,,
+TC-010,Verify API Authentication with Integration User,Functional,Validate that API authentication works correctly for system-to-system automation,Integration User created with Connected App access,1,Attempt API login using Integration User credentials,Authentication request sent,High
+,,,,,2,Verify OAuth token generation,Access token generated successfully,
+,,,,,3,Execute sample API call (e.g. metadata retrieve),API call executes,
+,,,,,4,Verify API response,Valid response received without authentication errors,
+,,,,,,,,
+TC-011,Verify Integration License Restrictions - Negative Test,Negative,Validate that Integration license cannot access UI-only features (expected limitation),Integration User created,1,Attempt to login to Salesforce UI using Integration User,Login attempt made,Medium
+,,,,,2,Verify access restriction,UI access denied or limited as per license restrictions (expected behavior),
+,,,,,,,,
+TC-012,Verify Permission Set Incompatibility Detection,Negative,Validate system behavior when assigning incompatible permission sets,Integration User created; Some permission sets may have license restrictions,1,Navigate to Integration User's Permission Set Assignments,Assignments page displays,Medium
+,,,,,2,Attempt to assign permission sets with features not supported by Integration license,Assignment attempted,
+,,,,,3,Observe system response,Clear error message displayed indicating license incompatibility,
+,,,,,,,,
+TC-013,Verify Production License Switch,Functional,Validate successful license switch from Salesforce to Salesforce Integration in Production,All Sandbox tests passed (TC-001 to TC-010); Production access available; Backup/rollback plan ready,1,Navigate to Production Setup > Users,Users list displays,Critical
+,,,,,2,Locate Copado API User,User found,
+,,,,,3,Edit User and change license from 'Salesforce' to 'Salesforce Integration',License dropdown available,
+,,,,,4,Save changes,License changed successfully OR error displayed if not feasible,
+,,,,,5,If successful verify user status is Active,User remains active with new license,
+,,,,,,,,
+TC-014,Verify Post-Migration Copado Functionality,Functional,Validate all Copado functions work after Production license switch,TC-013 completed successfully,1,Execute a test deployment in Production,Deployment initiates,Critical
+,,,,,2,Execute a test commit,Commit completes successfully,
+,,,,,3,Verify CI jobs are running,CI jobs execute without errors,
+,,,,,4,Monitor system for 24 hours,No automated job failures related to Integration User,
+,,,,,,,,
+TC-015,Verify Fallback - New Production Integration User Creation,Functional,Validate alternative path if existing user cannot be migrated,Decision made to create new user; Production admin access available,1,Create new user with Salesforce Integration license in Production,New user created,High
+,,,,,2,Assign all required permission sets,Permissions assigned,
+,,,,,3,Configure Connected App access,Access configured,
+,,,,,4,Update Copado configuration to use new user,Configuration updated,
+,,,,,5,Execute test deployment,Deployment succeeds with new user,
+,,,,,,,,
+TC-016,Verify Documentation Completeness,Functional,Validate that Salesforce-Jira-Copado integration documentation is complete and audit-ready,Documentation created/updated,1,Access documentation in Confluence,Documentation accessible,High
+,,,,,2,Verify documentation follows established structured layout,Format matches reference template (Account Team Management Documentation),
+,,,,,3,Verify all integration components are documented (Salesforce Jira Copado),All three systems' integration details present,
+,,,,,4,Verify user setup and configuration guide exists,Guide is complete,
+,,,,,5,Verify permission set documentation exists,All permission sets documented,
+,,,,,6,Verify troubleshooting guide exists,Guide covers common issues,
+,,,,,,,,
+TC-017,Verify Metadata Retrieval API with Integration User,Functional,Validate that metadata can be retrieved via API using Integration license user,TC-001 TC-002 TC-003 completed,1,Configure API call for metadata retrieval,API call configured,High
+,,,,,2,Execute metadata describe call,Call executes,
+,,,,,3,Execute metadata list call for specific types,Call returns metadata list,
+,,,,,4,Execute metadata retrieve for specific components,Components retrieved successfully,

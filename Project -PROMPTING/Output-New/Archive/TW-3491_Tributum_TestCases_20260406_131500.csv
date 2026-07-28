@@ -1,0 +1,103 @@
+# Test Cases - TW-3491 Processing Status Tile & Tributum Features
+
+## Anti-Hallucination Compliance
+
+### Verified Facts (From Provided Documents)
+
+**TW-3491.md:**
+- New tile named "Processing status" (Bearbeitungsstatus) is added to dashboard
+- Tile displays statuses of actions: saved, for approval, approved
+- When tile is activated, a pop-up appears showing current actions being processed
+- Users can select an area in pop-up to navigate to original mask for continuing release process
+- Performance considerations - separate backend endpoint mentioned
+
+**Tributum.md:**
+- Search functionality: display matching results based on valid search criteria
+- Search results include: total count, pagination, scrollbars
+- Persistence of search results after navigation
+- Reset (Zurücksetzen) functionality: clears all search inputs and results
+- Sorting functionality: sorting data across columns
+- Column customization: enabling/disabling columns
+- Edit & Create operations based on user roles (Viewer/Writer/Admin) - NEEDS CLARIFICATION
+
+### Missing / Unknown Information
+- API endpoints: Not specified in requirements
+- Validation rules: Not specified in requirements
+- Error messages: Not specified in requirements
+- Valid/Invalid search input values: Not specified in requirements
+- Browser/Device/OS requirements: Not specified in requirements
+- Role-specific access behavior (Viewer/Writer/Admin): NEEDS CLARIFICATION
+- Performance thresholds: Not specified in requirements
+- Specific UI element identifiers: Not specified in requirements
+
+### Self-Validation Check
+✓ All test cases derived ONLY from verified facts
+✓ No invented features, APIs, error codes, or behavior
+✓ Missing information explicitly marked as "Not specified in requirements"
+✓ Items requiring clarification marked as "NEEDS CLARIFICATION"
+
+---
+
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TW-3491-TC001,Verify Processing Status Tile Present on Dashboard,Functional,Verify that a new tile named "Processing status" (Bearbeitungsstatus) is added to the dashboard,User is logged in and has access to dashboard,1,Navigate to the dashboard page,Dashboard page loads,High
+,,,,,2,Observe the dashboard tiles,A tile named "Processing status" (Bearbeitungsstatus) is present on the dashboard,
+
+TW-3491-TC002,Verify Processing Status Tile Displays Action Statuses,Functional,Verify that the tile displays statuses of actions: saved - for approval - and approved,User is logged in and Processing status tile is visible on dashboard,1,Navigate to the dashboard page,Dashboard page loads with Processing status tile visible,High
+,,,,,2,Observe the Processing status tile content,Tile displays status: saved,
+,,,,,3,Observe the Processing status tile content,Tile displays status: for approval,
+,,,,,4,Observe the Processing status tile content,Tile displays status: approved,
+
+TW-3491-TC003,Verify Pop-up Appears When Tile is Activated,Functional,Verify that when the Processing status tile is activated a pop-up appears showing current actions being processed,User is logged in and Processing status tile is visible on dashboard,1,Navigate to the dashboard page,Dashboard page loads,High
+,,,,,2,Locate the Processing status tile,Tile is visible on dashboard,
+,,,,,3,Activate (click) the Processing status tile,A pop-up appears,
+,,,,,4,Observe the pop-up content,Pop-up shows current actions being processed,
+
+TW-3491-TC004,Verify Navigation from Pop-up to Original Mask,Functional,Verify that users can select an area in the pop-up to navigate to the original mask for continuing the release process,User is logged in and Processing status pop-up is open with actions displayed,1,Open the Processing status tile pop-up,Pop-up displays with actions,High
+,,,,,2,Identify selectable area in the pop-up,Selectable areas are present in the pop-up,
+,,,,,3,Select an area in the pop-up,Selection is registered,
+,,,,,4,Observe navigation behavior,User is navigated to the original mask for continuing the release process,
+
+TW-3491-TC005,Verify Search Displays Matching Results,Functional,Verify that search functionality displays matching results based on valid search criteria,Application UI for Search is available and data exists to support search results,1,Navigate to the search screen,Search screen is displayed,High
+,,,,,2,Enter valid search criteria (Not specified in requirements - use available test data),Search criteria is entered,
+,,,,,3,Trigger the search,Matching results are displayed based on valid search criteria,
+
+TW-3491-TC006,Verify Search Results Display Total Count,Functional,Verify that search results include total count of results,Search has been executed with matching results,1,Execute a search with valid criteria,Search results are displayed,Medium
+,,,,,2,Observe the results section,Total count of results is displayed,
+
+TW-3491-TC007,Verify Search Results Pagination,Functional,Verify that search results include pagination functionality,Search has been executed with results requiring pagination,1,Execute a search returning multiple pages of results,Search results are displayed,Medium
+,,,,,2,Observe the results section,Pagination controls are present,
+,,,,,3,Navigate through pagination,Results paginate correctly,
+
+TW-3491-TC008,Verify Search Results Scrollbars,Functional,Verify that search results include scrollbars when needed,Search has been executed with results requiring scrolling,1,Execute a search returning results that exceed visible area,Search results are displayed,Medium
+,,,,,2,Observe the results section,Scrollbars are present for result navigation,
+
+TW-3491-TC009,Verify Search Results Persistence After Navigation,Functional,Verify that search results persist after navigation,Search has been executed with results displayed,1,Execute a search with valid criteria,Search results are displayed,Medium
+,,,,,2,Navigate away from the search results page,Navigation occurs,
+,,,,,3,Return to the search results page,Search results are persisted and displayed,
+
+TW-3491-TC010,Verify Reset Functionality Clears Search Inputs,Functional,Verify that Reset (Zurücksetzen) functionality clears all search inputs,Search inputs have been entered,1,Navigate to the search screen,Search screen is displayed,High
+,,,,,2,Enter search criteria in input fields,Search inputs are populated,
+,,,,,3,Click Reset (Zurücksetzen) button,All search inputs are cleared,
+
+TW-3491-TC011,Verify Reset Functionality Clears Search Results,Functional,Verify that Reset (Zurücksetzen) functionality clears all search results,Search has been executed with results displayed,1,Execute a search with valid criteria,Search results are displayed,High
+,,,,,2,Click Reset (Zurücksetzen) button,All search results are cleared,
+
+TW-3491-TC012,Verify Sorting Functionality Across Columns,Functional,Verify that sorting functionality sorts data across columns,Search results or data grid is displayed with sortable columns,1,Navigate to screen with sortable data columns,Data is displayed in columns,Medium
+,,,,,2,Click on a column header to sort,Data is sorted by that column,
+,,,,,3,Click on a different column header to sort,Data is sorted by the new column,
+
+TW-3491-TC013,Verify Column Customization - Enable Columns,Functional,Verify that users can enable columns in column customization,Column customization option is available,1,Navigate to screen with column customization,Screen is displayed,Medium
+,,,,,2,Access column customization options,Column customization interface is displayed,
+,,,,,3,Enable a disabled column,Column becomes visible in the data display,
+
+TW-3491-TC014,Verify Column Customization - Disable Columns,Functional,Verify that users can disable columns in column customization,Column customization option is available with columns enabled,1,Navigate to screen with column customization,Screen is displayed,Medium
+,,,,,2,Access column customization options,Column customization interface is displayed,
+,,,,,3,Disable an enabled column,Column is hidden from the data display,
+
+TW-3491-TC015,Verify Edit Operations Based on User Role,Functional,Verify Edit operations based on user roles (Viewer/Writer/Admin),User role is configured - Role-specific behavior NEEDS CLARIFICATION,1,Login with specific user role,User is logged in with assigned role,High
+,,,,,2,Navigate to screen with Edit functionality,Screen is displayed,
+,,,,,3,Attempt Edit operation,Edit operation behavior depends on user role (NEEDS CLARIFICATION - specific permissions not defined),
+
+TW-3491-TC016,Verify Create Operations Based on User Role,Functional,Verify Create operations based on user roles (Viewer/Writer/Admin),User role is configured - Role-specific behavior NEEDS CLARIFICATION,1,Login with specific user role,User is logged in with assigned role,High
+,,,,,2,Navigate to screen with Create functionality,Screen is displayed,
+,,,,,3,Attempt Create operation,Create operation behavior depends on user role (NEEDS CLARIFICATION - specific permissions not defined),

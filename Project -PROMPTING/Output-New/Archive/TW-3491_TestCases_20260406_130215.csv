@@ -1,0 +1,36 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TW-3491-TC001,Verify Processing Status Tile Visibility on Dashboard,Functional,Verify that the new tile named "Processing status" (Bearbeitungsstatus) is displayed on the dashboard,User is logged in with valid credentials and has access to dashboard,1,Launch the application and login with valid credentials,User is logged in successfully,High
+,,,,,2,Navigate to the dashboard page,Dashboard page loads completely,
+,,,,,3,Scan the dashboard for available tiles,All dashboard tiles are visible,
+,,,,,4,Locate the "Processing status" (Bearbeitungsstatus) tile,New tile named "Processing status" is present on the dashboard,
+,,,,,5,Verify the tile displays summary information,Tile shows overview of actions currently being processed,
+
+TW-3491-TC002,Verify Processing Status Tile Shows Correct Action Statuses,Functional,Verify that the tile displays status of actions: saved - for approval - and approved,User is logged in and actions exist in various statuses (saved - for approval - approved),1,Navigate to the dashboard page,Dashboard page loads successfully,High
+,,,,,2,Locate the "Processing status" tile on dashboard,Tile is visible and accessible,
+,,,,,3,Verify "Saved" status is displayed on the tile,Saved status count/indicator is shown,
+,,,,,4,Verify "For Approval" status is displayed on the tile,For approval status count/indicator is shown,
+,,,,,5,Verify "Approved" status is displayed on the tile,Approved status count/indicator is shown,
+,,,,,6,Verify all three statuses are clearly visible and distinguishable,All action statuses are displayed with clear differentiation,
+
+TW-3491-TC003,Verify Pop-up Display When Processing Status Tile is Activated,Functional,Verify that activating the tile opens a pop-up with details of actions being processed,User is logged in and Processing status tile is visible on dashboard,1,Navigate to the dashboard page,Dashboard page loads successfully,High
+,,,,,2,Locate the "Processing status" tile,Tile is visible on dashboard,
+,,,,,3,Click/Activate the "Processing status" tile,Click action is registered,
+,,,,,4,Verify a pop-up window appears,Pop-up is displayed on screen,
+,,,,,5,Verify pop-up contains list of actions being processed,Actions with processing status details are shown in the pop-up,
+,,,,,6,Verify each action shows its current status (saved/for approval/approved),Status details are visible for each listed action,
+,,,,,7,Verify pop-up can be closed,Pop-up closes and returns to dashboard view,
+
+TW-3491-TC004,Verify Navigation from Pop-up to Original Mask for Release Process,Functional,Verify users can select an area in the pop-up to navigate to the original mask for continuing the release process,User is logged in and Processing status pop-up is open with actions listed,1,Open the Processing status tile pop-up from dashboard,Pop-up displays with list of actions,High
+,,,,,2,Identify the selectable areas within the pop-up,Clickable/selectable areas are visible for each action,
+,,,,,3,Click on a selectable action/area in the pop-up,Selection is registered,
+,,,,,4,Verify navigation to the original mask occurs,User is redirected to the original mask/form for the selected action,
+,,,,,5,Verify the original mask displays the action details,Correct action data is loaded in the mask,
+,,,,,6,Verify user can continue the release process from the mask,Release process functionality is accessible and operational,
+
+TW-3491-TC005,Verify Performance of Processing Status Tile Data Loading,Performance,Verify that the Processing status tile and pop-up load efficiently with acceptable performance,User is logged in and system has multiple actions in processing state,1,Clear browser cache and cookies,Cache is cleared,Medium
+,,,,,2,Navigate to the dashboard page,Dashboard begins loading,
+,,,,,3,Measure the time for Processing status tile to load,Tile loads without significant delay (performance acceptable - specific threshold not specified),
+,,,,,4,Click on the Processing status tile to open pop-up,Pop-up loading is initiated,
+,,,,,5,Measure the time for pop-up data to load,Pop-up displays data without noticeable performance degradation,
+,,,,,6,Verify data is retrieved from backend endpoint efficiently,No timeout errors or excessive loading times occur,
+,,,,,7,Verify tile and pop-up remain responsive with large data sets,System handles multiple pending actions without freezing or lag,

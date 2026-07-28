@@ -1,0 +1,102 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC_TW3491_001,Verify Processing Status Tile is Displayed on Dashboard,Functional,Verify that the Processing Status (Bearbeitungsstatus) tile is visible on the dashboard,User is logged in and has access to the dashboard,1,Navigate to the application dashboard,Dashboard page loads successfully,High
+,,,,,2,Locate the Processing Status (Bearbeitungsstatus) tile on the dashboard,Processing Status tile is displayed on the dashboard,
+,,,,,3,Verify the tile name is displayed as Bearbeitungsstatus,Tile displays the correct name Bearbeitungsstatus,
+
+TC_TW3491_002,Verify Processing Status Tile Shows Saved Status,Functional,Verify that the tile displays actions with saved status (save icon),User is logged in; At least one record exists in saved state with save icon,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,,2,Observe the Processing Status tile,Tile shows indicator for saved status actions,
+,,,,,3,Verify saved status is represented with save icon indicator,Saved status (save icon) is visible on the tile,
+
+TC_TW3491_003,Verify Processing Status Tile Shows For Approval Status,Functional,Verify that the tile displays actions with for approval status (single orange tick icon),User is logged in; At least one record exists in for approval state,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,,2,Observe the Processing Status tile,Tile shows indicator for for approval status actions,
+,,,,,3,Verify for approval status is represented with single orange tick icon indicator,For approval status (single orange tick) is visible on the tile,
+
+TC_TW3491_004,Verify Processing Status Tile Shows Approved Status,Functional,Verify that the tile displays actions with approved status (green double tick icon),User is logged in; At least one record exists in approved state,1,Navigate to the dashboard,Dashboard is displayed,High
+,,,,,2,Observe the Processing Status tile,Tile shows indicator for approved status actions,
+,,,,,3,Verify approved status is represented with green double tick icon indicator,Approved status (green double tick) is visible on the tile,
+
+TC_TW3491_005,Verify Pop-up Opens When Tile is Activated,Functional,Verify that clicking/activating the Processing Status tile opens a pop-up with action details,User is logged in and Processing Status tile is visible on dashboard,1,Navigate to the dashboard,Dashboard with Processing Status tile is displayed,High
+,,,,,2,Click on the Processing Status (Bearbeitungsstatus) tile,Pop-up window opens,
+,,,,,3,Verify the pop-up displays information about actions being processed,Pop-up shows details of current actions being processed,
+
+TC_TW3491_006,Verify Pop-up Displays Saved Actions with Save Icon,Functional,Verify that the pop-up lists actions in saved state with appropriate save icon,User is logged in; Records exist in saved state; Pop-up is accessible,1,Navigate to dashboard and activate Processing Status tile,Pop-up opens displaying actions,High
+,,,,,2,Locate actions with saved status in the pop-up,Actions with saved status are listed in the pop-up,
+,,,,,3,Verify saved actions display save icon,Save icon is displayed for saved status actions,
+,,,,,4,Verify saved action details are visible including area information,Action details show area and relevant information for selection,
+
+TC_TW3491_007,Verify Pop-up Displays For Approval Actions with Orange Tick,Functional,Verify that the pop-up lists actions sent for approval with single orange tick icon,User is logged in; Records exist in for approval state; Pop-up is accessible,1,Navigate to dashboard and activate Processing Status tile,Pop-up opens displaying actions,High
+,,,,,2,Locate actions with for approval status in the pop-up,Actions sent for approval are listed in the pop-up,
+,,,,,3,Verify for approval actions display single orange tick icon,Single orange tick icon is displayed for for approval status actions,
+,,,,,4,Verify for approval action details are visible including area information,Action details show area and relevant information for selection,
+
+TC_TW3491_008,Verify Pop-up Displays Approved Actions with Green Double Tick,Functional,Verify that the pop-up lists approved actions with green double tick icon,User is logged in; Records exist in approved state; Pop-up is accessible,1,Navigate to dashboard and activate Processing Status tile,Pop-up opens displaying actions,High
+,,,,,2,Locate actions with approved status in the pop-up,Approved actions are listed in the pop-up,
+,,,,,3,Verify approved actions display green double tick icon,Green double tick icon is displayed for approved status actions,
+,,,,,4,Verify approved action details are visible including area information,Action details show area and relevant information for selection,
+
+TC_TW3491_009,Verify Navigation to Original Mask from Pop-up,Functional,Verify that selecting an area in the pop-up navigates user to the original mask (Bearbeiten page),User is logged in; Pop-up is displayed with at least one action available,1,Navigate to dashboard and activate Processing Status tile,Pop-up opens with actions listed,High
+,,,,,2,Select an area/action entry in the pop-up,Selection is registered,
+,,,,,3,Verify navigation to the original mask (Bearbeiten page) is initiated,User is navigated to the Bearbeiten (Edit) page,
+,,,,,4,Verify the correct record is displayed in the Bearbeiten page,Selected record is displayed with updated data in left column and production data in right column,
+
+TC_TW3491_010,Verify User Can Continue Release Process After Navigation,Functional,Verify that after navigating from pop-up user can continue the release process,Writer or Admin user logged in; Action in saved state selected from pop-up; User navigated to Bearbeiten page,1,From Processing Status pop-up select a saved action,Navigation to Bearbeiten page occurs,High
+,,,,,2,Verify the record is displayed in Bearbeiten page,Record is displayed with updated data in left column,
+,,,,,3,Verify Send for Approval button is enabled,Send for Approval button is available and enabled,
+,,,,,4,Click Send for Approval button,Record is sent for approval successfully,
+,,,,,5,Verify status changes to for approval with single orange tick icon,Record now shows single orange tick icon indicating sent for approval status,
+
+TC_TW3491_011,Verify Viewer User Can Access Processing Status Tile,Functional,Verify that Viewer user can view the Processing Status tile and access the pop-up,Viewer user is logged in with view-only access,1,Login as Viewer user,User is logged in successfully,Medium
+,,,,,2,Navigate to the dashboard,Dashboard is displayed with Processing Status tile visible,
+,,,,,3,Activate the Processing Status tile,Pop-up opens showing actions being processed,
+,,,,,4,Verify Viewer can see all action statuses in pop-up,All statuses (saved - for approval - approved) are visible in view mode,
+
+TC_TW3491_012,Verify Viewer User Navigation Results in View-Only Mode,Functional,Verify that when Viewer user navigates from pop-up to original mask all fields are disabled,Viewer user logged in; Pop-up displayed with actions,1,Login as Viewer user and navigate to dashboard,Dashboard displayed,Medium
+,,,,,2,Activate Processing Status tile and select an action,Navigation to Bearbeiten page occurs,
+,,,,,3,Verify Bearbeiten page is displayed in view mode only,Bearbeiten page opens in view-only mode,
+,,,,,4,Verify all fields are disabled for Viewer user,All input fields are disabled and non-editable,
+,,,,,5,Verify only Schließen (Close) button is enabled,Only Close button is enabled; other action buttons are disabled,
+
+TC_TW3491_013,Verify Writer User Can Approve Record After Navigation,Functional,Verify that Writer user can approve a record after navigating from Processing Status pop-up,Writer user logged in; Record in for approval state exists sent by another user,1,Login as Writer user and navigate to dashboard,Dashboard displayed,High
+,,,,,2,Activate Processing Status tile,Pop-up opens with for approval actions visible,
+,,,,,3,Select a for approval action sent by another user,Navigation to Bearbeiten page occurs,
+,,,,,4,Verify Approve button is enabled,Approve button is available and enabled,
+,,,,,5,Click Approve button,Record is approved successfully,
+,,,,,6,Verify status changes to approved with green double tick icon,Green double tick icon is displayed indicating approved status,
+
+TC_TW3491_014,Verify Writer User Can Reject Record After Navigation,Functional,Verify that Writer user can reject a record after navigating from Processing Status pop-up,Writer user logged in; Record in for approval state exists sent by another user,1,Login as Writer user and navigate to dashboard,Dashboard displayed,High
+,,,,,2,Activate Processing Status tile,Pop-up opens with for approval actions visible,
+,,,,,3,Select a for approval action sent by another user,Navigation to Bearbeiten page occurs,
+,,,,,4,Verify Reject button is enabled,Reject button is available and enabled,
+,,,,,5,Enter rejection comments and click Reject button,Record is rejected with comments stored,
+,,,,,6,Verify status returns to saved state with save icon,Save icon is displayed and record becomes editable again,
+,,,,,7,Verify rejection comments are visible,Rejection comments are displayed on the record,
+
+TC_TW3491_015,Verify Pop-up Behavior With No Actions Being Processed,Edge,Verify the pop-up display when there are no actions in any processing state,User is logged in; No records exist in saved - for approval - or approved states,1,Ensure no records are in processing states (saved - for approval - approved),System has no pending actions,Medium
+,,,,,2,Navigate to the dashboard,Dashboard with Processing Status tile is displayed,
+,,,,,3,Activate the Processing Status tile,Pop-up opens,
+,,,,,4,Verify the pop-up content with no actions,Insufficient information to determine exact empty state message or behavior,
+
+TC_TW3491_016,Verify All Three Statuses Display Simultaneously in Pop-up,Functional,Verify pop-up can display saved - for approval - and approved actions together,User is logged in; Records exist in all three states (saved - for approval - approved),1,Ensure records exist in saved - for approval - and approved states,Multiple records in different states exist,High
+,,,,,2,Navigate to dashboard and activate Processing Status tile,Pop-up opens,
+,,,,,3,Verify saved actions with save icon are displayed,Saved actions visible with save icon,
+,,,,,4,Verify for approval actions with orange tick are displayed,For approval actions visible with single orange tick,
+,,,,,5,Verify approved actions with green double tick are displayed,Approved actions visible with green double tick,
+
+TC_TW3491_017,Verify Admin User Full Access After Navigation from Pop-up,Functional,Verify Admin user maintains full access including Flow execution after navigation,Admin user logged in; Record in approved state exists,1,Login as Admin user and navigate to dashboard,Dashboard displayed,Medium
+,,,,,2,Activate Processing Status tile,Pop-up opens with actions visible,
+,,,,,3,Select an approved action to navigate,Navigation to Bearbeiten page occurs,
+,,,,,4,Verify Admin has access to Flow execution option,Flow execution functionality is available for Admin user,
+
+TC_TW3491_018,Verify Sender Cannot Approve Own Record After Navigation,Negative,Verify that the user who sent record for approval cannot approve their own record,Writer user logged in; User has a record in for approval state that they sent,1,Login as Writer user who has sent a record for approval,Dashboard displayed,High
+,,,,,2,Activate Processing Status tile,Pop-up opens,
+,,,,,3,Select own record that is in for approval state,Navigation to Bearbeiten page occurs,
+,,,,,4,Verify Approve and Reject buttons are disabled for sender,Only Close button is enabled for the sender of the record,
+,,,,,5,Verify message Record not editable is displayed,Record not editable message is shown,
+
+TC_TW3491_019,Verify Updated Fields Highlighted After Navigation,Functional,Verify that updated fields are highlighted in green when viewing record via pop-up navigation,User logged in; Record with saved edits exists showing updated fields,1,Navigate via Processing Status pop-up to a record in saved state,Bearbeiten page opens,Medium
+,,,,,2,Verify the page layout shows left and right columns,Left column shows updated data - right column shows production data,
+,,,,,3,Verify updated fields are highlighted,Updated fields are highlighted in green color,
+
+TC_TW3491_020,Verify Timestamp and User Info Display After Navigation,Functional,Verify that timestamp and user information is correctly displayed on navigated record,User logged in; Record with edit pending data exists,1,Navigate via Processing Status pop-up to a record with pending edits,Bearbeiten page opens with selected record,Medium
+,,,,,2,Verify Update timestamp is displayed,Update timestamp is visible in the UI,
+,,,,,3,Verify Change user information is displayed,Change user field shows the user who made the changes,

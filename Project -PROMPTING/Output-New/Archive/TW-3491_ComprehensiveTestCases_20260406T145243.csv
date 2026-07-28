@@ -1,0 +1,20 @@
+﻿"TID","Category","Description","Pre-conditions","Steps","Expected Result","Priority"
+"TW-3491-TC001","Functional","Verify 'Processing status' tile is visible on the dashboard.","User is logged in and has access to the dashboard.","1. Navigate to the dashboard page.","A new tile named 'Processing status' (Bearbeitungsstatus) is present on the dashboard.","High"
+"TW-3491-TC002","Functional","Verify the tile displays the 'saved' status for a record.","User is logged in. A record has been created/edited and saved, but not sent for approval.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile.","The tile displays an entry for the saved record, indicated by a save icon.","High"
+"TW-3491-TC003","Functional","Verify the tile displays the 'for approval' status for a record.","User is logged in. A record has been sent for approval.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile.","The tile displays an entry for the record pending approval, indicated by a single orange tick icon.","High"
+"TW-3491-TC004","Functional","Verify the tile displays the 'approved' status for a record.","User is logged in. A record has been approved.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile.","The tile displays an entry for the approved record, indicated by a green double tick icon.","High"
+"TW-3491-TC005","Functional","Verify activating the tile opens a pop-up with processing actions.","User is logged in. There are records in 'saved', 'for approval', or 'approved' state.","1. Navigate to the dashboard.
+2. Click on the 'Processing status' tile.","A pop-up appears, showing a list of all actions currently being processed.","High"
+"TW-3491-TC006","Functional","Verify navigation from pop-up to the original mask for a specific action.","The 'Processing status' pop-up is open and displays at least one action.","1. From the pop-up, identify and click on a selectable area for a specific action.","The user is navigated to the original mask (e.g., the 'Bearbeiten' page) for that specific record.","High"
+"TW-3491-TC007","Functional","Verify user can continue the release process after navigating from the pop-up.","User has navigated to the original mask from the 'Processing status' pop-up.","1. On the original mask, perform the next logical action in the release process (e.g., click 'Send for Approval').","The release process continues as expected from the original mask.","High"
+"TW-3491-TC008","Negative","Verify tile behavior when no actions are being processed.","User is logged in. There are no records in 'saved', 'for approval', or 'approved' state.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile.","The tile is either empty or displays a message indicating 'No actions being processed'. [Needs Clarification on exact behavior]","Medium"
+"TW-3491-TC009","Negative","Verify pop-up behavior when tile is activated with no actions.","User is logged in. There are no records in 'saved', 'for approval', or 'approved' state.","1. Navigate to the dashboard.
+2. Click on the 'Processing status' tile.","A pop-up appears, showing an empty state or a message indicating 'No actions being processed'. [Needs Clarification on exact behavior]","Medium"
+"TW-3491-TC010","Boundary","Verify tile behavior with a large number of processing actions.","User is logged in. A very large number of records (e.g., 100+) are in various processing states.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile and the pop-up.","The tile and pop-up handle the large volume of data gracefully, possibly with a scrollbar in the pop-up, without UI degradation or performance issues.","Medium"
+"TW-3491-TC011","Edge Case","Verify tile behavior for a user with 'Viewer' role permissions.","A 'Viewer' user is logged in.","1. Navigate to the dashboard.
+2. Observe the 'Processing status' tile.","The 'Viewer' can see the 'Processing status' tile and open the pop-up to view actions, but cannot initiate any state changes.","Medium"

@@ -1,0 +1,88 @@
+TID,Test Case Name,Category,Description,Pre-conditions,Step No,Step Description,Expected Result,Priority
+TC001,Contact Restrictions Section - Labels and Layout,Functional,Verify section and field labels with two-column layout on Contact/Lead,Contact and Lead records exist; User can switch EN/DE,1,Navigate to Contact record in English,Contact record loads,High
+,,,,,2,Locate section previously named "Opt Out Overview",Section displays as "Contact Restrictions",
+,,,,,3,Verify "Do Not Email" field label exists,Field labeled "Do Not Email" (not "Email Opt Out"),
+,,,,,4,Verify "Do Not Call" field label exists,Field labeled "Do Not Call",
+,,,,,5,Verify "Objection Details (Email)" field exists,New field is present,
+,,,,,6,Verify "Objection Details (Phone)" field exists,New field is present,
+,,,,,7,Verify section uses two-column layout,Fields arranged in two columns per specification,
+,,,,,8,Switch user language to German,Language changes,
+,,,,,9,Verify section label in German,Section displays "Kontaktbeschränkungen",
+,,,,,10,Verify "Do Not Email" German label,Displays "Nicht per E-Mail kontaktieren",
+,,,,,11,Verify "Do Not Call" German label,Displays "Nicht per Telefon kontaktieren" (NOT "Nicht anrufen"),
+,,,,,12,Repeat steps 1-11 on Lead record,All labels and layout identical to Contact,
+
+TC002,Removed Fields Verification,Functional,Verify Print Opt Out - Newsletter Opt Out - Reason for Opt Out removed from Contact Restrictions,Contact/Lead records exist,1,Navigate to Contact record,Record loads,High
+,,,,,2,Examine Contact Restrictions section,Section visible,
+,,,,,3,Search for "Print Opt Out" field,Field NOT present in section,
+,,,,,4,Search for "Newsletter Opt Out" field,Field NOT present in Contact Restrictions,
+,,,,,5,Search for "Reason for Opt Out" field,Field NOT present on page,
+,,,,,6,Navigate to Setup > Object Manager > Contact > Fields,Fields list displays,
+,,,,,7,Search for Print Opt Out field API name,Field contains "_zdelete" suffix,
+,,,,,8,Repeat on Lead record,Same fields removed from Lead,
+
+TC003,Do Not Email Triggers Total Opt Out,Functional,Verify Do Not Email checkbox triggers Total Opt Out in Account Engagement,Contact with AE Prospect; Do Not Email=false; Total Opt Out=false,1,Navigate to Contact record,Record loads,Critical
+,,,,,2,Click Edit,Edit mode enabled,
+,,,,,3,Check "Do Not Email" checkbox,Checkbox selected,
+,,,,,4,Click Save,Record saves,
+,,,,,5,Check Account Engagement Total Opt Out,Total Opt Out = true,
+
+TC004,Unchecking Do Not Email Preserves Total Opt Out,Functional,Verify unchecking Do Not Email does NOT reset Total Opt Out,Contact with Do Not Email=true; Total Opt Out=true,1,Navigate to Contact record,Record loads,Critical
+,,,,,2,Click Edit,Edit mode enabled,
+,,,,,3,Uncheck "Do Not Email" checkbox,Checkbox deselected,
+,,,,,4,Click Save,Record saves,
+,,,,,5,Check Account Engagement Total Opt Out,Total Opt Out remains true (unchanged),
+
+TC005,Help Texts - Contact Restrictions,Functional,Verify bilingual help texts for Do Not Email and Do Not Call,Contact record exists,1,Navigate to Contact record (English),Record loads,High
+,,,,,2,Hover/click help icon for "Do Not Email",Help text popup displays,
+,,,,,3,Verify English help text content,Text matches specification exactly,
+,,,,,4,Hover/click help icon for "Do Not Call",Help text popup displays,
+,,,,,5,Verify English help text content,Text matches specification exactly,
+,,,,,6,Switch to German,Language changes,
+,,,,,7,Verify German help texts for both fields,German texts match specification exactly,
+
+TC006,Marketing Information Tab - Structure,Functional,Verify tab rename - field labels - layout - removed fields,Contact record exists,1,Navigate to Contact record,Record loads,High
+,,,,,2,Verify tab label,Tab displays "Marketing Information" (not "Marketing"),
+,,,,,3,Click Marketing Information tab,Tab content loads,
+,,,,,4,Locate Account Engagement Information section,Section visible,
+,,,,,5,Verify "Marketing Opt-Out" field exists,Field present (renamed from Newsletter Opt Out),
+,,,,,6,Verify "Latest Publication" field NOT present,Field removed,
+,,,,,7,Verify two-column layout (Score/Last Activity/Comments left; Marketing Opt-Out/Hard Bounced right),Layout matches specification,
+,,,,,8,Switch to German,Language changes,
+,,,,,9,Verify "Marketing-Opt-Out" German label,German label displayed,
+
+TC007,Account Engagement Fields - Read-Only,Functional,Verify all 5 AE fields are read-only,Contact with Account Engagement data,1,Navigate to Contact > Marketing Information tab,Tab loads,High
+,,,,,2,Attempt to edit Account Engagement Score,Field is read-only / cannot edit,
+,,,,,3,Attempt to edit Account Engagement Last Activity,Field is read-only / cannot edit,
+,,,,,4,Attempt to edit Account Engagement Comments,Field is read-only / cannot edit,
+,,,,,5,Attempt to edit Marketing Opt-Out,Field is read-only / cannot edit,
+,,,,,6,Attempt to edit Account Engagement Hard Bounced,Field is read-only / cannot edit,
+
+TC008,Account Engagement Fields - Help Texts,Functional,Verify help texts for all 5 AE fields,Contact record exists,1,Navigate to Marketing Information tab (English),Tab loads,High
+,,,,,2,Verify help text for Account Engagement Score,Matches specification,
+,,,,,3,Verify help text for Account Engagement Last Activity,Matches specification,
+,,,,,4,Verify help text for Account Engagement Comments,Matches specification,
+,,,,,5,Verify help text for Marketing Opt-Out,Matches specification,
+,,,,,6,Verify help text for Account Engagement Hard Bounced,Matches specification,
+,,,,,7,Switch to German and verify all 5 help texts,German texts match specification,
+
+TC009,Migration - Email Only,Functional,Verify migration when HasOptedOutOfEmail=true only,Contact with Reason for Opt Out text; HasOptedOutOfEmail=true; DoNotCall=false,1,Run migration,Migration completes,Critical
+,,,,,2,Navigate to Contact,Record loads,
+,,,,,3,Check Objection Details (Email),Contains migrated text,
+,,,,,4,Check Objection Details (Phone),Field is empty,
+
+TC010,Migration - Phone Only,Functional,Verify migration when DoNotCall=true only,Contact with Reason for Opt Out text; HasOptedOutOfEmail=false; DoNotCall=true,1,Run migration,Migration completes,Critical
+,,,,,2,Navigate to Contact,Record loads,
+,,,,,3,Check Objection Details (Email),Field is empty,
+,,,,,4,Check Objection Details (Phone),Contains migrated text,
+
+TC011,Migration - Both True,Functional,Verify migration when both checkboxes true,Contact with Reason for Opt Out text; Both checkboxes=true,1,Run migration,Migration completes,Critical
+,,,,,2,Navigate to Contact,Record loads,
+,,,,,3,Check Objection Details (Email),Contains migrated text,
+,,,,,4,Check Objection Details (Phone),Contains same migrated text,
+
+TC012,Lead Parity Verification,Functional,Verify all changes apply identically to Lead,Lead record exists,1,Navigate to Lead record,Record loads,High
+,,,,,2,Verify Contact Restrictions section and labels,Identical to Contact,
+,,,,,3,Verify Marketing Information tab structure,Identical to Contact,
+,,,,,4,Verify AE fields read-only,All 5 fields non-editable,
+,,,,,5,Test Do Not Email triggers Total Opt Out on Lead,Integration works on Lead,
