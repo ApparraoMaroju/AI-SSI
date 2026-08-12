@@ -41,5 +41,8 @@ tmp/
 temp/
 *.tmp
 
+# Office lock files
+~$*
+
 # Git
 .git-old/

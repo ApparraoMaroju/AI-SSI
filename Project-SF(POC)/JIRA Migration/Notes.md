@@ -1,0 +1,1 @@
+Create Detailed test cases which can be used for Confluence, JIRA & XRAY migration to cloud by using the prompt template @file:JiraMigrationPromt4_1208.md  and save the file in 'JIRA Migration" folder.
