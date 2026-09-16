@@ -1,0 +1,144 @@
+Board Name: Retrospective Session 20th Aug 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6a7d889c54d10e3b00f988ca
+
+Participants: (9) 
+
+  - Apparao Maroju (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan Pratap (Team Member)
+  - Shashwat (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (7)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: We are currently working on implementing new features in our org  such as Event Monitoring. . Collaborated as a team to thoroughly test the Bid/No Bid functionality and ensure all key scenarios were covered.
+  - Author: Sunaina
+  - UpVotes: 1 ( Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The deployments went smoothly during the past release. The security updates and instance migration were completed successfully without any issues.
+  - Author: Charu BISHT
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: During the system testing we have found some behaviors related to deal close date and Bid/no bid decision which later got converted into User stories.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: During testing  several issues related to the Bid/No Bid functionality were identified by the Rishabh and Christoph. The issues were analyzed and the required fixes were implemented  and the functionality was successfully retested and validated after the fixes.
+  - Author: Anonymous
+  - UpVotes: 1 ( Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The team has grown in both business and technical skills. Deliveries are going smoothly  and the team is taking on more challenging work.
+  - Author: Ila Gaba
+  - UpVotes: 2 ( Anonymous , Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Good collaboration within the team and quick support whenever we faced issues.
+  - Author: Shashwat
+  - UpVotes: 1 ( Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Industrial security relevance revamp smoothly went well in the production.
+  - Author: Rishabh Bhatt
+  - UpVotes: 2 ( Anonymous , Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (5)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: We should focus on improving code quality and adopting new Salesforce-recommended approaches to ensure our solutions are scalable  reliable  and easier to maintain. We should also focus on agent where we can add agentforce functionality in our Project if possible.
+  - Author: Anonymous
+  - UpVotes: 2 ( Anonymous , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: When complex user stories are successfully completed and deployed to production without major defects  the achievement is often recognized primarily as a developer accomplishment. However  thoroughly testing and validating these complex user stories is also a significant and challenging task for the QA team.. Recognizing both development and testing efforts will encourage stronger collaboration  improve team morale  and reinforce the importance of quality throughout the delivery process.
+  - Author: Rishabh Bhatt
+  - UpVotes: 2 ( Anonymous , Shashwat )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Reduce manual post deployment steps   we can give try via copado ( translation and field permissions)  as new version of copado is better
+  - Author: Ila Gaba
+  - UpVotes: 3 ( Anonymous , Shashwat , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We can pay more attention to post deployment steps.
+  - Author: Shashwat
+  - UpVotes: 2 ( Anonymous , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Improve attention to small details  as some production bugs were caused by minor issues being missed.
+  - Author: Ila Gaba
+  - UpVotes: 4 ( Charu BISHT , Anonymous , Shashwat , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (2)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Explore Copado new fetures  and automate tasks
+  - Author: Ila Gaba
+  - UpVotes: 3 ( Charu BISHT , Shashwat , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Identify repetitive manual activities and explore opportunities for automation.
+  - Author: Shashwat
+  - UpVotes: 2 ( Charu BISHT , Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+

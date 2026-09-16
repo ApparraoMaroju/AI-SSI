@@ -1,0 +1,134 @@
+Board Name: Retrospective Session 10th Sep 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6aa2739f4584221c772ae210
+
+Participants: (9) 
+
+  - Apparao Maroju (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan (Team Member)
+  - Shashwat (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (6)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Team started exploring on AI part by implementing agents and will continue to learn more in order to explore new things which will further be beneficial for project.
+  - Author: Shashwat
+  - UpVotes: 1 ( Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Team collabration and transparency improved
+  - Author: Ila Gaba
+  - UpVotes: 2 ( Anonymous , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Collaborated with the Christoph to clarify the Lead and Contact cleanup criteria  particularly around business-user modifications and DevOps users  and resolved ambiguities before finalizing the implementation.
+  - Author: Anonymous
+  - UpVotes: 1 ( Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We worked on new enhancements related to bid no bid though there were many edge cases we were able to implement those also in the recent User Stories
+  - Author: Rishabh Bhatt
+  - UpVotes: 1 ( Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Migrated copado pipelines and team is working to deliver upcoming US
+  - Author: Ila Gaba
+  - UpVotes: 1 ( Anonymous )
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We were successfully able to migrate from Copado metadata Pipelines to Copado Source Format Pipelines.
+  - Author: Charu BISHT
+  - UpVotes: 2 ( Anonymous , Sunaina )
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (7)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: If the scope of a user story increases  including any UI changes beyond the initially agreed requirements  it should be communicated immediately. Additional effort for such changes should be assessed and tracked to through a task avoid impacting the planned scope and timelines
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Consistently recording the actual effort spent on each story  ensuring accurate effort tracking  improved estimation  and greater transparency into the team’s delivery and capacity.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Want  Copado deployment access to independently perform deployments and reduce dependency on others for deployments
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Way of working will be improved
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Account engagement and copado KT should be planned
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Can plan a KT session on Copado with all new features with team so all the team members are well aware.
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Code quality should be improved   We should modify code as per new salesforce standard
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (0)
+
+

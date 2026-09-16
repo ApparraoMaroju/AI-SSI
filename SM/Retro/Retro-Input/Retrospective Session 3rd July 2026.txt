@@ -1,0 +1,134 @@
+Board Name: Retrospective Session 3rd July 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6a3cf4cecefede2c4e6d2654
+
+Participants: (9) 
+
+  - Apparao Maroju (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan Pratap (Team Member)
+  - Shashwat (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (7)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Hard to say goodbye  Elakiya! Wishing you all the best for your next adventure. You'll be missed by the team! 
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We were able to identify the root cause of the issue that prevented users from receiving emails for their subscribed reports and dashboards. The fix has been identified and will be implemented in the current sprint. And yes a great success for Seller Home   kudos to Manmohan.
+  - Author: Sunaina
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: The Summer '26 Release Feature call was conducted successfully and provided a productive discussion on the upcoming features.
+  - Author: Charu BISHT
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Kudos to Manmohan for the effort on this seller home implementation. The new functionality is now ready to go live. great job .
+  - Author: Elakiya Krishnan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: New feature has been implemented seller home and we have improved the bid /no bid decision flow
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Finally  we were able to complete the Seller Home enhancement after significant development effort and close collaboration with Christoph. The custom Seller Home is now fully aligned with the standard Seller Home functionality and ready to go live.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Delivered Improved Bid experience and Seller home in last days also Account engagement bounce management also documented.
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (6)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Frequent change in meeting schedules
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Managing the Sub-tasks and updating the status on time.
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Time Tracking is not consistent
+  - Author: Anonymous
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Investigate automation for repetitive deployment tasks  such as report types and translations  to improve efficiency and reduce manual work.
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We should plan the Release Feature meeting well in advance to ensure that new features can be evaluated and considered for inclusion in upcoming releases.
+  - Author: Charu BISHT
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Account Engagement KT needs to be planned and scheduled
+  - Author: Ila Gaba
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (0)
+
+

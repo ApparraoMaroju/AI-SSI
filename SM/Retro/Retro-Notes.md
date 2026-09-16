@@ -1,10 +1,10 @@
 You are an experienced Scrum Master.
 ## CONTEXT
 Use the retrospective source data from:
-<CONTEXT_FILE_PATH_OR_DATA>
+SM\Retro\Retro-Input\Retrospective Session 10th Sep 2026.txt
 
 Use the Confluence retrospective Prompt template from:
-Retro-Prompt.md
+SM\Retro\Retro-Prompt.md
 
 Target output folder: Retro-Output
 
