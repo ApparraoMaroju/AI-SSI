@@ -1,0 +1,102 @@
+Board Name: Retrospective Session 22nd Oct 2026
+Public/Private: Private 
+Board Type: Standard
+Board url: https://www.reetro.app/board/676cf1c88c909ca1db4c3d1b/6acf4962942ebeaf400ed1e8
+
+Participants: (9) 
+
+  - Apparao Maroju (Super Admin)
+  - Rishabh Bhatt (Team Member)
+  - Charu BISHT (Team Member)
+  - Christoph Zänker (Team Member)
+  - Elakiya Krishnan (Team Member)
+  - Ila Gaba (Team Member)
+  - Manmohan (Team Member)
+  - Shashwat (Team Member)
+  - Sunaina (Team Member)
+
+Column Name: Went Well (5)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: Successfully delivered the Calculation and Seller Home tickets for the US on time despite multiple challenges  and ensured timely testing through additional effort and collaboration.
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Implementation of relevant deal review feature is successfully going on and still working on that.
+  - Author: Sunaina
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Releases went well and also taken up the last minutes new ticket on the release day.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: We have worked on revamp of Deal review and introdcuce new enhancements.
+  - Author: Rishabh Bhatt
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Resolved the pending Event Monitoring issue with Salesforce Support  tested the fix  and preparing it for deployment to higher environments.
+  - Author: Manmohan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: To Improve (4)
+
+Individual Cards:
+
+Card Type: Comment
+
+  - Text: When we are working on dependent stories like now relevant deal related stuff  until release happen we should avoid UAT refresh to avoid discrepancy.
+  - Author: Sunaina
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: After environment refreshes  translations and other configurations can go missing in UAT. We could assign 1–2 dedicated owners to verify the environment post-refresh  document missing items  and report them for correction.
+  - Author: Shashwat
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: Improve post-deployment checks to ensure nothing is missed  including translations  permission set access  and other required configurations.
+  - Author: Manmohan
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+Card Type: Comment
+
+  - Text: To keep in mind all post deployment steps to be performed whenever UAT refresh happens.(To be more cautious)
+  - Author: Sunaina
+  - UpVotes: 0
+  - DownVotes: 0
+  - Comments: None
+
+
+Column Name: Action Items (0)
+
+

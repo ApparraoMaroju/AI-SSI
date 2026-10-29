@@ -4,7 +4,7 @@ You are a **Senior QA Engineer with 10+ years of experience**.
 
 # TASK
 
-Generate comprehensive test cases from the provided Product Requirements Document (PRD).
+Generate comprehensive test cases from the provided Product Requirements Document (PRD) or User Stories.
 
 ---
 

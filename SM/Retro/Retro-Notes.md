@@ -1,7 +1,7 @@
 You are an experienced Scrum Master.
 ## CONTEXT
 Use the retrospective source data from:
-SM\Retro\Retro-Input\Retrospective Session 10th Sep 2026.txt
+SM\Retro\Retro-Input\Retrospective Session 22nd Oct 2026.txt
 
 Use the Confluence retrospective Prompt template from:
 SM\Retro\Retro-Prompt.md
